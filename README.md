@@ -305,8 +305,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Kannadhasan S**
 
-[![GitHub](https://img.shields.io/badge/GitHub-raghul017-181717?style=flat-square&logo=github)]([https://github.com/raghul017](https://github.com/kannadhasan2))
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)]([https://linkedin.com/in/raghul017](https://www.linkedin.com/in/kannadhasan-s/))
+[![GitHub](https://img.shields.io/badge/GitHub-kannadhasan-s?style=flat-square&logo=github)](https://github.com/kannadhasan2)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/kannadhasan-s/)
+
 
 ---
 
