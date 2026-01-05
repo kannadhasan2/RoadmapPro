@@ -113,7 +113,7 @@ function SignupForm () {
       <button 
         type="submit" 
         disabled={loading}
-        className="w-full px-5 py-3 bg-[#FF6B35] hover:bg-[#ff7a4a] disabled:opacity-40 text-black font-bold text-[13px] flex items-center justify-center gap-2 transition-all mt-6"
+        className="w-full px-5 py-3 bg-violet-700 disabled:opacity-40 text-white font-bold text-[13px] flex items-center justify-center gap-2 transition-all mt-6"
       >
         {loading ? <><Loader2 size={16} className="animate-spin" /> CREATING...</> : 'CREATE ACCOUNT'}
       </button>

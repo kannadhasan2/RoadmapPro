@@ -7,8 +7,8 @@ function Login () {
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 text-[12px] text-[#FF6B35] mb-4 tracking-[0.15em] font-mono">
-            <span className="w-2 h-2 bg-[#FF6B35] rounded-full"></span>
+          <div className="inline-flex items-center gap-2 text-[14px] text-violet-700 mb-4 tracking-[0.15em] font-mono">
+            <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
             [ LOGIN ]
           </div>
           <h1 className="text-[32px] font-bold text-white mb-2">Welcome back</h1>
@@ -21,8 +21,8 @@ function Login () {
         </div>
         
         <p className="text-center text-[13px] text-[#666] mt-6">
-          New to EduVerse?{' '}
-          <Link to="/signup" className="text-[#FF6B35] font-semibold hover:underline">
+          New to RoadmapPro?{' '}
+          <Link to="/signup" className="text-violet-700 font-semibold hover:underline">
             Create an account
           </Link>
         </p>

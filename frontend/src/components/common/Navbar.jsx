@@ -30,19 +30,19 @@ function Navbar() {
       <div className="max-w-[1400px] mx-auto px-6 h-[70px] flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 bg-[#0a0a0a] border border-[#333] group-hover:border-[#FF6B35] transition-colors rounded-sm flex items-center justify-center">
-            <Sparkles size={16} className="text-white group-hover:text-[#FF6B35] transition-colors" />
+          <div className="w-8 h-8 bg-[#0a0a0a] border border-[3px] border-violet-700 transition-colors rounded-sm flex items-center justify-center">
+            <Sparkles size={16} className="text-violet-700 transition-colors" />
           </div>
-          <span className="font-bold text-[16px] tracking-tight text-white">EduVerse</span>
+          <span className="font-bold text-[16px] tracking-tight text-white">RoadmapPro</span>
         </Link>
         
         {/* Nav Links */}
-        <div className="hidden md:flex items-center gap-8 text-[13px] font-mono text-[#888]">
-          <Link to="/ai-roadmap" className="hover:text-white transition-colors hover:underline decoration-[#FF6B35] decoration-2 underline-offset-4">ROADMAPS</Link>
-          <Link to="/ai-course" className="hover:text-white transition-colors hover:underline decoration-[#FF6B35] decoration-2 underline-offset-4">COURSES</Link>
-          <Link to="/videos" className="hover:text-white transition-colors hover:underline decoration-[#FF6B35] decoration-2 underline-offset-4">VIDEOS</Link>
-          <Link to="/ai-tutor" className="hover:text-white transition-colors hover:underline decoration-[#FF6B35] decoration-2 underline-offset-4">AI_TUTOR</Link>
-          <Link to="/communities" className="hover:text-white transition-colors hover:underline decoration-[#FF6B35] decoration-2 underline-offset-4">COMMUNITY</Link>
+        <div className="hidden md:flex items-center gap-8 text-[14px] font-mono text-[#888]">
+          <Link to="/ai-roadmap" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">ROADMAPS</Link>
+          <Link to="/ai-course" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">COURSES</Link>
+          <Link to="/videos" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">VIDEOS</Link>
+          <Link to="/ai-tutor" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">AI_TUTOR</Link>
+          <Link to="/communities" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">ABOUT</Link>
         </div>
         
         {/* Right Side - Profile & Auth */}
@@ -95,8 +95,8 @@ function Navbar() {
             </>
           ) : (
             <div className="flex items-center gap-6">
-              <Link to="/login" className="text-[13px] font-mono text-[#999] hover:text-white transition-colors">LOG_IN</Link>
-              <Link to="/signup" className="px-6 py-2.5 bg-[#FF6B35] hover:bg-[#ff8555] text-black font-bold text-[12px] font-mono transition-all">SIGN_UP</Link>
+              <Link to="/login" className="text-[13px] font-bold text-violet-700 hover:text-white transition-colors">LOG IN</Link>
+              <Link to="/signup" className="px-6 py-2.5 bg-violet-700 hover:bg-violet-500 text-white font-bold text-[12px]  transition-all">SIGN UP</Link>
             </div>
           )}
         </div>

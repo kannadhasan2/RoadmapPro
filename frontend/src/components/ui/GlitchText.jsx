@@ -48,7 +48,7 @@ const GlitchText = ({
   }, [currentWordIndex, words, interval]);
 
   return (
-    <span className={`font-mono ${className}`}>
+    <span className={`font-mono ${className} text-violet-500`}>
       {displayedText}
     </span>
   );

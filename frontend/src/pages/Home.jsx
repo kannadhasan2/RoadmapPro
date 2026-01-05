@@ -35,14 +35,14 @@ const Home = () => {
     <div className="min-h-screen bg-[#050505] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] text-white font-sans antialiased scroll-smooth selection:bg-[#FF6B35] selection:text-white">
 
       {/* ===== HERO SECTION ===== */}
-      <section className="pt-12 pb-20 px-6 relative">
+      <section className="pt-12 pb-20 px-[12px] sm:px-[24px] relative">
         <div className="max-w-[1000px] mx-auto text-center relative z-10">
           
           {/* Top Tag */}
           <div className="flex justify-center mb-6 opacity-0 animate-fade-in" style={{animationDelay: '0.1s', animationFillMode: 'forwards'}}>
-             <div className="inline-flex items-center gap-3 text-[10px] text-[#FF6B35] font-mono tracking-[0.2em] uppercase">
-                <span className="w-1.5 h-1.5 bg-[#FF6B35] rounded-full"></span>
-                [ API_FOR_LEARNING ]
+             <div className="inline-flex items-center gap-3 text-[13px] text-violet-700 font-mono tracking-[0.2em] font-semibold uppercase">
+                <span className="w-1.5 h-1.5 bg-violet-700 rounded-full"></span>
+                [ Lets Rise Together ]
              </div>
           </div>
           
@@ -54,11 +54,8 @@ const Home = () => {
                <GlitchText 
                  words={["ACCELERATE", "AUTOMATE", "OPTIMIZE"]} 
                  interval={3000}
-                 className="text-[#FF6B35] relative z-10"
+                 className="text-violet-700 relative z-10"
                />
-               
-               {/* Vertical Bar */}
-               <div className="w-2.5 h-20 bg-[#FF6B35] hidden md:block"></div>
             </div>
             YOUR LEARNING
           </h1>
@@ -78,11 +75,11 @@ const Home = () => {
 
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-3 border-b border-[#1a1a1a]">
-               <div className="text-[10px] text-[#555] font-mono tracking-widest uppercase">user@eduverse:~/new_task</div>
+               <div className="text-[10px] text-violet-700 font-mono tracking-widest uppercase">user@RoadmapPro:~/new_task</div>
                <div className="flex gap-2">
-                  <div className="w-2 h-2 rounded-full bg-[#222] border border-[#333]"></div>
-                  <div className="w-2 h-2 rounded-full bg-[#222] border border-[#333]"></div>
-                  <div className="w-2 h-2 rounded-full bg-[#222] border border-[#333]"></div>
+                  <div className="w-2 h-2 rounded-full bg-violet-700 border border-violet-700"></div>
+                  <div className="w-2 h-2 rounded-full bg-violet-700 border border-violet-700"></div>
+                  <div className="w-2 h-2 rounded-full bg-violet-700 border border-violet-700"></div>
                </div>
             </div>
             
@@ -137,7 +134,7 @@ const Home = () => {
                   <button 
                      onClick={handleGenerate}
                      disabled={!topic.trim()}
-                     className="bg-[#FF6B35] hover:bg-[#ff8555] active:translate-y-0.5 text-black font-extrabold text-[11px] px-8 py-3.5 font-mono tracking-wider flex items-center gap-2 transition-all w-full md:w-auto justify-center uppercase"
+                     className="bg-violet-700 hover:bg-violet-600 active:translate-y-0.5 text-white font-extrabold text-[11px] px-8 py-3.5 font-mono tracking-wider flex items-center gap-2 transition-all w-full md:w-auto justify-center uppercase"
                   >
                      <Play size={10} fill="currentColor" /> RUN FOR FREE
                   </button>
@@ -152,7 +149,7 @@ const Home = () => {
         <div className="max-w-[1400px] mx-auto">
           {/* Header */}
           <div className="mb-12">
-             <div className="text-[11px] text-[#FF6B35] font-mono tracking-[0.2em] mb-4">infrastructure</div>
+             <div className="text-[14px] text-violet-700 font-mono tracking-[0.2em] mb-4">Infrastructure</div>
              <h2 className="text-[40px] font-bold text-white mb-4 leading-tight">Stealth Learning Infrastructure</h2>
              <p className="text-[#666] text-[15px] font-mono max-w-[600px]">
                Built on top of advanced AI agents. V 2.0.4 [STABLE]
@@ -216,7 +213,7 @@ const Home = () => {
       </section>
 
       {/* ===== PLATFORM DEMO - Code window with colored dots ===== */}
-      <section className="py-24 px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
+      <section className="py-20 px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
         <div className="max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Code Box - macOS dots on LEFT (colored) */}
@@ -257,7 +254,7 @@ const Home = () => {
       </section>
 
       {/* ===== FEATURES GRID ===== */}
-      <section className="py-24 px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
+      <section className="py-20 px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
@@ -280,7 +277,7 @@ const Home = () => {
       </section>
 
       {/* ===== CTA SECTION ===== */}
-      <section className="py-24 px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
+      <section className="py-2 px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
         <div className="max-w-[1400px] mx-auto text-center">
           <div className="text-[#FF6B35] text-[11px] tracking-[0.15em] mb-4 font-mono">[ START LEARNING ]</div>
           <h2 className="text-[40px] font-bold mb-6">Custom Learning Path for Your Goals</h2>
