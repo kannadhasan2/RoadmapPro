@@ -1,8 +1,8 @@
-# 🚀 EduVerse — AI-Powered Learning Platform
+# 🚀 RoadmapPro — AI-Powered Learning Platform
 
 <div align="center">
 
-![EduVerse Banner](https://img.shields.io/badge/EduVerse-AI%20Learning%20Platform-FF6B35?style=for-the-badge&logo=react&logoColor=white)
+![RoadmapPro Banner](https://img.shields.io/badge/RoadmapPro-AI%20Learning%20Platform-FF6B35?style=for-the-badge&logo=react&logoColor=white)
 
 [![React](https://img.shields.io/badge/React-18.3-61DAFB?style=flat-square&logo=react&logoColor=black)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-20+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
