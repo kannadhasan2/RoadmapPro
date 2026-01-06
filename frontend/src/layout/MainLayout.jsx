@@ -13,7 +13,7 @@ function MainLayout() {
       <Navbar />
       
       {/* Main Content Area */}
-      <main className={isHomePage || location.pathname.includes('roadmap') || location.pathname.includes('/ai-tutor') ? "w-full flex-grow" : "p-6 max-w-[1400px] mx-auto w-full flex-grow"}>
+      <main className={isHomePage || location.pathname.includes('roadmap') || location.pathname.includes('tutor') ? "w-full flex-grow" : "p-6 max-w-[1400px] mx-auto w-full flex-grow"}>
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}
