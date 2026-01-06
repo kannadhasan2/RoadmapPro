@@ -33,7 +33,20 @@ function Navbar() {
           <div className="w-8 h-8 bg-[#0a0a0a] border border-[3px] border-violet-700 transition-colors rounded-sm flex items-center justify-center">
             <Sparkles size={16} className="text-violet-700 transition-colors" />
           </div>
-          <span className="font-bold text-[16px] tracking-tight text-white">RoadmapPro</span>
+          <h2 className="font-bold text-[16px] tracking-tight">
+                {"RoadmapPro".split("").map((char, i) => (
+                  <span
+                    key={i}
+                    className="transition-colors duration-300"
+                    style={{
+                      animation: `violetWave 1.2s ease forwards infinite`,
+                      animationDelay: `${i * 90}ms`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+              </h2>
         </Link>
         
         {/* Nav Links */}
@@ -101,6 +114,16 @@ function Navbar() {
           )}
         </div>
       </div>
+      
+      <style>
+        {`
+        @keyframes violetWave {
+          0%   { color: #ffffff; }
+          50%  { color: rgb(124 58 237); }
+          100% { color: #ffffff; }
+        }
+      `}
+      </style>
     </nav>
   );
 }

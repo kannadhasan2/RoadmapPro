@@ -31,26 +31,26 @@ function LoginForm () {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label className="block text-[11px] uppercase tracking-[0.15em] text-[#555] mb-2 font-mono">EMAIL</label>
+        <label className="block text-[11px] uppercase tracking-[0.15em] text-violet-700 font-bold mb-2 font-mono">EMAIL</label>
         <input
           type="email"
           name="email"
           value={form.email}
           onChange={handleChange}
-          placeholder="you@example.com"
-          className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-[#FF6B35]"
+          placeholder="you@gmail.com"
+          className="w-full bg-[#0a0a0a] border border-[#2a2a2a] hover:border-violet-700 px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-violet-700"
         />
       </div>
       
       <div>
-        <label className="block text-[11px] uppercase tracking-[0.15em] text-[#555] mb-2 font-mono">PASSWORD</label>
+        <label className="block text-[11px] uppercase tracking-[0.15em] text-violet-700 font-bold mb-2 font-mono">PASSWORD</label>
         <input
           type="password"
           name="password"
           value={form.password}
           onChange={handleChange}
           placeholder="••••••••"
-          className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-[#FF6B35]"
+          className="w-full bg-[#0a0a0a] border border-[#2a2a2a] hover:border-violet-700 px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-violet-700"
         />
       </div>
       

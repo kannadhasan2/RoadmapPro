@@ -47,62 +47,62 @@ function SignupForm () {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-[11px] uppercase tracking-[0.15em] text-[#555] mb-2 font-mono">NAME</label>
+          <label className="block text-[11px] uppercase tracking-[0.15em] font-bold text-violet-700 mb-2 font-mono">NAME</label>
           <input
             type="text"
             name="name"
             value={form.name}
             onChange={handleChange}
             placeholder="Your name"
-            className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-[#FF6B35]"
+            className="w-full bg-[#0a0a0a] border border-[#2a2a2a] hover:border-violet-700 px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-violet-700"
           />
         </div>
         <div>
-          <label className="block text-[11px] uppercase tracking-[0.15em] text-[#555] mb-2 font-mono">EMAIL</label>
+          <label className="block text-[11px] uppercase tracking-[0.15em] font-bold text-violet-700 mb-2 font-mono">EMAIL</label>
           <input
             type="email"
             name="email"
             value={form.email}
             onChange={handleChange}
             placeholder="you@example.com"
-            className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-[#FF6B35]"
+            className="w-full bg-[#0a0a0a] border border-[#2a2a2a] hover:border-violet-700 px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-violet-700"
           />
         </div>
       </div>
       
       <div>
-        <label className="block text-[11px] uppercase tracking-[0.15em] text-[#555] mb-2 font-mono">PASSWORD</label>
+        <label className="block text-[11px] uppercase tracking-[0.15em] font-bold text-violet-700 mb-2 font-mono">PASSWORD</label>
         <input
           type="password"
           name="password"
           value={form.password}
           onChange={handleChange}
           placeholder="At least 8 characters"
-          className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-[#FF6B35]"
+          className="w-full bg-[#0a0a0a] border border-[#2a2a2a] hover:border-violet-700 px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-violet-700"
         />
       </div>
       
       <div>
-        <label className="block text-[11px] uppercase tracking-[0.15em] text-[#555] mb-2 font-mono">BIO (OPTIONAL)</label>
+        <label className="block text-[11px] uppercase tracking-[0.15em] font-bold text-violet-700 mb-2 font-mono">BIO (OPTIONAL)</label>
         <input
           type="text"
           name="bio"
           value={form.bio}
           onChange={handleChange}
           placeholder="Tell us about yourself"
-          className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-[#FF6B35]"
+          className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 hover:border-violet-700 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-violet-700"
         />
       </div>
       
       <div>
-        <label className="block text-[11px] uppercase tracking-[0.15em] text-[#555] mb-2 font-mono">INTERESTS (COMMA SEPARATED)</label>
+        <label className="block text-[11px] uppercase tracking-[0.15em] font-bold text-violet-700 mb-2 font-mono">INTERESTS (COMMA SEPARATED)</label>
         <input
           type="text"
           name="interests"
           value={form.interests}
           onChange={handleChange}
           placeholder="React, Python, AI..."
-          className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-[#FF6B35]"
+          className="w-full bg-[#0a0a0a] border border-[#2a2a2a] hover:border-violet-700 px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-violet-700"
         />
       </div>
       

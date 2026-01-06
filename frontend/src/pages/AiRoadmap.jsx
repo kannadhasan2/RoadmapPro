@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Sparkles, ArrowRight, Clock, Trash2, Loader2, Route, Star, ChevronDown, Settings2 } from "lucide-react";
 import api from "../utils/api.js";
 import PlaceholdersAndVanishInput from "../components/ui/PlaceholdersAndVanishInput.jsx";
+import ButtonHeading from "../components/ui/ButtonHeading.jsx";
 
 // Animated input placeholders
 const placeholders = [
@@ -109,20 +110,31 @@ function AiRoadmap() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] py-12 px-6">
+    <div className="min-h-screen bg-[#0a0a0a] selection:bg-violet-700 selection:text-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] py-12 px-6">
       <div className="max-w-[1400px] mx-auto">
         
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 text-[12px] text-[#FF6B35] mb-4 tracking-[0.15em] font-mono">
-            <span className="w-2 h-2 bg-[#FF6B35] rounded-full"></span>
+          <div className="inline-flex items-center gap-2 text-[12px] text-violet-700 mb-4 tracking-[0.15em] font-mono">
+            <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
             [ AI ROADMAP GENERATOR ]
           </div>
           <h1 className="text-[48px] font-bold text-white mb-4 leading-tight">
-            AI Roadmap Generator
-          </h1>
+                {"AI Roadmap Generator".split("").map((char, i) => (
+                  <span
+                    key={i}
+                    className="transition-colors duration-300"
+                    style={{
+                      animation: `violetWave 1.2s ease forwards infinite`,
+                      animationDelay: `${i * 80}ms`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+            </h1>
           <p className="text-[#666] text-[16px] max-w-xl mx-auto">
-            Choose a role/skill or <span className="text-[#FF6B35]">enter any topic</span> to generate a personalized learning roadmap
+            Choose a role/skill or <span className="text-violet-700 font-bold">enter any topic</span> to generate a personalized learning roadmap
           </p>
         </div>
 
@@ -130,11 +142,11 @@ function AiRoadmap() {
         <div className="max-w-[700px] mx-auto mb-6">
           <div className="bg-[#111] border border-[#2a2a2a]">
             <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a]">
-              <code className="text-[12px] text-[#555] tracking-wide font-mono">USER@EDUVERSE:~/ROADMAP</code>
+              <code className="text-[12px] text-violet-700 tracking-wide font-mono">USER@EDUVERSE:~/ROADMAP</code>
               <div className="flex gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#555]"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-[#555]"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-[#555]"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
               </div>
             </div>
             <div className="p-4">
@@ -163,7 +175,7 @@ function AiRoadmap() {
             className="flex items-center gap-2 text-[13px] text-[#666] hover:text-white mx-auto mb-3 transition-colors"
           >
             <Settings2 size={14} />
-            Detail Level: <span className="text-[#FF6B35] font-semibold uppercase">{detailLevel}</span>
+            Detail Level: <span className="text-violet-700 font-semibold uppercase">{detailLevel}</span>
             <ChevronDown size={14} className={`transition-transform ${showSettings ? 'rotate-180' : ''}`} />
           </button>
           
@@ -177,7 +189,7 @@ function AiRoadmap() {
                     onClick={() => { setDetailLevel(level.id); setShowSettings(false); }}
                     className={`p-4 border text-left transition-all ${
                       detailLevel === level.id
-                        ? 'border-[#FF6B35] bg-[#FF6B35]/10'
+                        ? 'border-violet-700 bg-[violet]/10'
                         : 'border-[#2a2a2a] hover:border-[#444]'
                     }`}
                   >
@@ -193,16 +205,16 @@ function AiRoadmap() {
 
         {/* Role Roadmaps */}
         <div className="mb-10">
-          <h2 className="text-[14px] font-mono text-[#FF6B35] mb-4 tracking-wide">&gt;_ ROLE_ROADMAPS</h2>
+          <ButtonHeading text="ROLE_ROADMAPS" />
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
             {roleRoadmaps.map((role, i) => (
               <button
                 key={i}
                 onClick={() => handleRoadmapClick(role)}
-                className="p-4 bg-[#0f0f0f] border border-[#1f1f1f] hover:border-[#FF6B35] transition-all text-left group"
+                className="p-4  bg-[#0f0f0f] border border-[#1f1f1f] hover:border-violet-700 transition-all text-left group"
               >
-                <Route size={18} className="text-[#FF6B35] mb-2" />
-                <div className="text-[13px] font-semibold text-white group-hover:text-[#FF6B35] transition-colors">
+                <Route size={18} className="text-violet-700 mb-2" />
+                <div className="text-[13px] font-semibold text-white group-hover:text-violet-700 group-hover:font-bold group-hover:text-[14px] transition-colors">
                   {role}
                 </div>
               </button>
@@ -212,16 +224,16 @@ function AiRoadmap() {
 
         {/* Skill Roadmaps */}
         <div className="mb-10">
-          <h2 className="text-[14px] font-mono text-[#FF6B35] mb-4 tracking-wide">&gt;_ SKILL_ROADMAPS</h2>
+          <ButtonHeading text="SKILL_ROADMAPS" />
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
             {skillRoadmaps.map((skill, i) => (
               <button
                 key={i}
                 onClick={() => handleRoadmapClick(skill)}
-                className="p-4 bg-[#0f0f0f] border border-[#1f1f1f] hover:border-[#FF6B35] transition-all text-left group"
+                className="p-4 bg-[#0f0f0f] border border-[#1f1f1f] hover:border-violet-700 transition-all text-left group"
               >
-                <Sparkles size={18} className="text-[#FF6B35] mb-2" />
-                <div className="text-[13px] font-semibold text-white group-hover:text-[#FF6B35] transition-colors">
+                <Sparkles size={18} className="text-violet-700 mb-2" />
+                <div className="text-[13px] font-semibold text-white group-hover:text-violet-700 group-hover:text-[14px]  transition-colors">
                   {skill}
                 </div>
               </button>
@@ -231,16 +243,16 @@ function AiRoadmap() {
 
         {/* Topic Roadmaps */}
         <div className="mb-10">
-          <h2 className="text-[14px] font-mono text-[#FF6B35] mb-4 tracking-wide">&gt;_ TOPIC_ROADMAPS</h2>
+          <ButtonHeading text="TOPIC_ROADMAPS"  />
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
             {topicRoadmaps.map((topic, i) => (
               <button
                 key={i}
                 onClick={() => handleRoadmapClick(topic)}
-                className="p-4 bg-[#0f0f0f] border border-[#1f1f1f] hover:border-[#FF6B35] transition-all text-left group"
+                className="p-4 bg-[#0f0f0f] border border-[#1f1f1f] hover:border-violet-700 transition-all text-left group"
               >
-                <Star size={18} className="text-[#FF6B35] mb-2" />
-                <div className="text-[13px] font-semibold text-white group-hover:text-[#FF6B35] transition-colors">
+                <Star size={18} className="text-violet-700 mb-2" />
+                <div className="text-[13px] font-semibold text-white group-hover:text-violet-700 group-hover:text-[14px] transition-colors">
                   {topic}
                 </div>
               </button>
@@ -251,18 +263,18 @@ function AiRoadmap() {
         {/* User Generated Roadmaps */}
         {generatedRoadmaps.length > 0 && (
           <div>
-            <h2 className="text-[14px] font-mono text-[#FF6B35] mb-4 tracking-wide">&gt;_ YOUR_GENERATED_ROADMAPS</h2>
+            <ButtonHeading text="YOUR_GENERATED_ROADMAPS" className="inline-flex" />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {generatedRoadmaps.map((roadmap) => (
                 <div
                   key={roadmap.id}
                   onClick={() => handleRoadmapClick(roadmap.role || roadmap.title, roadmap.detail_level)}
-                  className="relative p-5 bg-[#0f0f0f] border border-[#1f1f1f] hover:border-[#333] cursor-pointer transition-all group"
+                  className="relative p-5 bg-[#0f0f0f] border border-[#1f1f1f] hover:border-violet-700 cursor-pointer transition-all group"
                 >
                   <div className="absolute left-0 top-4 bottom-4 w-[3px] bg-[#FF6B35]"></div>
                   <div className="flex items-start justify-between pl-3">
                     <div>
-                      <h3 className="font-bold text-white text-[15px] mb-1 group-hover:text-[#FF6B35] transition-colors">
+                      <h3 className="font-bold text-white text-[15px] mb-1 group-hover:text-violet-700 transition-colors">
                         {roadmap.title || roadmap.role}
                       </h3>
                       <div className="flex items-center gap-3 text-[11px] text-[#555]">
@@ -270,7 +282,7 @@ function AiRoadmap() {
                           <Clock size={12} />
                           {new Date(roadmap.created_at).toLocaleDateString()}
                         </span>
-                        <span className="px-2 py-0.5 bg-[#1a1a1a] text-[#FF6B35] uppercase font-mono">
+                        <span className="px-2 py-0.5 bg-[#1a1a1a] text-violet-700 uppercase font-mono">
                           {roadmap.detail_level || 'standard'}
                         </span>
                       </div>
@@ -282,7 +294,7 @@ function AiRoadmap() {
                     </div>
                     <button
                       onClick={(e) => handleDeleteRoadmap(e, roadmap.id)}
-                      className="p-2 text-[#555] hover:text-red-400 hover:bg-red-500/10 transition-all"
+                      className="p-2 text-[#555] hover:text-white hover:bg-violet-500 transition-all"
                     >
                       <Trash2 size={16} />
                     </button>
@@ -296,12 +308,21 @@ function AiRoadmap() {
         {/* Empty State for User Roadmaps */}
         {generatedRoadmaps.length === 0 && (
           <div className="text-center py-12 bg-[#0f0f0f] border border-[#1f1f1f]">
-            <Route size={40} className="text-[#333] mx-auto mb-4" />
+            <Route size={40} className="text-violet-700 mx-auto mb-4" />
             <p className="text-[#555] text-[14px] mb-2">No generated roadmaps yet</p>
             <p className="text-[#444] text-[12px]">Your personalized roadmaps will appear here</p>
           </div>
         )}
       </div>
+       <style>
+        {`
+        @keyframes violetWave {
+          0%   { color: #ffffff; }
+          50%  { color: rgb(124 58 237); }
+          100% { color: #ffffff; }
+        }
+      `}
+      </style>
     </div>
   );
 }

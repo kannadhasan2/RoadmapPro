@@ -4,6 +4,7 @@ import api from "../utils/api.js";
 import { Play, BookOpen, ChevronDown, ChevronRight, ExternalLink, Clock, FileText, Video } from "lucide-react";
 import MultiStepLoader from "../components/ui/MultiStepLoader.jsx";
 import PlaceholdersAndVanishInput from "../components/ui/PlaceholdersAndVanishInput.jsx";
+import ButtonHeading from "../components/ui/ButtonHeading.jsx";
 
 const courseLoadingStates = [
   { text: "Analyzing your topic..." },
@@ -71,20 +72,31 @@ function AiCourse() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] py-12 px-6">
+    <div className="min-h-screen bg-[#0a0a0a] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] py-12 px-6 selection:bg-violet-700 selection:text-white">
       <div className="max-w-[1200px] mx-auto">
         
         {!course ? (
           <>
             {/* Header */}
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 text-[12px] text-[#FF6B35] mb-4 tracking-[0.15em] font-mono">
-                <span className="w-2 h-2 bg-[#FF6B35] rounded-full"></span>
+              <div className="inline-flex items-center gap-2 text-[12px] text-violet-700 mb-4 tracking-[0.15em] font-mono">
+                <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
                 [ AI COURSE GENERATOR ]
               </div>
               <h1 className="text-[48px] font-bold text-white mb-4 leading-tight">
-                AI Course Generator
-              </h1>
+                {"AI Course Generator".split("").map((char, i) => (
+                  <span
+                    key={i}
+                    className="transition-colors duration-300"
+                    style={{
+                      animation: `violetWave 1.2s ease forwards infinite`,
+                      animationDelay: `${i * 80}ms`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+            </h1>
               <p className="text-[#666] text-[16px] max-w-xl mx-auto">
                 Enter a topic to generate a comprehensive course with modules and resources
               </p>
@@ -94,11 +106,11 @@ function AiCourse() {
             <div className="max-w-[700px] mx-auto mb-12">
               <div className="bg-[#111] border border-[#2a2a2a]">
                 <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a]">
-                  <code className="text-[12px] text-[#555] tracking-wide font-mono">USER@EDUVERSE:~/COURSE</code>
+                  <code className="text-[12px] text-violet-700 tracking-wide font-mono">USER@EDUVERSE:~/COURSE</code>
                   <div className="flex gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#555]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#555]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#555]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
                   </div>
                 </div>
                 <div className="p-4">
@@ -119,16 +131,16 @@ function AiCourse() {
 
             {/* Quick Select */}
             <div>
-              <h2 className="text-[14px] font-mono text-[#FF6B35] mb-4 tracking-wide">&gt;_ POPULAR_TOPICS</h2>
+              <ButtonHeading text="POPULAR_TOPICS" className="border-none" />
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
                 {presetTopics.map((t, i) => (
                   <button
                     key={i}
                     onClick={(e) => handleGenerate(e, t)}
-                    className="p-4 bg-[#0f0f0f] border border-[#1f1f1f] hover:border-[#FF6B35] transition-all text-left group"
+                    className="p-4 bg-[#0f0f0f] border border-[#1f1f1f] hover:border-violet-700 transition-all text-left group"
                   >
-                    <BookOpen size={18} className="text-[#FF6B35] mb-2" />
-                    <div className="text-[13px] font-semibold text-white group-hover:text-[#FF6B35] transition-colors">
+                    <BookOpen size={18} className="text-violet-700 mb-2" />
+                    <div className="text-[13px] font-semibold text-white group-hover:text-violet-700 group-hover:text-[14px] transition-colors">
                       {t}
                     </div>
                   </button>
@@ -252,6 +264,15 @@ function AiCourse() {
           </div>
         )}
       </div>
+      <style>
+        {`
+        @keyframes violetWave {
+          0%   { color: #ffffff; }
+          50%  { color: rgb(124 58 237); }
+          100% { color: #ffffff; }
+        }
+      `}
+      </style>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Play, MessageCircle, Loader2, Send, Bot, User } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import api from "../utils/api.js";
+import ButtonHeading from "../components/ui/ButtonHeading.jsx";
 
 function AiTutor() {
   const [topic, setTopic] = useState("");
@@ -86,14 +87,25 @@ function AiTutor() {
           <div className="flex-1 flex flex-col justify-center items-center overflow-y-auto">
             {/* Header */}
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 text-[12px] text-[#FF6B35] mb-4 tracking-[0.15em] font-mono">
-                <span className="w-2 h-2 bg-[#FF6B35] rounded-full"></span>
+              <div className="inline-flex items-center gap-2 text-[12px] text-violet-700 mb-4 tracking-[0.15em] font-mono">
+                <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
                 [ AI TUTOR ]
               </div>
               <h1 className="text-[48px] font-bold text-white mb-4 leading-tight">
-                AI Tutor
+                {"AI Tutor".split("").map((char, i) => (
+                    <span
+                      key={i}
+                      className="transition-colors duration-300"
+                      style={{
+                        animation: `violetWave 1.2s ease forwards infinite`,
+                        animationDelay: `${i * 80}ms`,
+                      }}
+                    >
+                      {char === " " ? "\u00A0" : char}
+                    </span>
+                  ))}
               </h1>
-              <p className="text-[#666] text-[16px] max-w-xl mx-auto">
+                <p className="text-[#666] text-[16px] max-w-xl mx-auto">
                 Get personalized help on any topic. Start a session to begin learning.
               </p>
             </div>
@@ -102,11 +114,11 @@ function AiTutor() {
             <div className="max-w-[600px] w-full mx-auto mb-12">
               <div className="bg-[#111] border border-[#2a2a2a]">
                 <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a]">
-                  <code className="text-[12px] text-[#555] tracking-wide font-mono">USER@EDUVERSE:~/TUTOR</code>
+                  <code className="text-[12px] text-violet-700 tracking-wide font-mono">USER@EDUVERSE:~/TUTOR</code>
                   <div className="flex gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#555]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#555]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#555]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
                   </div>
                 </div>
                 <form onSubmit={handleStartSession} className="p-6">
@@ -121,7 +133,7 @@ function AiTutor() {
                   <button 
                     type="submit"
                     disabled={!topic.trim() || loading}
-                    className="w-full px-6 py-3 bg-[#FF6B35] hover:bg-[#ff7a4a] disabled:opacity-40 text-black font-bold text-[13px] flex items-center justify-center gap-2 transition-all"
+                    className="w-full px-6 py-3 bg-[violet]/10 hover:bg-violet-700 disabled:opacity-100 text-white font-bold text-[13px] flex items-center justify-center gap-2 transition-all"
                   >
                     {loading ? (
                       <><Loader2 size={16} className="animate-spin" /> STARTING...</>
@@ -135,13 +147,13 @@ function AiTutor() {
 
             {/* Suggested Topics */}
             <div>
-              <h2 className="text-[14px] font-mono text-[#FF6B35] mb-4 tracking-wide text-center">&gt;_ SUGGESTED_TOPICS</h2>
+              <ButtonHeading text="SUGGESTED_TOPICS" className="border-none font-mono" />
               <div className="flex flex-wrap justify-center gap-3">
                 {suggestedTopics.map((t, i) => (
                   <button
                     key={i}
                     onClick={() => setTopic(t)}
-                    className="px-4 py-2 bg-[#0f0f0f] border border-[#1f1f1f] hover:border-[#FF6B35] text-[#999] hover:text-white text-[13px] transition-all"
+                    className="px-4 py-2 bg-[#0f0f0f] border border-[#1f1f1f] hover:border-violet-700 text-[#999] hover:text-white text-[13px] transition-all"
                   >
                     {t}
                   </button>
@@ -246,6 +258,15 @@ function AiTutor() {
           </div>
         )}
       </div>
+      <style>
+        {`
+        @keyframes violetWave {
+          0%   { color: #ffffff; }
+          50%  { color: rgb(124 58 237); }
+          100% { color: #ffffff; }
+        }
+      `}
+      </style>
     </div>
   );
 }

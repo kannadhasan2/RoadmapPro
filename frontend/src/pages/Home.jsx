@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Users, Play, BookOpen, Route, Target, ArrowRight, Rocket, Route as RouterIcon, GitFork, Twitter, Book, ChevronDown } from "lucide-react";
 
 import GlitchText from "../components/ui/GlitchText";
+import ButtonHeading from "../components/ui/ButtonHeading";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -31,8 +32,10 @@ const Home = () => {
     navigate(`/roadmap?role=${encodeURIComponent(topic.trim())}&detail=${skillLevel.toLowerCase()}`);
   };
 
+  const title = "RoadmapPro Platform"
+
   return (
-    <div className="min-h-screen bg-[#050505] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] text-white font-sans antialiased scroll-smooth selection:bg-[#FF6B35] selection:text-white">
+    <div className="min-h-screen bg-[#050505] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] text-white font-sans antialiased scroll-smooth selection:bg-violet-800 selection:text-white">
 
       {/* ===== HERO SECTION ===== */}
       <section className="pt-12 pb-20 px-[12px] sm:px-[24px] relative">
@@ -42,7 +45,7 @@ const Home = () => {
           <div className="flex justify-center mb-6 opacity-0 animate-fade-in" style={{animationDelay: '0.1s', animationFillMode: 'forwards'}}>
              <div className="inline-flex items-center gap-3 text-[13px] text-violet-700 font-mono tracking-[0.2em] font-semibold uppercase">
                 <span className="w-1.5 h-1.5 bg-violet-700 rounded-full"></span>
-                [ Lets Rise Together ]
+                [ Let's Rise Together ]
              </div>
           </div>
           
@@ -149,8 +152,21 @@ const Home = () => {
         <div className="max-w-[1400px] mx-auto">
           {/* Header */}
           <div className="mb-12">
-             <div className="text-[14px] text-violet-700 font-mono tracking-[0.2em] mb-4">Infrastructure</div>
-             <h2 className="text-[40px] font-bold text-white mb-4 leading-tight">Stealth Learning Infrastructure</h2>
+             <ButtonHeading text="Infrastructure" className="border-none pl-0 pb-0 mb-0 uppercase" />
+             <h2 className="text-[38px] font-bold mb-6 leading-tight flex flex-wrap">
+                {"Stealth Learning Infrastructure".split("").map((char, i) => (
+                  <span
+                    key={i}
+                    className="transition-colors duration-300"
+                    style={{
+                      animation: `violetWave 1.2s ease forwards infinite`,
+                      animationDelay: `${i * 50}ms`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+              </h2>
              <p className="text-[#666] text-[15px] font-mono max-w-[600px]">
                Built on top of advanced AI agents. V 2.0.4 [STABLE]
              </p>
@@ -187,23 +203,23 @@ const Home = () => {
                 desc: "Connect with peers on the same path. Share resources and compete on global leaderboards."
               },
             ].map((f, i) => (
-              <div key={i} className="bg-[#0a0a0a] border border-[#222] p-8 hover:border-[#333] transition-all group relative overflow-hidden">
+              <div key={i} className="bg-[#0a0a0a] border border-[#222] p-8 hover:border-violet-700 transition-all group relative overflow-hidden">
                 {/* Background Grid inside card */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:16px_16px]"></div>
                 
                 <div className="relative z-10 flex flex-col h-full justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-8">
-                       <span className="text-[12px] text-[#FF6B35] font-mono">{f.name}</span>
-                       <f.icon size={20} className="text-[#666] group-hover:text-white transition-colors" />
+                       <span className="text-[12px] text-violet-700 font-mono">{f.name}</span>
+                       <f.icon size={20} className="text-[#666] group-hover:text-violet-700 transition-colors" />
                     </div>
                     <h3 className="text-[24px] font-bold text-white mb-3">{f.title}</h3>
                     <p className="text-[#888] text-[14px] leading-relaxed mb-8">{f.desc}</p>
                   </div>
                   
-                  <div className="pt-6 border-t border-[#1a1a1a] flex items-center justify-between">
+                  <div className="pt-6 border-t border-[#1a1a1a] group-hover:border-violet-700 flex items-center justify-between">
                      <span className="text-[10px] text-[#444] font-mono tracking-widest">{f.id}</span>
-                     <div className="text-[10px] text-[#444] font-mono">STATUS: ACTIVE</div>
+                     <div className="text-[10px] text-[#444] font-mono">STATUS: <span className="text-violet-700">ACTIVE</span></div>
                   </div>
                 </div>
               </div>
@@ -220,32 +236,45 @@ const Home = () => {
             <div className="bg-[#0f0f0f] border border-[#1f1f1f] overflow-hidden">
               <div className="flex items-center justify-between px-4 py-3 border-b border-[#1f1f1f]">
                 <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#27ca40]"></div>
+                  <div className="w-3 h-3 rounded-full bg-violet-700"></div>
+                  <div className="w-3 h-3 rounded-full bg-violet-700"></div>
+                  <div className="w-3 h-3 rounded-full bg-violet-700"></div>
                 </div>
-                <code className="text-[11px] text-[#555] font-mono">/EDUVERSE.JS</code>
+                <code className="text-[11px] font-mono text-violet-700">/RoadmapPro.JS</code>
               </div>
               <pre className="p-6 text-[13px] font-mono leading-[2] overflow-x-auto">
-<span className="text-[#c678dd]">const</span> <span className="text-[#61afef]">roadmap</span> = <span className="text-[#c678dd]">await</span> eduverse.<span className="text-[#e5c07b]">generate</span>({`{`}
-  topic: <span className="text-[#98c379]">"Full Stack Dev"</span>,
-  level: <span className="text-[#98c379]">"beginner"</span>,
-  duration: <span className="text-[#98c379]">"3 months"</span>
-{`}`});
+                <span className="text-[#c678dd]">const</span> <span className="text-[#61afef]">roadmap</span> = <span className="text-[#c678dd]">await</span> roadmapPro.<span className="text-[#e5c07b]">generate</span>({`{`}
+                  topic: <span className="text-[#98c379]">"Full Stack Dev"</span>,
+                  level: <span className="text-[#98c379]">"beginner"</span>,
+                  duration: <span className="text-[#98c379]">"3 months"</span>
+                {`}`});
 
-<span className="text-[#5c6370]">// That's your entire</span>
-<span className="text-[#5c6370]">// learning infrastructure.</span>
+                <span className="text-[#5c6370]">// That's your entire</span>
+                <span className="text-[#5c6370]">// learning infrastructure.</span>
               </pre>
             </div>
 
             {/* Description */}
             <div>
-              <div className="text-[#FF6B35] text-[11px] tracking-[0.15em] mb-4 font-mono">[ ROADMAP ENGINE ]</div>
-              <h2 className="text-[38px] font-bold mb-6 leading-tight">EduVerse Platform</h2>
+              <div className="text-violet-700 text-[14px] font-bold tracking-[0.15em] mb-4 font-mono">[ ROADMAP ENGINE ]</div>
+              <h2 className="text-[38px] font-bold mb-6 leading-tight flex flex-wrap">
+                {title.split("").map((char, i) => (
+                  <span
+                    key={i}
+                    className="transition-colors duration-300"
+                    style={{
+                      animation: `violetWave 1.2s ease forwards infinite`,
+                      animationDelay: `${i * 100}ms`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+              </h2>
               <p className="text-[#666] text-[15px] leading-[1.8] mb-8">
                 Build personalized learning paths with our AI-powered roadmap generator. Get structured courses, curated resources, and real-time AI tutoring support.
               </p>
-              <Link to="/ai-roadmap" className="text-[#FF6B35] font-semibold text-[13px] flex items-center gap-2 hover:gap-3 transition-all tracking-wide">
+              <Link to="/ai-roadmap" className="text-violet-700 font-semibold text-[13px] flex items-center gap-2 hover:gap-3 transition-all tracking-wide">
                 TRY IT FREE <ArrowRight size={14} />
               </Link>
             </div>
@@ -265,9 +294,9 @@ const Home = () => {
               { label: "OPS: NO_OPS", title: "ZERO_MAINTENANCE", desc: "No Docker, Kubernetes, or browser management required." },
               { label: "AUTH: SINGLE_KEY", title: "ONE_API_KEY", desc: "Access the entire cloud ecosystem with a single key." },
             ].map((f, i) => (
-              <div key={i} className="relative bg-[#0f0f0f] border border-[#1f1f1f] p-7 transition-all duration-300 hover:border-[#333]">
-                <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-[#FF6B35]"></div>
-                <div className="absolute top-4 right-4 text-[9px] text-[#FF6B35] tracking-[0.1em] font-mono">{f.label}</div>
+              <div key={i} className="relative bg-[#0f0f0f] border border-[#1f1f1f] p-7 transition-all duration-300 hover:border-violet-700">
+                <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-violet-700"></div>
+                <div className="absolute top-4 right-4 text-[11px] text-violet-700 tracking-[0.1em] font-mono">{f.label}</div>
                 <h3 className="font-bold text-[16px] tracking-wide mb-3 mt-2 pl-3">{f.title}</h3>
                 <p className="text-[13px] text-[#555] leading-relaxed pl-3">{f.desc}</p>
               </div>
@@ -279,16 +308,29 @@ const Home = () => {
       {/* ===== CTA SECTION ===== */}
       <section className="py-2 px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
         <div className="max-w-[1400px] mx-auto text-center">
-          <div className="text-[#FF6B35] text-[11px] tracking-[0.15em] mb-4 font-mono">[ START LEARNING ]</div>
-          <h2 className="text-[40px] font-bold mb-6">Custom Learning Path for Your Goals</h2>
+          <div className="text-violet-700 text-[14px] font-bold tracking-[0.15em] mb-4 font-mono">[ START LEARNING ]</div>
+          <h2 className="text-[38px] font-bold mb-6 leading-tight ">
+                {'Custom Learning Path for Your Goals'.split("").map((char, i) => (
+                  <span
+                    key={i}
+                    className="transition-colors duration-300"
+                    style={{
+                      animation: `violetWave 1.2s ease forwards infinite`,
+                      animationDelay: `${i * 50}ms`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+              </h2>
           <p className="text-[#555] text-[15px] max-w-[480px] mx-auto mb-12">
             Whether you're learning to code, preparing for interviews, or mastering a new technology.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/ai-roadmap" className="px-10 py-4 bg-[#FF6B35] hover:bg-[#ff7a4a] text-black font-bold text-[13px] flex items-center justify-center gap-2 transition-all tracking-wide">
+            <Link to="/ai-roadmap" className="px-10 py-4 bg-violet-700 hover:bg-violet-500 text-white font-bold text-[13px] flex items-center justify-center gap-2 transition-all tracking-wide">
               <Rocket size={16} /> START FOR FREE
             </Link>
-            <Link to="/communities" className="px-10 py-4 border border-[#333] hover:border-[#555] text-white font-semibold text-[13px] flex items-center justify-center gap-2 transition-all tracking-wide">
+            <Link to="/communities" className="px-10 py-4 border border-[#333] hover:border-violet-700 text-white font-semibold text-[13px] flex items-center justify-center gap-2 transition-all tracking-wide">
               <Users size={16} /> JOIN COMMUNITY
             </Link>
           </div>
@@ -298,8 +340,8 @@ const Home = () => {
       {/* ===== CHANGELOG ===== */}
       <section className="py-24 px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
         <div className="max-w-[1400px] mx-auto">
-          <div className="flex items-center gap-2 mb-10">
-            <span className="text-[14px] font-mono text-[#FF6B35]">&gt;_ LATEST_CHANGELOG</span>
+          <div className="flex items-center gap-2 mb-5">
+            <ButtonHeading text="Latest_ChangeLog" className="border-none pl-0 mb-0 pb-0 uppercase" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
@@ -308,18 +350,28 @@ const Home = () => {
               { date: "2025.11.21", title: "MCP SERVER, GEMINI 3", desc: "We ship fast. Enjoy the best model ever." },
               { date: "2025.11.13", title: "TEMPLATES LIBRARY", desc: "Ready-to-use automation workflows." },
             ].map((log, i) => (
-              <div key={i} className="bg-[#0f0f0f] border border-[#1f1f1f] p-5 transition-all hover:border-[#333]">
-                <span className="text-[10px] text-[#444] tracking-wide font-mono">[{log.date}]</span>
+              <div key={i} className="bg-[#0f0f0f] border border-[#1f1f1f] p-5 transition-all hover:border-violet-700">
+                <span className="text-[10px] text-violet-700 tracking-wide font-mono">[{log.date}]</span>
                 <h3 className="font-bold text-[13px] mt-2 mb-2 tracking-wide">{log.title}</h3>
                 <p className="text-[12px] text-[#444] leading-relaxed">{log.desc}</p>
               </div>
             ))}
           </div>
           <div className="text-right mt-6">
-            <a href="#" className="text-[#FF6B35] text-[12px] font-mono hover:underline">&gt;_VIEW_ALL_LOGS</a>
+            <a href="#" className="text-violet-700 text-[14px] font-bold font-mono hover:underline">&gt;_VIEW_ALL_LOGS</a>
           </div>
         </div>
       </section>
+
+      <style>
+        {`
+        @keyframes violetWave {
+          0%   { color: #ffffff; }
+          50%  { color: rgb(124 58 237); }
+          100% { color: #ffffff; }
+        }
+      `}
+      </style>
 
     </div>
   );
