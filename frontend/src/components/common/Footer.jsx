@@ -27,6 +27,14 @@ function Footer() {
     setHovered(index);
   };
 
+  useEffect(() => {
+  const interval = setInterval(() => {
+    setHovered(prev => (prev + 1) % 10);
+  }, 1000);
+
+  return () => clearInterval(interval);
+}, []);
+
   const handleMouseLeave = () => {
     setHovered(null);
   };
@@ -225,7 +233,7 @@ function Footer() {
             };
 
             return (
-              <span className="text-[clamp(8.4rem,10vw,13rem)] text-ellipsis"
+              <span className="text-[clamp(8.4rem,10vw,13rem)] text-ellipsis mt-[20px]"
                 key={index}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave()}
@@ -233,7 +241,7 @@ function Footer() {
                   display: 'inline-block',
                   position: 'relative',
                   fontFamily: 'Cal Sans, sans-serif',
-                  fontWeight: 400,
+                  fontWeight: 600,
                   letterSpacing: '3px',
                   lineHeight: 1,
                   cursor: 'default',
@@ -250,8 +258,8 @@ function Footer() {
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
                         filter: isActive
-                          ? 'drop-shadow(0 0 80px rgba(255,46,80,0.8))'
-                          : 'drop-shadow(0 0 30px rgba(255,46,80,0.4))',
+                          ? 'drop-shadow(0 0 80px rgba(74, 62, 180, 0.8))'
+                          : 'drop-shadow(0 0 30px rgba(67, 46, 255, 0.88))',
                       }
                     : {}),
                 }}
