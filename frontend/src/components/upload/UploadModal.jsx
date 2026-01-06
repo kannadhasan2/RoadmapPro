@@ -88,32 +88,34 @@ function UploadModal () {
       onSubmit={handleSubmit}
       className="space-y-4 bg-card border border-border  p-4"
     >
-      <VideoUploader onFileSelect={setFile} file={file} />
-      <Input label="Title" name="title" value={form.title} onChange={handleChange} />
+      <VideoUploader onFileSelect={setFile} file={file}  />
+      <Input label="Title" name="title" className="border hover:border-violet-700 focus:border-violet-700" value={form.title} onChange={handleChange} />
       <Input
         label="Description"
         name="description"
         value={form.description}
+        className="border hover:border-violet-700 focus:border-violet-700"
         onChange={handleChange}
       />
       <Input
-        label="Thumbnail URL (optional)"
+        label="Thumbnail URL (optional)" 
+        className="border hover:border-violet-700 focus:border-violet-700 "
         name="thumbnail_url"
         value={form.thumbnail_url}
         onChange={handleChange}
         placeholder="https://images..."
       />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <label className="flex flex-col gap-1 text-sm text-textSecondary">
-          Subject
+        <label className="flex flex-col gap-1 text-[12px] font-mono ">
+          SUBJECT
           <select
             name="subject"
-            className="bg-card border border-border  px-3 py-2 text-textPrimary focus:outline-none focus:border-accent"
+            className="bg-transparent border border-border  px-3 py-2 text-textPrimary focus:outline-none focus:border-accent"
             value={form.subject}
             onChange={handleChange}
           >
             {['Math', 'Science', 'Coding', 'Languages', 'Business'].map((subject) => (
-              <option key={subject} value={subject}>
+              <option className='bg-transparent'  key={subject} value={subject}>
                 {subject}
               </option>
             ))}
@@ -123,6 +125,7 @@ function UploadModal () {
           label="Tags (comma separated)"
           name="tags"
           value={form.tags}
+          className="border hover:border-violet-700 focus:border-violet-700"
           onChange={handleChange}
         />
       </div>
@@ -145,7 +148,7 @@ function UploadModal () {
           {message}
         </p>
       )}
-      <Button type="submit" disabled={loading}>
+      <Button className="bg-violet-700 text-white hover:bg-violet-500" type="submit" disabled={loading}>
         {loading ? (uploadProgress > 0 ? `Uploading... ${uploadProgress}%` : 'Uploading...') : 'Publish lesson'}
       </Button>
     </form>

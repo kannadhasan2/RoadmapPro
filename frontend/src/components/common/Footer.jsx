@@ -51,7 +51,7 @@ function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-violet-700 flex items-center justify-center">
-                <Rocket size={16} className="text-white" />
+                <Rocket size={18} strokeWidth={2} className="text-white" />
               </div>
               <span className="text-white font-bold text-[16px] tracking-wide">RoadmapPro</span>
             </div>
@@ -191,7 +191,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="hidden lg:block">
+      <div className="">
       <div className="relative w-full flex ">        
         <div className="flex justify-center items-center w-full">
           {letters.map((letter, index) => {
@@ -206,9 +206,6 @@ function Footer() {
               O: {
                 paddingBottom: '0px',
               },
-              A: {
-                paddingBottom: '0px',
-              },
               D: {
                 paddingBottom: '0px',
               },
@@ -220,20 +217,11 @@ function Footer() {
               },
               P: {
                 paddingBottom: '0px',
-              },
-              P: {
-                paddingBottom: '0px',
-              },
-              R: {
-                paddingBottom: '0px',
-              },
-              O: {
-                paddingBottom: '0px',
-              },
+              }
             };
 
             return (
-              <span className="text-[clamp(8.4rem,10vw,13rem)] text-ellipsis mt-[20px]"
+              <span className="text-[clamp(2.3rem,10vw,13rem)] sm:text-[clamp(4rem,10vw,13rem)] lg:text-[clamp(8.6rem,10vw,13rem)] text-ellipsis mt-[20px]"
                 key={index}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave()}

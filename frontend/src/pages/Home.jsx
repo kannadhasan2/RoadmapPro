@@ -43,8 +43,8 @@ const Home = () => {
           
           {/* Top Tag */}
           <div className="flex justify-center mb-6 opacity-0 animate-fade-in" style={{animationDelay: '0.1s', animationFillMode: 'forwards'}}>
-             <div className="inline-flex items-center gap-3 text-[13px] text-violet-700 font-mono tracking-[0.2em] font-semibold uppercase">
-                <span className="w-1.5 h-1.5 bg-violet-700 rounded-full"></span>
+             <div className="inline-flex items-center gap-3 text-[16px] font-bold text-violet-700 font-mono tracking-[0.2em] font-semibold uppercase">
+                <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
                 [ Let's Rise Together ]
              </div>
           </div>
@@ -102,7 +102,7 @@ const Home = () => {
                   <div className="flex gap-6 w-full md:w-auto">
                      {/* Control 1 */}
                      <div className="flex-1 md:flex-none">
-                        <label className="block text-[9px] text-[#333] font-mono uppercase tracking-widest mb-2 text-left px-1">SKILL_LEVEL</label>
+                        <label className="block text-[10px] text-violet-700 font-bold font-mono uppercase tracking-widest mb-2 text-left px-1">SKILL_LEVEL</label>
                         <div className="relative bg-[#0d0d0d] border border-[#222] px-4 py-2.5 w-full md:w-36 flex items-center justify-between hover:border-[#333] transition-colors cursor-pointer group/select">
                            <select 
                               value={skillLevel} 
@@ -118,7 +118,7 @@ const Home = () => {
                      </div>
                      {/* Control 2 */}
                      <div className="flex-1 md:flex-none">
-                        <label className="block text-[9px] text-[#333] font-mono uppercase tracking-widest mb-2 text-left px-1">MODE</label>
+                        <label className="block text-[10px] text-violet-700 font-bold font-mono uppercase tracking-widest mb-2 text-left px-1">MODE</label>
                         <div className="relative bg-[#0d0d0d] border border-[#222] px-4 py-2.5 w-full md:w-36 flex items-center justify-between hover:border-[#333] transition-colors cursor-pointer group/select">
                            <select 
                               value={format} 
@@ -137,7 +137,7 @@ const Home = () => {
                   <button 
                      onClick={handleGenerate}
                      disabled={!topic.trim()}
-                     className="bg-violet-700 hover:bg-violet-600 active:translate-y-0.5 text-white font-extrabold text-[11px] px-8 py-3.5 font-mono tracking-wider flex items-center gap-2 transition-all w-full md:w-auto justify-center uppercase"
+                     className="bg-violet-700 hover:bg-violet-600 active:translate-y-0.5 text-white font-extrabold text-[15px] px-6 py-3.5 font-mono tracking-wider flex items-center gap-2 transition-all w-full md:w-auto justify-center uppercase"
                   >
                      <Play size={10} fill="currentColor" /> RUN FOR FREE
                   </button>

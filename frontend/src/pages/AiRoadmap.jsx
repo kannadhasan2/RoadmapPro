@@ -115,7 +115,7 @@ function AiRoadmap() {
         
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 text-[12px] text-violet-700 mb-4 tracking-[0.15em] font-mono">
+          <div className="inline-flex items-center gap-2 text-[14px] font-bold text-violet-700 mb-4 tracking-[0.15em] font-mono">
             <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
             [ AI ROADMAP GENERATOR ]
           </div>
@@ -271,7 +271,7 @@ function AiRoadmap() {
                   onClick={() => handleRoadmapClick(roadmap.role || roadmap.title, roadmap.detail_level)}
                   className="relative p-5 bg-[#0f0f0f] border border-[#1f1f1f] hover:border-violet-700 cursor-pointer transition-all group"
                 >
-                  <div className="absolute left-0 top-4 bottom-4 w-[3px] bg-[#FF6B35]"></div>
+                  <div className="absolute left-0 top-4 bottom-4 w-[3px] bg-violet-700"></div>
                   <div className="flex items-start justify-between pl-3">
                     <div>
                       <h3 className="font-bold text-white text-[15px] mb-1 group-hover:text-violet-700 transition-colors">
@@ -307,10 +307,13 @@ function AiRoadmap() {
 
         {/* Empty State for User Roadmaps */}
         {generatedRoadmaps.length === 0 && (
-          <div className="text-center py-12 bg-[#0f0f0f] border border-[#1f1f1f]">
+          <div> 
+            <ButtonHeading text="YOUR_GENERATED_ROADMAPS" className="" />
+            <div className="text-center py-12 bg-[#0f0f0f] border border-[#1f1f1f]">
             <Route size={40} className="text-violet-700 mx-auto mb-4" />
             <p className="text-[#555] text-[14px] mb-2">No generated roadmaps yet</p>
             <p className="text-[#444] text-[12px]">Your personalized roadmaps will appear here</p>
+          </div>
           </div>
         )}
       </div>

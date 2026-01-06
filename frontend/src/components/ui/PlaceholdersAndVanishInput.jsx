@@ -202,7 +202,7 @@ export function PlaceholdersAndVanishInput({
         className={cn(
           "absolute right-4 top-1/2 z-50 -translate-y-1/2 h-10 px-4 flex items-center gap-2 transition-all duration-300 font-mono text-[13px] font-bold uppercase",
           value && !animating 
-            ? "bg-[#FF6B35] text-black hover:bg-[#ff7a4a]" 
+            ? "bg-violet-700 text-white hover:bg-violet-500" 
             : "bg-[#2a2a2a] text-[#555] cursor-not-allowed"
         )}
       >

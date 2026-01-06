@@ -1,3 +1,4 @@
+import { Upload } from 'lucide-react';
 import { useRef } from 'react';
 
 const MAX_DURATION_MINUTES = 5;
@@ -29,8 +30,8 @@ function VideoUploader ({ onFileSelect, file }) {
       <button
         type="button"
         onClick={() => inputRef.current?.click()}
-        className="ev-button ev-button--primary text-xs"
-      >
+        className="ev-button bg-violet-700 font-bold text-[14px] inline-flex gap-[5px] items-center"
+      > <Upload size={20} strokeWidth={3} />
         {file ? 'Replace video' : 'Choose video'}
       </button>
       <input

@@ -26,7 +26,7 @@ function MainLayout() {
           </motion.div>
         </AnimatePresence>
       </main>
-    <Footer />
+    {location.pathname !== "/ai-tutor" && <Footer />}
     </div>
   );
 }

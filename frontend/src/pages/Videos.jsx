@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { usePostStore } from "../store/postStore.js";
 import { Play, Clock, Eye, Upload, Video } from "lucide-react";
 import { Link } from "react-router-dom";
+import ButtonHeading from "../components/ui/ButtonHeading.jsx";
 
 function Videos() {
   const { posts, fetchFeed, loading, error } = usePostStore();
@@ -11,25 +12,25 @@ function Videos() {
     fetchFeed(true);
   }, []);
 
-  if (loading && posts.length === 0) {
+  if (loading && posts.length === 0 ) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
+      <div className="h-[calc(100vh-120px)] bg-[#0a0a0a] flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-8 h-8 border-2 border-[#FF6B35] border-t-transparent rounded-full animate-spin"></div>
-          <p className="text-[12px] font-mono text-[#666]">LOADING_VIDEOS...</p>
+          <div className="w-8 h-8 border-4 border-violet-700  rounded-[5px] animate-spin"></div>
+          <p className=" text-[12px] font-bold lg:text-[14px] font-mono text-violet-700">LOADING_VIDEOS...</p>
         </div>
       </div>
     );
   }
 
-  if (error) {
+  if (error ) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
-        <div className="text-center p-8 border border-red-500/20 bg-red-500/5">
-          <p className="text-red-400 mb-4">{error}</p>
+      <div className="h-[calc(100vh-180px)] bg-[#0a0a0a] flex items-center justify-center">
+        <div className="text-center p-8 border border-violet-700 bg-violet-700/10">
+          <p className="text-[red] font-bold mb-4">{error}</p>
           <button 
             onClick={() => fetchFeed(true)}
-            className="px-4 py-2 bg-[#FF6B35] text-black font-bold text-sm hover:bg-[#ff7a4a] transition-colors"
+            className="px-4 py-2 bg-violet-700 text-white font-bold text-sm hover:bg-violet-500 transition-colors"
           >
             RETRY_CONNECTION
           </button>
@@ -45,18 +46,29 @@ function Videos() {
     : safePosts.filter(p => p.subject === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] py-12 px-6">
+    <div className="min-h-screen bg-[#0a0a0a] py-8 px-6">
       <div className="max-w-[1400px] mx-auto">
         
         {/* Header */}
         <div className="mb-10">
-          <div className="inline-flex items-center gap-2 text-[12px] text-[#FF6B35] mb-4 tracking-[0.15em] font-mono">
-            <span className="w-2 h-2 bg-[#FF6B35] rounded-full"></span>
+          <div className="inline-flex items-center gap-2 font-bold text-[14px] text-violet-700 mb-4 tracking-[0.15em] font-mono">
+            <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
             [ LEARNING VIDEOS ]
           </div>
           <h1 className="text-[48px] font-bold text-white mb-4 leading-tight">
-            Learning Videos
-          </h1>
+                {"Learning Videos".split("").map((char, i) => (
+                  <span
+                    key={i}
+                    className="transition-colors duration-300"
+                    style={{
+                      animation: `violetWave 1.2s ease forwards infinite`,
+                      animationDelay: `${i * 80}ms`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+            </h1>
           <p className="text-[#666] text-[16px] max-w-xl">
             Explore deep-dive educational content curated by our community of experts
           </p>
@@ -64,7 +76,7 @@ function Videos() {
 
         {/* Category Filter */}
         <div className="mb-10">
-          <h2 className="text-[14px] font-mono text-[#FF6B35] mb-4 tracking-wide">&gt;_ CATEGORIES</h2>
+          <h2 className="text-[14px] font-mono text-violet-700 font-bold mb-4 tracking-wide">&gt;_ CATEGORIES</h2>
           <div className="flex items-center gap-3 overflow-x-auto pb-2">
             {categories.map((category) => (
               <button
@@ -72,8 +84,8 @@ function Videos() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 text-[13px] font-medium whitespace-nowrap transition-all ${
                   selectedCategory === category
-                    ? "bg-[#FF6B35] text-black"
-                    : "bg-[#111] border border-[#2a2a2a] text-[#999] hover:border-[#FF6B35] hover:text-white"
+                    ? "bg-violet-700 text-white"
+                    : "bg-[#111] border border-[#2a2a2a] text-[#999] hover:border-violet-700 hover:font-bold hover:text-white"
                 }`}
               >
                 {category}
@@ -84,12 +96,12 @@ function Videos() {
 
         {/* Videos Grid */}
         <div className="mb-10">
-          <h2 className="text-[14px] font-mono text-[#FF6B35] mb-4 tracking-wide">&gt;_ VIDEO_LIBRARY</h2>
+          <ButtonHeading text="VIDEO LIBRARY" className="border-none pl-0 pb-0 " />
           
           {filteredPosts.length === 0 ? (
             <div className="text-center py-20 bg-[#0f0f0f] border border-[#1f1f1f]">
-              <Video size={48} className="text-[#333] mx-auto mb-4" />
-              <p className="text-[#555] text-[14px]">No videos found in this category</p>
+              <Video size={48} className="text-violet-700 mx-auto mb-4" />
+              <p className="text-white-700 text-[14px]">No videos found in this category</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -150,9 +162,9 @@ function Videos() {
       {/* Floating Upload Button */}
       <Link
         to="/upload"
-        className="fixed bottom-8 right-8 flex items-center gap-2 px-5 py-3 bg-[#FF6B35] hover:bg-[#ff7a4a] text-black font-bold text-[13px] transition-all z-50"
+        className="fixed bottom-8 right-8 flex items-center gap-2 px-5 py-3 bg-violet-700 hover:bg-violet-500 text-white font-bold text-[13px] transition-all z-50"
       >
-        <Upload size={18} />
+        <Upload size={18} strokeWidth={3} />
         UPLOAD VIDEO
       </Link>
     </div>

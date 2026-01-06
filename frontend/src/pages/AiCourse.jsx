@@ -62,12 +62,10 @@ function AiCourse() {
 
   if (loading) {
     return (
-      <MultiStepLoader 
-        loadingStates={courseLoadingStates} 
-        loading={loading} 
-        duration={1000}
-        loop={false}
-      />
+      <div className="h-[calc(100vh-120px)] flex justify-center items-center gap-[9px]">
+        <div className="w-7 h-7 border  border-[3px] border-violet-700 animate-spin rounded-[5px]"></div>
+        <p className="text-violet-700 font-mono font-bold text-[18px]">Loading...</p>
+      </div>
     );
   }
 

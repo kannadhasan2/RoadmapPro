@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Play, MessageCircle, Loader2, Send, Bot, User } from "lucide-react";
+import { Play, MessageCircle, Loader2, Send, Bot, User,SquareCheckBig } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import api from "../utils/api.js";
 import ButtonHeading from "../components/ui/ButtonHeading.jsx";
@@ -167,12 +167,27 @@ function AiTutor() {
             {/* Chat Header */}
             <div className="flex items-center justify-between mb-6 flex-shrink-0">
               <div>
-                <div className="text-[12px] text-[#FF6B35] font-mono mb-1">ACTIVE SESSION</div>
-                <h2 className="text-[24px] font-bold text-white">{topic}</h2>
+                <div className="text-[13px] font-bold text-violet-700  font-mono mb-1 flex items-center gap-[5px]">
+                  <SquareCheckBig size={18} strokeWidth={3} />
+                  ACTIVE SESSION</div>
+                <h1 className="text-[24px] font-bold text-white ">
+                {topic.split("").map((char, i) => (
+                  <span
+                    key={i}
+                    className="transition-colors duration-700"
+                    style={{
+                      animation: `violetWave 2s ease forwards infinite`,
+                      animationDelay: `${i * 190}ms`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+            </h1>
               </div>
               <button
                 onClick={() => { setMessages([]); setTopic(""); }}
-                className="px-4 py-2 bg-[#1a1a1a] border border-[#2a2a2a] text-[#999] hover:text-white text-[13px] transition-all"
+                className="px-4 py-2 bg-[#1a1a1a] border border-[#2a2a2a] text-[#999] hover:text-white hover:border-violet-700 hover:border-[2px] text-[13px] transition-all"
               >
                 END SESSION
               </button>
@@ -183,18 +198,18 @@ function AiTutor() {
               {messages.map((msg, idx) => (
                 <div 
                   key={idx} 
-                  className={`flex gap-4 ${msg.role === 'user' ? 'justify-end' : ''}`}
+                  className={`flex gap-2 ${msg.role === 'user' ? 'justify-end items-end' : ' items-end'}`}
                 >
                   {msg.role === 'assistant' && (
                     <div className="w-8 h-8 rounded bg-[#1f1f1f] border border-[#333] flex items-center justify-center flex-shrink-0">
-                      <Bot size={16} className="text-[#FF6B35]" />
+                      <Bot size={24} className="text-violet-600" strokeWidth={3} />
                     </div>
                   )}
                   
-                  <div className={`max-w-[85%] p-5 rounded-lg border ${
+                  <div className={`max-w-[85%] h-full p-3 rounded-lg border break-words ${
                     msg.role === 'user' 
-                      ? 'bg-[#1a1a1a] border-[#2a2a2a]' 
-                      : 'bg-[#0f0f0f] border-[#1f1f1f]'
+                      ? 'bg-cyan-700/5 border-cyan-900 rounded-br-none' 
+                      : 'bg-violet-700/5 border-violet-900 rounded-bl-none'
                   }`}>
                     {msg.role === 'assistant' ? (
                       <div className="prose prose-invert prose-sm max-w-none prose-p:leading-relaxed prose-pre:bg-[#050505] prose-pre:border prose-pre:border-[#222] prose-p:my-2 [&>ul]:list-disc [&>ul]:pl-4 [&>ol]:list-decimal [&>ol]:pl-4">
@@ -217,7 +232,7 @@ function AiTutor() {
 
                   {msg.role === 'user' && (
                     <div className="w-8 h-8 rounded bg-[#333] border border-[#444] flex items-center justify-center flex-shrink-0">
-                      <User size={16} className="text-white" />
+                      <User size={22} className="text-cyan-600" strokeWidth={3} />
                     </div>
                   )}
                 </div>
@@ -229,8 +244,8 @@ function AiTutor() {
                     <Bot size={16} className="text-[#FF6B35]" />
                   </div>
                   <div className="bg-[#0f0f0f] border border-[#1f1f1f] p-4 rounded-lg flex items-center gap-3">
-                    <Loader2 size={16} className="text-[#FF6B35] animate-spin" />
-                    <span className="text-xs text-[#555] font-mono tracking-wide">THINKING...</span>
+                    <Loader2 size={18} className="text-violet-700 animate-spin" strokeWidth={3}/>
+                    <span className="text-sm text-violet-700 font-bold font-mono tracking-wide">THINKING...</span>
                   </div>
                 </div>
               )}
@@ -244,13 +259,13 @@ function AiTutor() {
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 placeholder="Ask a question about this topic..."
-                className="flex-1 bg-[#111] border border-[#2a2a2a] px-4 py-4 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-[#FF6B35] font-mono rounded-lg transition-all"
+                className="flex-1 bg-[#111] border border-[#2a2a2a] px-4 py-4 text-white text-[14px] placeholder:text-[#444] border-[2px]  border-violet-700 focus:outline-none focus:border-violet-700 font-mono rounded-lg transition-all"
                 disabled={loading}
               />
               <button
                 type="submit"
                 disabled={!inputMessage.trim() || loading}
-                className="px-6 bg-[#FF6B35] hover:bg-[#ff7a4a] disabled:opacity-40 text-black rounded-lg transition-all flex items-center justify-center"
+                className="px-6 bg-violet-700 hover:bg-violet-500 border  border-violet-700 disabled:opacity-40 text-black rounded-lg transition-all flex items-center justify-center"
               >
                 <Send size={20} />
               </button>
