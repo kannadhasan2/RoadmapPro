@@ -144,7 +144,7 @@ function UploadModal () {
         </div>
       )}
       {message && (
-        <p className={`text-sm ${message.includes('successful') ? 'text-success' : 'text-danger'}`}>
+        <p className={`text-sm ${message.includes('successful') ? 'text-[green]' : 'text-[red]'}`}>
           {message}
         </p>
       )}

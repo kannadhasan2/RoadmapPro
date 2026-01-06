@@ -23,7 +23,7 @@ function Videos() {
     );
   }
 
-  if (error ) {
+  if (!error ) {
     return (
       <div className="h-[calc(100vh-180px)] bg-[#0a0a0a] flex items-center justify-center">
         <div className="text-center p-8 border border-violet-700 bg-violet-700/10">

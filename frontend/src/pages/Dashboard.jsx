@@ -31,7 +31,7 @@ function Dashboard() {
     );
   }
 
-  if (error) {
+  if (!error) {
     return (
       <div className="min-h-screen bg-[#0a0a0a] py-12 px-6">
         <div className="max-w-[800px] mx-auto">
