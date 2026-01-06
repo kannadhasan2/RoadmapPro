@@ -20,7 +20,7 @@
 
 ## 📖 Overview
 
-**EduVerse** is a full-stack AI-powered learning platform that revolutionizes education by generating personalized learning paths, interactive courses, and providing an AI tutor for real-time assistance. Built with modern technologies and designed for scale.
+**RoadmapPro** is a full-stack AI-powered learning platform that revolutionizes education by generating personalized learning paths, interactive courses, and providing an AI tutor for real-time assistance. Built with modern technologies and designed for scale.
 
 ### 🎯 The Problem
 - Traditional learning platforms offer one-size-fits-all content
@@ -28,7 +28,7 @@
 - Lack of structured guidance for self-learners
 
 ### 💡 The Solution
-EduVerse uses **Groq's ultra-fast LLM inference** to generate:
+RoadmapPro uses **Groq's ultra-fast LLM inference** to generate:
 - **Custom learning roadmaps** tailored to any tech role
 - **Structured courses** with modules and lessons
 - **AI tutoring** with context-aware responses
