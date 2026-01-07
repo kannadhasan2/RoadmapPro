@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Play, Eye, Clock } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
+import { useAuthStore } from '../../store/authStore';
 
 function PostCard({ post, index = 0 }) {
+  const {user} = useAuthStore()
   return (
     <div className="group block">
       {/* Thumbnail Container */}
@@ -15,8 +17,8 @@ function PostCard({ post, index = 0 }) {
         
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-          <div className="w-12 h-12 bg-[#FF6B35] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
-            <Play size={20} fill="black" className="text-black ml-1" />
+          <div className="w-12 h-12 bg-violet-700 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+            <Play size={20} fill="white" className="text-white ml-1" />
           </div>
         </div>
         
@@ -34,26 +36,26 @@ function PostCard({ post, index = 0 }) {
       {/* Info */}
       <div className="flex gap-3">
         {/* Avatar */}
-        <div className="w-9 h-9 bg-[#FF6B35] flex items-center justify-center text-black font-bold text-sm flex-shrink-0">
+        <div className="w-9 h-9 bg-violet-700 flex items-center justify-center text-white font-bold text-2sm flex-shrink-0">
           {post.creator?.avatar ? (
             <img src={post.creator.avatar} alt="" className="w-full h-full object-cover" />
           ) : (
-            (post.creator?.name || 'U').charAt(0).toUpperCase()
+            (user?.name || '1').charAt(0).toUpperCase()
           )}
         </div>
 
         <div className="flex-1 min-w-0">
           <Link to={`/posts/${post.id}`}>
-            <h3 className="text-[14px] font-semibold text-white leading-tight line-clamp-2 group-hover:text-[#FF6B35] transition-colors">
+            <h3 className="text-[14px] font-semibold text-white leading-tight line-clamp-2 group-hover:text-violet-700 transition-colors">
               {post.title}
             </h3>
           </Link>
           
-          <p className="text-[12px] text-[#666] mt-1">{post.creator?.name || "EduVerse Creator"}</p>
+          <p className="text-[12px] text-[#666] mt-1">{post.creator?.name || "RoadmapPro Creator"}</p>
           
           <div className="flex items-center gap-3 text-[11px] text-[#555] mt-1">
             <span className="flex items-center gap-1">
-              <Eye size={12} /> {post.views || 0}
+              <Eye size={12} /> {post.views_count || 0}
             </span>
             <span className="flex items-center gap-1">
               <Clock size={12} /> {post.created_at ? formatDistanceToNow(new Date(post.created_at), { addSuffix: true }) : "Just now"}
