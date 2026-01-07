@@ -32,7 +32,7 @@ const getAllowedOrigins = () => {
   }
   
   // Explicitly add Vercel production URL
-  origins.push('https://edu-verse-ebon.vercel.app');
+  origins.push('https://roadmap-pro.vercel.app');
   
   // Allow additional origins from env if specified
   if (process.env.CORS_ALLOWED_ORIGINS) {
@@ -41,7 +41,7 @@ const getAllowedOrigins = () => {
   }
   
   // Allow Vercel preview deployments (with regex)
-  origins.push(/^https:\/\/edu-verse-[a-z0-9-]+\.vercel\.app$/);
+  origins.push(/^https:\/\/roadmap-pro-[a-z0-9-]+\.vercel\.app$/);
   
   console.log('[CORS] Allowed origins:', origins);
   return origins;
