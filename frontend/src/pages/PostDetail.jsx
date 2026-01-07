@@ -76,9 +76,10 @@ function PostDetail() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
-        <Loader2 size={32} className="text-[#FF6B35] animate-spin" />
-      </div>
+      <div className="h-[calc(100vh-120px)] flex items-center justify-center gap-[8px] text-violet-700">
+      <div className='w-7 h-7 border border-[3px] border-violet-700 rounded-[5px] animate-spin'></div>
+      <p className="text-[17px] font-bold">Loading...</p>
+    </div>
     );
   }
 

@@ -5,7 +5,7 @@ function ProfileHeader ({ profile, isOwnProfile, onFollowToggle }) {
     <div className="bg-[#0f0f0f] border border-[#1f1f1f] p-6">
       <div className="flex flex-col md:flex-row md:items-center gap-6">
         {/* Avatar */}
-        <div className="w-20 h-20 bg-[#FF6B35] flex items-center justify-center text-black text-3xl font-bold flex-shrink-0">
+        <div className="w-20 h-20 bg-violet-700 flex items-center justify-center text-white text-4xl font-bold flex-shrink-0">
           {profile.avatar ? (
             <img src={profile.avatar} alt={profile.name} className="w-full h-full object-cover" />
           ) : (
@@ -21,7 +21,7 @@ function ProfileHeader ({ profile, isOwnProfile, onFollowToggle }) {
           {profile.interests?.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-3">
               {profile.interests.map((interest, i) => (
-                <span key={i} className="px-2 py-1 bg-[#1a1a1a] border border-[#2a2a2a] text-[11px] text-[#FF6B35] font-mono">
+                <span key={i} className="px-2 py-1 bg-[#1a1a1a] border border-[#2a2a2a] text-[11px] text-violet-700 font-bold font-mono">
                   {interest}
                 </span>
               ))}

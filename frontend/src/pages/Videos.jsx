@@ -23,7 +23,7 @@ function Videos() {
     );
   }
 
-  if (!error ) {
+  if (error ) {
     return (
       <div className="h-[calc(100vh-180px)] bg-[#0a0a0a] flex items-center justify-center">
         <div className="text-center p-8 border border-violet-700 bg-violet-700/10">
@@ -120,8 +120,8 @@ function Videos() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                        <div className="w-12 h-12 bg-[#FF6B35] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
-                          <Play size={20} fill="black" className="text-black ml-1" />
+                        <div className="w-12 h-12 bg-violet-700 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+                          <Play size={20} fill="white" className="text-white ml-1" />
                         </div>
                       </div>
                       {post.duration && (
@@ -133,7 +133,7 @@ function Videos() {
 
                     {/* Info */}
                     <div className="p-4">
-                      <h3 className="font-semibold text-white text-[14px] line-clamp-2 mb-2 group-hover:text-[#FF6B35] transition-colors">
+                      <h3 className="font-semibold text-white text-[14px] line-clamp-2 mb-2 group-hover:text-violet-700 font-bold group-hover:text-[16px] transition-colors">
                         {post.title}
                       </h3>
                       <p className="text-[12px] text-[#555] mb-3">{post.creator_name || "Unknown Creator"}</p>
