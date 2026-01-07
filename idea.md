@@ -1,8 +1,8 @@
-# EduVerse MVP - AI-Powered Learning Platform
+# RoadmapPro MVP - AI-Powered Learning Platform
 
 ## 🎯 Executive Summary
 
-**EduVerse** transforms mindless scrolling into meaningful learning. It's a social-first educational platform where every post teaches something valuable, communities form around knowledge, and AI amplifies learning without distractions.
+**RoadmapPro** transforms mindless scrolling into meaningful learning. It's a social-first educational platform where every post teaches something valuable, communities form around knowledge, and AI amplifies learning without distractions.
 
 **Core Promise:** Make learning as addictive as social media, but actually productive.
 
