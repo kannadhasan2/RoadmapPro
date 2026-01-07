@@ -37,11 +37,11 @@ function AISummary ({ postId }) {
   return (
     <div className="bg-[#0f0f0f] border border-[#1f1f1f] p-5">
       <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-2 text-[13px] font-semibold text-[#FF6B35]">
+        <div className="flex items-center gap-2 text-[13px] font-semibold text-violet-700 font-bold">
           <Sparkles size={16} />
           AI SUMMARY
         </div>
-        {loading && <Loader2 size={14} className="text-[#FF6B35] animate-spin" />}
+        {loading && <div className='w-4 h-4 border border-[3px] border-violet-700 rounded-[5px] animate-spin'></div>}
         {!loading && <SourceBadge source={source} />}
       </div>
       {source === 'description' && (

@@ -28,8 +28,8 @@ function AIChat({ postId }) {
 
   return (
     <div className="bg-[#0f0f0f] border border-[#1f1f1f] p-5 space-y-4">
-      <div className="flex items-center gap-2 text-[13px] font-semibold text-[#FF6B35]">
-        <MessageCircle size={16} />
+      <div className="flex items-center font-bold gap-2 text-[13px] font-semibold text-violet-700">
+        <MessageCircle size={17} />
         ASK AI TUTOR
       </div>
       
@@ -37,7 +37,7 @@ function AIChat({ postId }) {
         <div className="space-y-3 max-h-48 overflow-y-auto">
           {messages.map((msg, idx) => (
             <div key={idx} className={`text-[12px] ${msg.role === 'user' ? 'text-white' : 'text-[#999]'}`}>
-              <span className="text-[#FF6B35] font-mono text-[10px]">{msg.role === 'user' ? 'YOU' : 'AI'}:</span>
+              <span className="text-violet-700 font-bold font-mono text-[13px]">{msg.role === 'user' ? 'YOU' : 'AI'}:</span>
               <p className="mt-1">{msg.content}</p>
             </div>
           ))}
@@ -50,15 +50,15 @@ function AIChat({ postId }) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask about this video..."
-          className="flex-1 bg-[#0a0a0a] border border-[#2a2a2a] px-3 py-2 text-[13px] text-white placeholder:text-[#444] focus:border-[#FF6B35] focus:outline-none"
+          className="flex-1 bg-[#0a0a0a] border border-[#2a2a2a] px-3 py-2 text-[13px] text-white placeholder:text-[#444] hover:border-violet-700 focus:border-violet-700 focus:outline-none"
           disabled={loading}
         />
         <button
           type="submit"
           disabled={loading || !input.trim()}
-          className="px-3 py-2 bg-[#FF6B35] text-black disabled:opacity-40"
+          className="px-3 py-2 bg-violet-700 text-white disabled:opacity-40"
         >
-          {loading ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
+          {loading ? <div className='w-4 h-4 border border-[3px] border-cyan-400 rounded-[5px] animate-spin'></div> : <Send size={16} />}
         </button>
       </form>
     </div>

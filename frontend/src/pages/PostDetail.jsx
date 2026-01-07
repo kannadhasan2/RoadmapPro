@@ -12,6 +12,7 @@ import AIChat from "../components/ai/AIChat.jsx";
 import api from "../utils/api.js";
 import { usePostStore } from "../store/postStore.js";
 import { useAuthStore } from "../store/authStore.js";
+import ButtonHeading from "../components/ui/ButtonHeading.jsx";
 
 function PostDetail() {
   const { id } = useParams();
@@ -85,10 +86,10 @@ function PostDetail() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] py-12 px-6">
+      <div className="h-[calc(100vh-150px)] bg-[#0a0a0a] py-12 px-6">
         <div className="max-w-[800px] mx-auto text-center">
           <p className="text-red-400 text-[16px] mb-4">{error}</p>
-          <Link to="/videos" className="text-[#FF6B35] text-[13px] hover:underline">
+          <Link to="/videos" className="text-violet-700 text-[16px] font-bold hover:underline">
             ← Back to Videos
           </Link>
         </div>
@@ -101,7 +102,7 @@ function PostDetail() {
   const transcriptReady = Boolean(post.transcript && post.transcript.length > 20);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] py-8 px-6">
+    <div className="min-h-screen bg-[#0a0a0a] py-6 lg:px-6">
       <div className="max-w-[1400px] mx-auto">
         {/* Back button */}
         <button
@@ -130,7 +131,7 @@ function PostDetail() {
                 </h1>
                 <div className="flex flex-wrap items-center gap-4 text-[13px] text-[#666]">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-[#FF6B35] flex items-center justify-center text-black font-bold text-[12px]">
+                    <div className="w-8 h-8 bg-violet-700 flex items-center justify-center text-white font-bold font-bold text-[14px]">
                       {post.creator_name?.charAt(0) || 'U'}
                     </div>
                     <span className="font-semibold text-white">{post.creator_name || 'Creator'}</span>
@@ -145,7 +146,7 @@ function PostDetail() {
                       {Math.round(post.duration / 60)} min
                     </span>
                   )}
-                  <span className="px-2 py-1 bg-[#1a1a1a] border border-[#2a2a2a] text-[#FF6B35] text-[11px] font-mono uppercase">
+                  <span className="px-2 py-1 bg-[#1a1a1a] border border-[#2a2a2a] text-violet-700 text-[11px] font-mono uppercase">
                     {post.subject}
                   </span>
                 </div>
@@ -155,38 +156,38 @@ function PostDetail() {
               <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-[#1f1f1f]">
                 <button
                   onClick={handleLike}
-                  className={`px-4 py-2 flex items-center gap-2 text-[13px] font-semibold transition-all ${
+                  className={`px-4 py-2 flex items-center gap-2 text-[15px] font-semibold transition-all ${
                     post.liked 
-                      ? 'bg-[#FF6B35] text-black' 
-                      : 'bg-[#1a1a1a] border border-[#2a2a2a] text-[#999] hover:text-white hover:border-[#FF6B35]'
+                      ? 'bg-violet-700 text-white' 
+                      : 'bg-[#1a1a1a] border border-[#2a2a2a] text-[#999] hover:text-white hover:border-violet-700'
                   }`}
                 >
-                  <Heart size={16} className={post.liked ? 'fill-current' : ''} />
+                  <Heart size={18} className={post.liked ? 'fill-current' : ''} />
                   {post.likes_count || 0}
                 </button>
                 <button
                   onClick={handleBookmark}
-                  className={`px-4 py-2 flex items-center gap-2 text-[13px] font-semibold transition-all ${
+                  className={`px-4 py-2 flex items-center gap-2 text-[15px] font-semibold transition-all ${
                     post.bookmarked 
-                      ? 'bg-[#FF6B35] text-black' 
-                      : 'bg-[#1a1a1a] border border-[#2a2a2a] text-[#999] hover:text-white hover:border-[#FF6B35]'
+                      ? 'bg-violet-700 text-white' 
+                      : 'bg-[#1a1a1a] border border-[#2a2a2a] text-[#999] hover:text-white hover:border-violet-700'
                   }`}
                 >
-                  <Bookmark size={16} className={post.bookmarked ? 'fill-current' : ''} />
+                  <Bookmark size={18} className={post.bookmarked ? 'fill-current' : ''} />
                   {post.bookmarked ? 'SAVED' : 'SAVE'}
                 </button>
                 <button
                   onClick={handleShare}
-                  className="px-4 py-2 flex items-center gap-2 text-[13px] font-semibold bg-[#1a1a1a] border border-[#2a2a2a] text-[#999] hover:text-white hover:border-[#FF6B35] transition-all"
+                  className="px-4 py-2 flex items-center gap-2 text-[15px] font-semibold bg-[#1a1a1a] border border-[#2a2a2a] text-[#999] hover:text-white hover:border-violet-700 transition-all"
                 >
-                  <Share2 size={16} />
+                  <Share2 size={18} />
                   SHARE
                 </button>
                 <div className="ml-auto flex items-center gap-2">
                   {post.tags?.map((tag) => (
                     <span 
                       key={tag} 
-                      className="text-[11px] px-2 py-1 bg-[#111] border border-[#2a2a2a] text-[#666] font-mono"
+                      className="text-[11px] px-2 py-1 bg-[#111] border border-violet-700 text-[#666] font-mono"
                     >
                       #{tag}
                     </span>
@@ -195,8 +196,8 @@ function PostDetail() {
               </div>
               
               {/* Description */}
-              <div className="bg-[#0f0f0f] border border-[#1f1f1f] p-6 space-y-3">
-                <h3 className="text-[14px] font-mono text-[#FF6B35] tracking-wide">&gt;_ ABOUT_THIS_LESSON</h3>
+              <div className="bg-[#0f0f0f] border border-[#1f1f1f] p-6 ">
+                <ButtonHeading text="ABOUT_THIS_LESSON" className="border-none pl-0 pb-0" />
                 <p className="text-[#999] leading-relaxed text-[14px] whitespace-pre-wrap">
                   {post.description}
                 </p>

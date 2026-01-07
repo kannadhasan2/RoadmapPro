@@ -25,9 +25,9 @@ function AIFlashcards({ postId }) {
 
   if (loading) {
     return (
-      <div className="bg-[#0f0f0f] border border-[#1f1f1f] p-5 text-[13px] text-[#666]">
+      <div className="bg-[#0f0f0f] border border-[#1f1f1f] p-5 text-[13px] text-violet-700">
         <div className="flex items-center gap-2">
-          <Loader2 size={14} className="text-[#FF6B35] animate-spin" />
+          <div className='w-6 h-6 border border-[3px] border-violet-700 rounded-[5px] animate-spin'></div>
           Loading flashcards...
         </div>
       </div>
@@ -47,7 +47,7 @@ function AIFlashcards({ postId }) {
   return (
     <div className="bg-[#0f0f0f] border border-[#1f1f1f] p-5 space-y-4">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 text-[13px] font-semibold text-[#FF6B35]">
+        <div className="flex items-center gap-2 text-[13px] font-semibold text-violet-700">
           <Layers size={16} />
           FLASHCARDS
         </div>
@@ -56,7 +56,7 @@ function AIFlashcards({ postId }) {
       
       <button
         onClick={() => setFlipped(!flipped)}
-        className="w-full p-4 border border-[#2a2a2a] hover:border-[#FF6B35] text-left transition-all min-h-[80px]"
+        className="w-full p-4 border border-[#2a2a2a] hover:border-violet-700 text-left transition-all min-h-[80px]"
       >
         <p className="text-[10px] text-[#555] uppercase tracking-wide mb-2 font-mono">
           {flipped ? 'ANSWER' : 'QUESTION'}
@@ -72,15 +72,15 @@ function AIFlashcards({ postId }) {
           disabled={currentCard === 0}
           className="p-2 text-[#555] hover:text-white disabled:opacity-30 transition-colors"
         >
-          <ChevronLeft size={18} />
+          <ChevronLeft className='text-violet-700' strokeWidth={3} size={20} />
         </button>
-        <span className="text-[11px] text-[#555]">Tap card to flip</span>
+        <span className="text-[12px] text-[#555]">Tap card to flip</span>
         <button
           onClick={() => { setCurrentCard(Math.min(cards.length - 1, currentCard + 1)); setFlipped(false); }}
           disabled={currentCard === cards.length - 1}
           className="p-2 text-[#555] hover:text-white disabled:opacity-30 transition-colors"
         >
-          <ChevronRight size={18} />
+          <ChevronRight className='text-violet-700' strokeWidth={3} size={20} />
         </button>
       </div>
     </div>
