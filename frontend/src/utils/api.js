@@ -23,8 +23,8 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem("eduverse_token");
-      localStorage.removeItem("eduverse_user");
+      localStorage.removeItem("roadmap_pro_token");
+      localStorage.removeItem("roadmap_pro_user");
     }
     return Promise.reject(error);
   }

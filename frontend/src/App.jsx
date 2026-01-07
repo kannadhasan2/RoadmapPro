@@ -30,7 +30,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/feed" element={<Feed />} />
-          <Route path="/videos" element={<Videos />} />
+          <Route path="/videos" element={<ProtectedRoute><Videos /></ProtectedRoute>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route

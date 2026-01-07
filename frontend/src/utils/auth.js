@@ -1,5 +1,5 @@
-const TOKEN_KEY = 'eduverse_token';
-const USER_KEY = 'eduverse_user';
+const TOKEN_KEY = 'roadmap_pro_token';
+const USER_KEY = 'roadmap_pro_user';
 
 export const saveSession = ({ token, user }) => {
   if (token) localStorage.setItem(TOKEN_KEY, token);
