@@ -703,14 +703,14 @@ function RoadmapGenerator() {
                 <div className="flex gap-2">
                   <button
                     onClick={handleDownload}
-                    className="px-4 py-2 bg-[#FF6B35] border border-[#FF6B35] rounded-none font-bold text-sm text-white hover:bg-[#ff7a4a] transition-all flex items-center gap-2 btn-beam"
+                    className="px-4 py-2 bg-violet-700 border border-violet-700 rounded-none font-bold text-sm text-white hover:bg-violet-500 transition-all flex items-center gap-2 btn-beam"
                   >
                     <Download size={16} />
                     Download
                   </button>
                   <button
                     onClick={handleRegenerate}
-                    className="px-4 py-2 bg-[#FF6B35] border border-[#FF6B35] rounded-none font-bold text-sm text-white hover:bg-[#ff7a4a] transition-all flex items-center gap-2 btn-beam"
+                    className="px-4 py-2 bg-violet-700 border border-violet-700 rounded-none font-bold text-sm text-white hover:bg-violet-500 transition-all flex items-center gap-2 btn-beam"
                   >
                     <RefreshCw size={16} />
                     Regenerate
@@ -720,7 +720,7 @@ function RoadmapGenerator() {
                       navigator.clipboard.writeText(window.location.href);
                       alert("Link copied to clipboard!");
                     }}
-                    className="px-4 py-2 bg-[#FF6B35] border border-[#FF6B35] rounded-none font-bold text-sm text-white hover:bg-[#ff7a4a] transition-all flex items-center gap-2 btn-beam"
+                    className="px-4 py-2 bg-violet-700 border border-violet-700 rounded-none font-bold text-sm text-white hover:bg-violet-500 transition-all flex items-center gap-2 btn-beam"
                   >
                     <Share2 size={16} />
                     Share
@@ -740,8 +740,8 @@ function RoadmapGenerator() {
               <div className="mt-6 pt-6 border-t border-white/10">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="px-3 py-1 bg-[#FF6B35]/10 border border-[#FF6B35]/20 rounded-none">
-                      <span className="text-sm font-bold text-[#FF6B35]">
+                    <div className="px-3 py-1 bg-violet-700/20 border border-[2px] border-violet-700 rounded-sm">
+                      <span className="text-sm font-bold text-white">
                         {Math.round((Object.values(completedNodes).filter(Boolean).length / (roadmap?.stages?.reduce((acc, stage) => acc + (stage.nodes?.length || 0), 0) || 1)) * 100)}% DONE
                       </span>
                     </div>
@@ -772,7 +772,7 @@ function RoadmapGenerator() {
 
                 {/* Stage Title (Root of the Tree) */}
                 <div className="flex justify-center mb-12 relative z-20">
-                  <div className="bg-[#0a0a0a] border border-white/20 px-8 py-4 rounded-none shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] relative group cursor-default hover:-translate-y-1 transition-transform duration-200">
+                  <div className="bg-[#0a0a0a] border border-white/20 px-8 py-4 rounded-none shadow-[4px_4px_0px_0px_rgba(124,58,237,0.1)] relative group cursor-default hover:-translate-y-1 transition-transform duration-200">
                     <h2 className="text-xl font-bold text-white text-center uppercase tracking-wide">
                       {stage.label}
                     </h2>
@@ -806,10 +806,10 @@ function RoadmapGenerator() {
                             onClick={() => handleNodeClick(node)}
                             className={`w-full bg-white/5 p-5  border cursor-pointer transition-all duration-300 relative overflow-hidden group  ${
                               isSelected
-                                ? "border-[#FF6B35] shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)]"
+                                ? "border-[#FF6B35] shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] "
                                 : isCompleted
                                 ? "border-green-500/50 shadow-sm bg-green-500/5"
-                                : "border-white/10 hover:border-white/30 shadow-sm hover:shadow-xl hover:bg-white/10"
+                                : "border-white/10 hover:border-violet-700 shadow-sm hover:shadow-xl hover:bg-white/10"
                             }`}
                           >
                             {/* Hover Gradient Overlay */}

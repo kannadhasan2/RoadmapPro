@@ -60,7 +60,7 @@ function GuideGenerator() {
             {chapters.map((chapter) => (
               <div
                 key={chapter.id}
-                className="bg-white/5 border border-white/10  p-4 space-y-2 "
+                className="bg-white/5 border border-white/10  p-4 space-y-2 hover:border-violet-700"
               >
                 <h3 className="text-sm font-semibold text-white">
                   {chapter.title}

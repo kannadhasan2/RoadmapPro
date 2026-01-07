@@ -1,4 +1,4 @@
-# EduVerse - Quick Start Guide
+# RoadmapPro - Quick Start Guide
 
 ## 🎯 What You Need to Do RIGHT NOW
 
@@ -63,7 +63,7 @@ SUPABASE_KEY=your_supabase_key
 2. Click "New Project"
 3. Choose:
    - Organization (or create one)
-   - Name: `eduverse` (or your choice)
+   - Name: `RoadmapPro` (or your choice)
    - Database Password: **SAVE THIS** (you'll need it)
    - Region: Choose closest to you
 4. Wait 2-3 minutes for provisioning

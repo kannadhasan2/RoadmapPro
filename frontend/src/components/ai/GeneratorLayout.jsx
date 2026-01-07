@@ -21,8 +21,8 @@ function GeneratorLayout({
       <div className="max-w-[800px] mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 text-[12px] text-[#FF6B35] mb-4 tracking-[0.15em] font-mono">
-            <span className="w-2 h-2 bg-[#FF6B35] rounded-full"></span>
+          <div className="inline-flex items-center gap-2 text-[14px] font-bold text-violet-700 mb-4 tracking-[0.15em] font-mono">
+            <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
             [ AI GENERATOR ]
           </div>
           <h1 className="text-[40px] font-bold text-white mb-3">{title}</h1>
@@ -32,11 +32,11 @@ function GeneratorLayout({
         {/* Terminal Input */}
         <div className="bg-[#111] border border-[#2a2a2a] mb-8">
           <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a]">
-            <code className="text-[12px] text-[#555] tracking-wide font-mono">USER@EDUVERSE:~/GENERATE</code>
+            <code className="text-[12px] text-violet-700 tracking-wide font-mono">USER@EDUVERSE:~/GENERATE</code>
             <div className="flex gap-2">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#555]"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-[#555]"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-[#555]"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
             </div>
           </div>
           
@@ -62,7 +62,7 @@ function GeneratorLayout({
                     onClick={() => setActiveFormat(fmt.id)}
                     className={`p-4 border text-left transition-all ${
                       activeFormat === fmt.id
-                        ? "border-[#FF6B35] bg-[#FF6B35]/10"
+                        ? "border-violet-700 bg-violet-700/10"
                         : "border-[#2a2a2a] hover:border-[#444]"
                     }`}
                   >
@@ -82,7 +82,7 @@ function GeneratorLayout({
                 id="answerQuestions"
                 checked={answerQuestions}
                 onChange={(e) => setAnswerQuestions(e.target.checked)}
-                className="w-4 h-4 bg-[#0a0a0a] border border-[#2a2a2a] accent-[#FF6B35]"
+                className="w-4 h-4 bg-[#0a0a0a] border border-[#2a2a2a] accent-violet-700"
               />
               <label htmlFor="answerQuestions" className="text-[13px] text-[#666]">
                 Answer questions for a better outline
@@ -92,7 +92,7 @@ function GeneratorLayout({
             <button
               type="submit"
               disabled={loading || !topic.trim()}
-              className="w-full px-6 py-3 bg-[#FF6B35] hover:bg-[#ff7a4a] disabled:opacity-40 text-black font-bold text-[13px] flex items-center justify-center gap-2 transition-all"
+              className="w-full px-6 py-2.5 bg-violet-700 hover:bg-violet-500 disabled:opacity-40 text-white font-bold text-[16px] flex items-center justify-center gap-2 transition-all"
             >
               {loading ? (
                 <><Loader2 size={16} className="animate-spin" /> GENERATING...</>

@@ -153,18 +153,27 @@ function AiCourse() {
             <div className="mb-8">
               <button 
                 onClick={() => setCourse(null)}
-                className="text-[#FF6B35] text-[13px] font-mono mb-4 hover:underline"
+                className="text-violet-700 text-[15px] font-bold font-mono mb-3 hover:underline"
               >
                 ← BACK TO GENERATOR
               </button>
-              <div className="inline-flex items-center gap-2 text-[12px] text-[#FF6B35] mb-4 tracking-[0.15em] font-mono">
-                <span className="w-2 h-2 bg-[#FF6B35] rounded-full"></span>
-                [ GENERATED COURSE ]
-              </div>
-              <h1 className="text-[40px] font-bold text-white mb-3">{course.title}</h1>
+              <h1 className="text-[40px] font-bold text-white mb-3">
+                {course.title.split("").map((char, i) => (
+                  <span
+                    key={i}
+                    className="transition-colors duration-300"
+                    style={{
+                      animation: `violetWave 1.2s ease forwards infinite`,
+                      animationDelay: `${i * 80}ms`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+            </h1>
               <p className="text-[#666] text-[15px] max-w-2xl">{course.description}</p>
               
-              <div className="flex items-center gap-4 mt-4 text-[12px] text-[#555]">
+              <div className="flex items-center gap-4 mt-4 text-[12px] text-white">
                 <span className="flex items-center gap-1">
                   <BookOpen size={14} /> {modules.length} modules
                 </span>
@@ -176,15 +185,15 @@ function AiCourse() {
 
             {/* Modules */}
             <div className="space-y-3">
-              <h2 className="text-[14px] font-mono text-[#FF6B35] mb-4 tracking-wide">&gt;_ COURSE_MODULES</h2>
+              <ButtonHeading text="COURSE_MODULES" className="border-none pb-0 pl-0" />
               {modules.map((module, idx) => (
-                <div key={idx} className="bg-[#0f0f0f] border border-[#1f1f1f]">
+                <div key={idx} className="bg-[#0f0f0f] border border-[#1f1f1f] hover:border-violet-700">
                   <button
                     onClick={() => setExpandedModule(expandedModule === idx ? null : idx)}
                     className="w-full p-5 flex items-center justify-between text-left hover:bg-[#151515] transition-colors"
                   >
                     <div className="flex items-center gap-4">
-                      <span className="text-[#FF6B35] font-mono text-[13px]">{String(idx + 1).padStart(2, '0')}</span>
+                      <span className="text-violet-700 font-bold font-mono text-[14px]">{String(idx + 1).padStart(2, '0')}</span>
                       <div>
                         <h3 className="text-white font-semibold text-[15px]">{module.title}</h3>
                         <p className="text-[#555] text-[13px] mt-1">{module.description}</p>
