@@ -46,7 +46,7 @@ const getAllowedOrigins = () => {
   console.log('[CORS] Allowed origins:', origins);
   return origins;
 };
-
+/*
 app.use(
   cors({
     origin: (origin, callback) => {
@@ -72,18 +72,15 @@ app.use(
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   })
-);
-app.options("*", (req, res) => {
-  return res.sendStatus(204);
-});
+); */
+app.use(cors({
+  origin: "https://roadmap-pro.vercel.app", // or "*" for testing
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  credentials: true
+}));
 app.use(express.json({ limit: "100mb" })); // Increased for video uploads
 app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 app.use(pinoHttp({ logger }));
-app.use((req, res, next) => {
-  if (req.method === "OPTIONS") return res.sendStatus(204);
-  next();
-});
-
 app.use(apiLimiter);
 
 app.get("/health", (req, res) => {
