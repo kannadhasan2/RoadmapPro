@@ -2,6 +2,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+console.log(process.env.FRONTEND_URL)
+
 export const env = {
   node: process.env.NODE_ENV || 'development',
   port: Number(process.env.PORT || 5051),
