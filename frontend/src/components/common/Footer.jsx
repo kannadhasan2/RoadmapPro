@@ -42,7 +42,7 @@ function Footer() {
 
 
   return (
-    <footer className="border-t border-[#1a1a1a] py-16 px-6 bg-[#050505] h-full">
+    <footer className="border-t border-[#1a1a1a] py-16 px-[12px] sm:px-6 bg-[#050505] h-full">
       <div className="max-w-[1400px] mx-auto">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">

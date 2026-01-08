@@ -60,10 +60,10 @@ function Navbar() {
         </div>
         
         {/* Right Side - Profile & Auth */}
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-2 sm:gap-5">
           {user ? (
             <>
-              <Link to="/dashboard" className="px-5 py-2.5 bg-violet-700 hover:bg-violet-700 text-white font-bold text-[14px] font-bold font-mono transition-all flex items-center gap-2">
+              <Link to="/dashboard" className="px-2.5 py-2 bg-violet-700 hover:bg-violet-700 text-white font-bold text-[14px] font-bold font-mono transition-all flex items-center gap-2">
                 <LayoutDashboard size={18} /> DASHBOARD
               </Link>
               

@@ -148,7 +148,7 @@ const Home = () => {
       </section>
 
       {/* ===== ECOSYSTEM GRID - 'Stealth Browser Infrastructure' Style ===== */}
-      <section className="py-24 px-6">
+      <section className="py-24 px-[12px] sm:px-6">
         <div className="max-w-[1400px] mx-auto">
           {/* Header */}
           <div className="mb-12">
@@ -229,7 +229,7 @@ const Home = () => {
       </section>
 
       {/* ===== PLATFORM DEMO - Code window with colored dots ===== */}
-      <section className="py-20 px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
+      <section className="py-20 px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
         <div className="max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Code Box - macOS dots on LEFT (colored) */}
@@ -283,7 +283,7 @@ const Home = () => {
       </section>
 
       {/* ===== FEATURES GRID ===== */}
-      <section className="py-20 px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
+      <section className="py-20  px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
@@ -306,17 +306,17 @@ const Home = () => {
       </section>
 
       {/* ===== CTA SECTION ===== */}
-      <section className="py-2 px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
+      <section className="py-2 px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
         <div className="max-w-[1400px] mx-auto text-center">
           <div className="text-violet-700 text-[14px] font-bold tracking-[0.15em] mb-4 font-mono">[ START LEARNING ]</div>
-          <h2 className="text-[38px] font-bold mb-6 leading-tight ">
+              <h2 className="text-[38px] font-bold mb-6 leading-tight flex flex-wrap">
                 {'Custom Learning Path for Your Goals'.split("").map((char, i) => (
                   <span
                     key={i}
                     className="transition-colors duration-300"
                     style={{
                       animation: `violetWave 1.2s ease forwards infinite`,
-                      animationDelay: `${i * 50}ms`,
+                      animationDelay: `${i * 100}ms`,
                     }}
                   >
                     {char === " " ? "\u00A0" : char}
@@ -338,7 +338,7 @@ const Home = () => {
       </section>
 
       {/* ===== CHANGELOG ===== */}
-      <section className="py-24 px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
+      <section className="py-24 px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
         <div className="max-w-[1400px] mx-auto">
           <div className="flex items-center gap-2 mb-5">
             <ButtonHeading text="Latest_ChangeLog" className="border-none pl-0 mb-0 pb-0 uppercase" />

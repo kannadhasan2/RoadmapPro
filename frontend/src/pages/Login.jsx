@@ -3,7 +3,7 @@ import LoginForm from '../components/auth/LoginForm.jsx';
 
 function Login () {
   return (
-    <div className=" bg-[#0a0a0a] flex items-center justify-center py-6 px-6">
+    <div className=" bg-[#0a0a0a] flex items-center justify-center py-6 sm:px-6">
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
