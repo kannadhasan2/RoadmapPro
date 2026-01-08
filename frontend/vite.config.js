@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
+  console.log(env.VITE_API_URL)
   return {
     plugins: [react()],
     server: {
@@ -10,7 +11,7 @@ export default defineConfig(({ mode }) => {
       open: true,
       proxy: {
         '/api': {
-          target: env.VITE_API_URL || 'https://roadmappro.onrender.com',
+          target: env.VITE_API_URL || 'http://localhost:5000',
           changeOrigin: true
         }
       }
