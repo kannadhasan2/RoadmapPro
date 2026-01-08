@@ -73,7 +73,6 @@ app.use(
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   })
 );
-app.options("*", cors());
 app.use(express.json({ limit: "100mb" })); // Increased for video uploads
 app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 app.use(pinoHttp({ logger }));
