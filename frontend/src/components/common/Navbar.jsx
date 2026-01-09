@@ -102,6 +102,12 @@ function Navbar() {
                       >
                         <LogOut size={18} /> LOG_OUT
                       </button>
+                      <Link to="/" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">HOME</Link>
+                      <Link to="/ai-roadmap" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">ROADMAPS</Link>
+                      <Link to="/ai-course" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">COURSES</Link>
+                      <Link to="/videos" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">VIDEOS</Link>
+                      <Link to="/ai-tutor" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">AI_TUTOR</Link>
+                      
                     </div>
                   </div>
                 )}

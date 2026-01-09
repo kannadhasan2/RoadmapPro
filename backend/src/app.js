@@ -74,7 +74,7 @@ app.use(
   })
 ); */
 app.use(cors({
-  origin: "https://roadmap-pro.vercel.app", // or "*" for testing
+  origin: ["https://roadmap-pro.vercel.app","http://localhost:5173"], // or "*" for testing
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   credentials: true
 }));
