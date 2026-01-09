@@ -78,7 +78,7 @@ function Profile() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] py-6 px-6">
+    <div className="min-h-screen bg-[#0a0a0a] py-6 sm:px-6">
       <div className="max-w-[1000px] mx-auto">
         
         {/* Header */}

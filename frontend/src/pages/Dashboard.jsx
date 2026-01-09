@@ -54,7 +54,7 @@ function Dashboard() {
   const subjectsCount = stats?.subjects_explored_count || stats?.subjects_count || 0;
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] py-6 px-6">
+    <div className="min-h-screen bg-[#0a0a0a] py-6  sm:px-6">
       <div className="max-w-[1200px] mx-auto">
         
         {/* Header */}

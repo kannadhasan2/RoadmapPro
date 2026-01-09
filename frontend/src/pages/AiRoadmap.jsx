@@ -119,7 +119,7 @@ function AiRoadmap() {
             <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
             [ AI ROADMAP GENERATOR ]
           </div>
-          <h1 className="text-[48px] font-bold text-white mb-4 leading-tight">
+          <h2 className="text-[48px] font-bold text-white mb-4 leading-tight flex flex-wrap justify-center">
                 {"AI Roadmap Generator".split("").map((char, i) => (
                   <span
                     key={i}
@@ -132,7 +132,7 @@ function AiRoadmap() {
                     {char === " " ? "\u00A0" : char}
                   </span>
                 ))}
-            </h1>
+            </h2>
           <p className="text-[#666] text-[16px] max-w-xl mx-auto">
             Choose a role/skill or <span className="text-violet-700 font-bold">enter any topic</span> to generate a personalized learning roadmap
           </p>

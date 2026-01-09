@@ -70,7 +70,7 @@ function AiCourse() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] py-12 px-6 selection:bg-violet-700 selection:text-white">
+    <div className="min-h-screen bg-[#0a0a0a] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] py-12 sm:px-6 selection:bg-violet-700 selection:text-white">
       <div className="max-w-[1200px] mx-auto">
         
         {!course ? (

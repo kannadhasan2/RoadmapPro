@@ -80,11 +80,11 @@ function AiTutor() {
   ];
 
   return (
-    <div className="h-[calc(100vh-64px)] bg-[#0a0a0a] overflow-hidden flex flex-col">
+    <div className="h-[calc(100vh-64px)] bg-[#0a0a0a]  flex flex-col">
       <div className="max-w-[900px] mx-auto w-full h-full flex flex-col p-6">
         
         {messages.length === 0 ? (
-          <div className="flex-1 flex flex-col justify-center items-center overflow-y-auto">
+          <div className="flex-1 flex flex-col justify-center items-center ">
             {/* Header */}
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 text-[12px] text-violet-700 mb-4 tracking-[0.15em] font-mono">

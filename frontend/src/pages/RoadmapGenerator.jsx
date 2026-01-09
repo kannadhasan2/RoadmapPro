@@ -689,15 +689,16 @@ function RoadmapGenerator() {
             )}
 
             {/* Header Card */}
-            <div className="bg-white/5 rounded-[32px] shadow-lg border border-white/10 p-8 mb-12 ">
+            <div className="bg-white/5 rounded-[32px] shadow-lg border border-white/10 p-4 md:p-8 mb-12 ">
               {/* Top Row: Back Button & Action Buttons */}
               <div className="flex items-center justify-between mb-6">
                 <button
                   onClick={() => navigate("/ai-roadmap")}
-                  className="flex items-center gap-2 text-slate-400 hover:text-white font-medium transition-colors"
+                  className="flex items-center gap-[2px] text-slate-400 hover:text-white font-medium transition-colors"
                 >
                   <ArrowLeft size={20} />
-                  <span>All Roadmaps</span>
+                  <span className="hidden md:block">All Roadmaps</span>
+                  <span >Back</span>
                 </button>
 
                 <div className="flex gap-2">
@@ -706,14 +707,15 @@ function RoadmapGenerator() {
                     className="px-4 py-2 bg-violet-700 border border-violet-700 rounded-none font-bold text-sm text-white hover:bg-violet-500 transition-all flex items-center gap-2 btn-beam"
                   >
                     <Download size={16} />
-                    Download
+                    <span className="hidden md:block">Download</span>
                   </button>
                   <button
                     onClick={handleRegenerate}
                     className="px-4 py-2 bg-violet-700 border border-violet-700 rounded-none font-bold text-sm text-white hover:bg-violet-500 transition-all flex items-center gap-2 btn-beam"
                   >
                     <RefreshCw size={16} />
-                    Regenerate
+                    
+                    <span className="hidden md:block">Regenerate</span>
                   </button>
                   <button
                     onClick={() => {
@@ -723,7 +725,7 @@ function RoadmapGenerator() {
                     className="px-4 py-2 bg-violet-700 border border-violet-700 rounded-none font-bold text-sm text-white hover:bg-violet-500 transition-all flex items-center gap-2 btn-beam"
                   >
                     <Share2 size={16} />
-                    Share
+                    <span className="hidden md:block">Share</span>
                   </button>
                 </div>
               </div>

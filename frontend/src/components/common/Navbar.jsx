@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Sparkles, LayoutDashboard, User, LogOut } from "lucide-react";
+import { Sparkles, LayoutDashboard, User, LogOut ,Menu} from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useAuthStore } from "../../store/authStore";
 
@@ -71,20 +71,26 @@ function Navbar() {
               <div className="relative" ref={profileRef}>
                 <button
                   onClick={() => setIsProfileOpen(!isProfileOpen)}
-                  className="w-10 h-10 rounded-sm overflow-hidden border border-[3px] border-violet-700 hover:border-violet-500 transition-all"
+                  className="w-10 h-10 rounded-sm  overflow-hidden border border-[3px] border-violet-700 hover:border-violet-500 transition-all"
                 >
                   {user.avatar ? (
-                    <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
+                    <>
+                    <img src={user.avatar} alt={user.name} className="hidden md:block w-full h-full object-cover" />
+                    <Menu fill="violet-700" size={18}  className="md:hidden text-violet-700 pl-2" /> 
+                    </>
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-[#111] text-violet-700 font-bold text-[18px] font-bold">
+                    <>
+                    <div className="hidden w-full h-full md:flex items-center justify-center bg-[#111] text-violet-700 font-bold text-[18px] font-bold">
                       {user.name?.charAt(0).toUpperCase()}
                     </div>
+                    <Menu fill="violet-700" size={34}  className="md:hidden text-violet-700 p-[2px]" /> 
+                    </>
                   )}
                 </button>
 
                 {isProfileOpen && (
                   <div className="absolute top-full right-0 mt-2 w-64 bg-[#0a0a0a] border border-violet-700 shadow-2xl z-50">
-                    <div className="px-5 py-4 border-b border-violet-700">
+                    <div className="hidden md:block px-5 py-4 border-b border-violet-700">
                       <p className="text-sm font-bold text-white truncate font-mono">{user.name}</p>
                       <p className="text-xs text-[#666] truncate mt-1 font-mono">{user.email}</p>
                     </div>
@@ -94,19 +100,23 @@ function Navbar() {
                         onClick={() => setIsProfileOpen(false)}
                         className="flex items-center gap-3 px-5 py-3 text-xs font-mono text-[#999] hover:text-white hover:bg-[#111] transition-colors"
                       >
-                        <User size={18} /> PROFILE
+                        <User className="hidden md:block" size={18} /> PROFILE
                       </Link>
-                      <button
-                        onClick={handleLogout}
-                        className="w-full flex items-center font-bold gap-3 px-5 py-3 text-xs font-mono text-violet-700 hover:bg-violet-700/10 transition-colors text-left"
-                      >
-                        <LogOut size={18} /> LOG_OUT
-                      </button>
+                      
+                      <div className="md:hidden flex flex-col pl-5 gap-2 text-[14px] font-mono text-[#888]">
                       <Link to="/" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">HOME</Link>
                       <Link to="/ai-roadmap" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">ROADMAPS</Link>
                       <Link to="/ai-course" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">COURSES</Link>
                       <Link to="/videos" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">VIDEOS</Link>
                       <Link to="/ai-tutor" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">AI_TUTOR</Link>
+                      
+                    </div>
+                    <button
+                        onClick={handleLogout}
+                        className=" w-full flex items-center font-bold gap-3 px-5 py-3 text-xs font-mono text-violet-700 hover:bg-violet-700/10 transition-colors text-left"
+                      >
+                        <LogOut size={18} /> LOG_OUT
+                      </button>
                       
                     </div>
                   </div>
