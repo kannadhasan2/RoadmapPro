@@ -808,7 +808,7 @@ function RoadmapGenerator() {
                             onClick={() => handleNodeClick(node)}
                             className={`w-full bg-white/5 p-5  border cursor-pointer transition-all duration-300 relative overflow-hidden group  ${
                               isSelected
-                                ? "border-[#FF6B35] shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] "
+                                ? "border-violet-700 shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] "
                                 : isCompleted
                                 ? "border-green-500/50 shadow-sm bg-green-500/5"
                                 : "border-white/10 hover:border-violet-700 shadow-sm hover:shadow-xl hover:bg-white/10"

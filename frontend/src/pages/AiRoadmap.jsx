@@ -142,7 +142,7 @@ function AiRoadmap() {
         <div className="max-w-[700px] mx-auto mb-6">
           <div className="bg-[#111] border border-[#2a2a2a]">
             <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a]">
-              <code className="text-[12px] text-violet-700 tracking-wide font-mono">USER@EDUVERSE:~/ROADMAP</code>
+              <code className="text-[12px] text-violet-700 tracking-wide font-mono">USER@ROADMAPPRO:~/ROADMAP</code>
               <div className="flex gap-2">
                 <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
                 <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
