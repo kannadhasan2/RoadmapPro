@@ -444,7 +444,7 @@ function RoadmapGenerator() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-[70px] bottom-0 w-full md:w-[28rem] bg-[#0a0a0a]/95 backdrop-blur-xl border-l border-[#FF6B35]/20 shadow-[-20px_0_50px_0px_rgba(0,0,0,0.5)] z-40 overflow-hidden"
+              className="fixed right-0 top-[70px] bottom-0 w-full md:w-[28rem] bg-[#0a0a0a]/95 backdrop-blur-xl border-l  shadow-[-20px_0_50px_0px_rgba(0,0,0,0.5)] z-40 overflow-hidden"
             >
               {/* Sidebar Header */}
               <div className="p-6 border-b border-[#2a2a2a] bg-[#111]">
@@ -452,7 +452,7 @@ function RoadmapGenerator() {
                   <h3 className="text-[16px] font-bold text-white font-mono uppercase tracking-tight">{selectedNode.label}</h3>
                   <button
                     onClick={() => setSelectedNode(null)}
-                    className="p-2 text-[#555] hover:text-[#FF6B35] hover:bg-[#1a1a1a] transition-colors"
+                    className="p-2 text-[#555] hover:text-violet-700 hover:bg-[#1a1a1a] transition-colors"
                   >
                     ✕
                   </button>
@@ -464,7 +464,7 @@ function RoadmapGenerator() {
                     onClick={() => setActiveTab("resources")}
                     className={`px-4 py-2 font-mono text-[12px] uppercase tracking-wider transition-all border ${
                       activeTab === "resources"
-                        ? "bg-[#FF6B35] text-black border-[#FF6B35] font-bold"
+                        ? "bg-violet-700 text-white border-violet-700 font-bold"
                         : "bg-transparent text-[#555] border-[#2a2a2a] hover:border-[#444] hover:text-white"
                     }`}
                   >
@@ -474,7 +474,7 @@ function RoadmapGenerator() {
                     onClick={() => setActiveTab("chat")}
                     className={`px-4 py-2 font-mono text-[12px] uppercase tracking-wider transition-all border ${
                       activeTab === "chat"
-                        ? "bg-[#FF6B35] text-black border-[#FF6B35] font-bold"
+                        ? "bg-violet-700 text-white border-violet-700 font-bold"
                         : "bg-transparent text-[#555] border-[#2a2a2a] hover:border-[#444] hover:text-white"
                     }`}
                   >
@@ -489,8 +489,8 @@ function RoadmapGenerator() {
                   <div className="p-6 space-y-6">
                     {loadingResources ? (
                       <div className="flex flex-col items-center justify-center py-12">
-                        <Loader2 className="w-8 h-8 text-[#FF6B35] animate-spin mb-4" />
-                        <p className="text-[#555] text-[13px] font-mono">LOADING_RESOURCES...</p>
+                        <div className="w-6 h-6 rouded-[5px] border border-violet-700 border-[3px] animate-spin"> </div>
+                        <p className="text-[#555] text-[13px] font-mono mt-[7px]">LOADING_RESOURCES...</p>
                       </div>
                     ) : nodeResources[selectedNode.id] ? (
                       <>
@@ -506,8 +506,8 @@ function RoadmapGenerator() {
                         {/* Free Resources */}
                         {nodeResources[selectedNode.id].freeResources?.length > 0 && (
                           <div>
-                            <h4 className="font-bold text-[#FF6B35] mb-3 flex items-center gap-2 text-[12px] font-mono uppercase tracking-wide">
-                              <BookOpen size={14} />
+                            <h4 className="font-bold text-violet-700 mb-3 flex items-center gap-2 text-[14px] font-mono uppercase tracking-wide">
+                              <BookOpen size={16} />
                               Free Resources
                             </h4>
                             <div className="space-y-3">
@@ -517,21 +517,21 @@ function RoadmapGenerator() {
                                   href={resource.url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="block p-4 bg-[#111] border border-[#2a2a2a] hover:border-[#FF6B35] transition-all group"
+                                  className="block p-4 bg-[#111] border border-[#2a2a2a] hover:border-violet-700 transition-all group"
                                 >
                                   <div className="flex items-start justify-between gap-3">
                                     <div className="flex-1">
                                       <div className="flex items-center gap-2 mb-1">
-                                        {resource.type === "video" && <Video size={14} className="text-[#FF6B35]" />}
-                                        {resource.type === "article" && <FileText size={14} className="text-[#FF6B35]" />}
-                                        {resource.type === "course" && <Code size={14} className="text-[#FF6B35]" />}
-                                        <h5 className="font-medium text-white text-[13px] group-hover:text-[#FF6B35] transition-colors">
+                                        {resource.type === "video" && <Video size={16} className="text-violet-700" />}
+                                        {resource.type === "article" && <FileText size={16} className="text-violet-700" />}
+                                        {resource.type === "course" && <Code size={16} className="text-violet-700" />}
+                                        <h5 className="font-medium text-white text-[13px] group-hover:text-violet-700 transition-colors">
                                           {resource.title}
                                         </h5>
                                       </div>
                                       <p className="text-[11px] text-[#555] font-mono uppercase">{resource.platform}</p>
                                     </div>
-                                    <ExternalLink size={14} className="text-[#444] group-hover:text-[#FF6B35] transition-colors flex-shrink-0" />
+                                    <ExternalLink size={16} className="text-[#444] group-hover:text-violet-700 transition-colors flex-shrink-0" />
                                   </div>
                                 </a>
                               ))}
@@ -542,8 +542,8 @@ function RoadmapGenerator() {
                         {/* Premium Resources */}
                         {nodeResources[selectedNode.id].premiumResources?.length > 0 && (
                           <div>
-                            <h4 className="font-bold text-[#FF6B35] mb-3 flex items-center gap-2 text-[12px] font-mono uppercase tracking-wide">
-                              <Sparkles size={14} />
+                            <h4 className="font-bold text-violet-700 mb-3 flex items-center gap-2 text-[14px] font-mono uppercase tracking-wide">
+                              <Sparkles size={16} />
                               Premium Resources
                             </h4>
                             <div className="space-y-3">
@@ -553,21 +553,21 @@ function RoadmapGenerator() {
                                   href={resource.url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="block p-4 bg-[#111] border border-[#2a2a2a] hover:border-[#FF6B35] transition-all group"
+                                  className="block p-4 bg-[#111] border border-[#2a2a2a] hover:border-violet-700 transition-all group"
                                 >
                                   <div className="flex items-start justify-between gap-3">
                                     <div className="flex-1">
                                       <div className="flex items-center gap-2 mb-1">
-                                        {resource.type === "video" && <Video size={14} className="text-[#FF6B35]" />}
-                                        {resource.type === "article" && <FileText size={14} className="text-[#FF6B35]" />}
-                                        {resource.type === "course" && <Code size={14} className="text-[#FF6B35]" />}
-                                        <h5 className="font-medium text-white text-[13px] group-hover:text-[#FF6B35] transition-colors">
+                                        {resource.type === "video" && <Video size={16} className="text-violet-700" />}
+                                        {resource.type === "article" && <FileText size={16} className="text-violet-700" />}
+                                        {resource.type === "course" && <Code size={16} className="text-violet-700" />}
+                                        <h5 className="font-medium text-white text-[13px] group-hover:text-violet-700 transition-colors">
                                           {resource.title}
                                         </h5>
                                       </div>
                                       <p className="text-[11px] text-[#555] font-mono uppercase">{resource.platform}</p>
                                     </div>
-                                    <ExternalLink size={14} className="text-[#444] group-hover:text-[#FF6B35] transition-colors flex-shrink-0" />
+                                    <ExternalLink size={16} className="text-[#444] group-hover:text-violet-700 transition-colors flex-shrink-0" />
                                   </div>
                                 </a>
                               ))}
@@ -590,7 +590,7 @@ function RoadmapGenerator() {
                     <div className="absolute top-0 left-0 right-0 bottom-[72px] overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-[#2a2a2a] scrollbar-track-transparent">
                       {chatMessages.length === 0 ? (
                         <div className="flex flex-col items-center justify-center h-full text-center p-8">
-                          <Sparkles className="w-12 h-12 text-[#FF6B35] mb-4 opacity-50" />
+                          <Sparkles className="w-12 h-12 text-violet-700 mb-4 opacity-50" />
                           <p className="text-[#666] text-[13px] mb-2 font-mono uppercase tracking-widest">AI Tutor Ready</p>
                           <p className="text-[#444] text-[12px] max-w-xs font-mono">
                             Target: {selectedNode.label}
@@ -606,15 +606,15 @@ function RoadmapGenerator() {
                               }`}
                             >
                               {msg.role === "assistant" && (
-                                <div className="w-6 h-6 rounded-none border border-[#FF6B35]/30 flex items-center justify-center flex-shrink-0 mt-1 bg-[#FF6B35]/5 text-[#FF6B35] font-mono text-[10px]">
+                                <div className="w-6 h-6 rounded-none border border-cyan-700 flex items-center justify-center flex-shrink-0 mt-1 bg-cyan-700/10 text-cyan-700 font-mono text-[12px]">
                                   AI
                                 </div>
                               )}
                               <div
                                 className={`max-w-[85%] rounded-md px-4 py-3 leading-relaxed font-mono border ${
                                   msg.role === "user"
-                                    ? "bg-[#FF6B35]/10 text-[#FF6B35] border-[#FF6B35]/20 ml-12"
-                                    : "bg-[#111] text-[#ccc] border-[#2a2a2a] mr-8 shadow-sm"
+                                    ? "bg-violet-700/10 text-violet-700 border-violet-700 ml-12"
+                                    : "bg-[#111] text-[#ccc] border-cyan-700 mr-8 shadow-sm"
                                 }`}
                               >
                                 {msg.role === "assistant" ? (
@@ -637,8 +637,8 @@ function RoadmapGenerator() {
                           ))}
                           {isChatLoading && (
                             <div className="flex gap-3 justify-start animate-pulse">
-                              <div className="w-6 h-6 rounded-none border border-[#FF6B35]/30 flex items-center justify-center flex-shrink-0 mt-1">
-                                <Loader2 size={12} className="text-[#FF6B35] animate-spin" />
+                              <div className="w-6 h-6 rounded-none border border-violet-700/5 flex items-center justify-center flex-shrink-0 mt-1">
+                                <Loader2 size={12} className="text-violet-700 animate-spin" />
                               </div>
                               <div className="bg-[#111] text-[#555] border border-[#2a2a2a] rounded-md px-4 py-2">
                                 <p className="text-[12px] font-mono">PROCESSING_QUERY...</p>
