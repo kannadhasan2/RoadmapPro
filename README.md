@@ -12,7 +12,7 @@
 
 **Transform how you learn with AI-generated roadmaps, personalized courses, and an intelligent tutor.**
 
-[Live Demo](#) · [Features](#-features) · [Tech Stack](#-tech-stack) · [Getting Started](#-getting-started)
+[Live Demo](https://roadmap-pro.vercel.app/) · [Features](#-features) · [Tech Stack](#-tech-stack) · [Getting Started](#-getting-started)
 
 </div>
 
