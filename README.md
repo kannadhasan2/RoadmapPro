@@ -317,3 +317,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **⭐ Star this repo if you found it helpful!**
 
 </div>
+![My SVG](c:\Users\91638\Downloads\supabase-schema-oujghaaxmvhuacirpmxb.svg)
