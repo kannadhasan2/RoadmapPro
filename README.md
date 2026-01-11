@@ -278,6 +278,7 @@ Run migrations in order via Supabase SQL Editor:
 |--------|-------|
 | **Lighthouse Score** | 95+ |
 | **First Contentful Paint** | < 1s |
+| **Largest Contentful Paint**| < 1s |
 | **AI Response Time** | < 2s (Groq Llama 3.3) |
 | **Bundle Size** | < 500KB gzipped |
 
