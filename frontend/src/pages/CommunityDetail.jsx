@@ -61,7 +61,7 @@ function CommunityDetail() {
               onClick={() => setActiveTab("feed")}
               className={`w-full flex items-center gap-2 px-3 py-2 transition-colors text-left ${
                 activeTab === "feed"
-                  ? "bg-[#FF6B35]/10 text-[#FF6B35] border-l-2 border-[#FF6B35]"
+                  ? "bg-violet-700/10 font-bold text-violet-700 border-l-2 border-violet-700"
                   : "text-[#999] hover:bg-[#1a1a1a] hover:text-white"
               }`}
             >
@@ -72,7 +72,7 @@ function CommunityDetail() {
               onClick={() => setActiveTab("chat")}
               className={`w-full flex items-center gap-2 px-3 py-2 transition-colors text-left ${
                 activeTab === "chat"
-                  ? "bg-[#FF6B35]/10 text-[#FF6B35] border-l-2 border-[#FF6B35]"
+                  ? "bg-violet-700/10 font-bold text-violet-700 border-l-2 border-violet-700"
                   : "text-[#999] hover:bg-[#1a1a1a] hover:text-white"
               }`}
             >
@@ -119,7 +119,7 @@ function CommunityDetail() {
           <div className="flex items-center gap-4">
             <Users 
               size={18} 
-              className={`cursor-pointer transition-colors ${showMembers ? 'text-[#FF6B35]' : 'text-[#555]'}`}
+              className={`cursor-pointer transition-colors ${showMembers ? 'text-violet-700' : 'text-[#555]'}`}
               onClick={() => setShowMembers(!showMembers)} 
             />
           </div>
@@ -151,7 +151,7 @@ function CommunityDetail() {
             <div>
               <p className="px-2 mb-2 text-[10px] font-mono text-[#555] uppercase tracking-[0.15em]">Online</p>
               <div className="flex items-center gap-2 px-2 py-2 hover:bg-[#1a1a1a] cursor-pointer">
-                <div className="w-8 h-8 bg-[#FF6B35] flex items-center justify-center text-black text-[12px] font-bold">
+                <div className="w-8 h-8 bg-violet-700 flex items-center justify-center text-white text-[12px] font-bold">
                   A
                 </div>
                 <div>

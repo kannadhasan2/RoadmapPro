@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { Search, Users, Plus, Loader2, X, MessageSquare, Hash } from "lucide-react";
 import { useCommunityStore } from "../store/communityStore.js";
 import { useAuthStore } from "../store/authStore.js";
+import ButtonHeading from "../components/ui/ButtonHeading.jsx";
 
 function Communities() {
   const navigate = useNavigate();
@@ -70,8 +71,8 @@ function Communities() {
         {/* Header */}
         <div className="flex items-start justify-between mb-10">
           <div>
-            <div className="inline-flex items-center gap-2 text-[12px] text-[#FF6B35] mb-4 tracking-[0.15em] font-mono">
-              <span className="w-2 h-2 bg-[#FF6B35] rounded-full"></span>
+            <div className="inline-flex items-center gap-2 text-[14px] font-bold text-violet-700 mb-4 tracking-[0.15em] font-mono">
+              <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
               [ LEARNING COMMUNITIES ]
             </div>
             <h1 className="text-[48px] font-bold text-white mb-4 leading-tight">
@@ -85,7 +86,7 @@ function Communities() {
           {user && (
             <button
               onClick={() => setShowCreateModal(true)}
-              className="flex items-center gap-2 px-5 py-3 bg-[#FF6B35] hover:bg-[#ff7a4a] text-black font-bold text-[13px] transition-all"
+              className="flex items-center gap-2 px-5 py-3 bg-violet-700 hover:bg-violet-500 text-white font-bold text-[13px] transition-all"
             >
               <Plus size={16} /> CREATE COMMUNITY
             </button>
@@ -94,7 +95,7 @@ function Communities() {
 
         {/* Search */}
         <div className="mb-10">
-          <div className="max-w-md bg-[#111] border border-[#2a2a2a] flex items-center gap-3 px-4">
+          <div className="max-w-md bg-[#111] border border-[#2a2a2a] hover:border-violet-700  flex items-center gap-3 px-4">
             <Search size={18} className="text-[#555]" />
             <input
               type="text"
@@ -107,12 +108,12 @@ function Communities() {
         </div>
 
         {/* Communities Grid */}
-        <div>
-          <h2 className="text-[14px] font-mono text-[#FF6B35] mb-4 tracking-wide">&gt;_ ALL_COMMUNITIES</h2>
+        <div> 
+          <ButtonHeading text="ALL_COMMUNITIES" className="border-none pl-0 pb-0" />
           
           {loading ? (
             <div className="flex items-center justify-center py-20">
-              <Loader2 size={32} className="text-[#FF6B35] animate-spin" />
+              <Loader2 size={32} className="text-violet-700 animate-spin" />
             </div>
           ) : filteredCommunities.length === 0 ? (
             <div className="text-center py-20 bg-[#0f0f0f] border border-[#1f1f1f]">
@@ -127,15 +128,15 @@ function Communities() {
                   to={`/communities/${community.id}`}
                   className="group block"
                 >
-                  <div className="relative bg-[#0f0f0f] border border-[#1f1f1f] hover:border-[#333] p-5 transition-all">
-                    <div className="absolute left-0 top-4 bottom-4 w-[3px] bg-[#FF6B35]"></div>
+                  <div className="relative bg-[#0f0f0f] border border-violet-700 hover:border-violet-700 p-5 transition-all">
+                    <div className="absolute left-0 top-4 bottom-4 w-[3px] bg-violet-700"></div>
                     
                     <div className="pl-4">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center gap-3">
                           <span className="text-2xl">{getSubjectEmoji(community.subject)}</span>
                           <div>
-                            <h3 className="font-bold text-white text-[16px] group-hover:text-[#FF6B35] transition-colors">
+                            <h3 className="font-bold text-white text-[16px] group-hover:text-violet-700 transition-colors">
                               {community.name}
                             </h3>
                             <span className="text-[11px] text-[#555] font-mono uppercase">{community.subject}</span>
@@ -161,8 +162,8 @@ function Communities() {
                           onClick={(e) => handleJoinLeave(e, community)}
                           className={`px-3 py-1.5 text-[11px] font-semibold transition-all ${
                             community.joined
-                              ? 'bg-[#1a1a1a] text-[#FF6B35] border border-[#FF6B35]'
-                              : 'bg-[#FF6B35] text-black'
+                              ? 'bg-[#1a1a1a] text-violet-700 font-bold border border-violet-700'
+                              : 'bg-violet-700 text-white'
                           }`}
                         >
                           {community.joined ? 'JOINED' : 'JOIN'}
@@ -190,46 +191,46 @@ function Communities() {
             
             <form onSubmit={handleCreateCommunity} className="p-5 space-y-4">
               <div>
-                <label className="block text-[11px] uppercase tracking-[0.15em] text-[#555] mb-2 font-mono">NAME</label>
+                <label className="block text-[13px] uppercase tracking-[0.15em] text-violet-700 font-bold mb-2 font-mono">NAME</label>
                 <input
                   type="text"
                   value={newCommunity.name}
                   onChange={(e) => setNewCommunity({ ...newCommunity, name: e.target.value })}
                   placeholder="Community name"
-                  className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-[#FF6B35]"
+                  className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-violet-700"
                   required
                 />
               </div>
               
               <div>
-                <label className="block text-[11px] uppercase tracking-[0.15em] text-[#555] mb-2 font-mono">SUBJECT</label>
+                <label className="block text-[13px] font-bold uppercase tracking-[0.15em] text-violet-700 mb-2 font-mono">SUBJECT</label>
                 <input
                   type="text"
                   value={newCommunity.subject}
                   onChange={(e) => setNewCommunity({ ...newCommunity, subject: e.target.value })}
                   placeholder="e.g. React, Python, Machine Learning"
-                  className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-[#FF6B35]"
+                  className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-violet-700"
                   required
                 />
               </div>
               
               <div>
-                <label className="block text-[11px] uppercase tracking-[0.15em] text-[#555] mb-2 font-mono">DESCRIPTION</label>
+                <label className="block text-[13px] font-bold uppercase tracking-[0.15em] text-violet-700 mb-2 font-mono">DESCRIPTION</label>
                 <textarea
                   value={newCommunity.description}
                   onChange={(e) => setNewCommunity({ ...newCommunity, description: e.target.value })}
                   placeholder="Brief description..."
                   rows={3}
-                  className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-[#FF6B35] resize-none"
+                  className="w-full bg-[#0a0a0a] border border-[#2a2a2a] px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-violet-700 resize-none"
                 />
               </div>
               
               <button
                 type="submit"
                 disabled={creating || !newCommunity.name.trim() || !newCommunity.subject.trim()}
-                className="w-full px-5 py-3 bg-[#FF6B35] hover:bg-[#ff7a4a] disabled:opacity-40 text-black font-bold text-[13px] flex items-center justify-center gap-2 transition-all"
+                className="w-full px-5 py-3 bg-violet-700 hover:bg-violet-500 disabled:opacity-40 text-white font-bold text-[13px] flex items-center justify-center gap-2 transition-all"
               >
-                {creating ? <Loader2 size={16} className="animate-spin" /> : <Plus size={16} />}
+                {creating ? <Loader2 size={16} className="animate-spin text-violet-700" /> : <Plus size={16} />}
                 CREATE COMMUNITY
               </button>
             </form>

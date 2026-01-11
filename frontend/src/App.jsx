@@ -11,6 +11,8 @@ const Login = lazy(() => import("./pages/Login.jsx"));
 const Signup = lazy(() => import("./pages/Signup.jsx"));
 const Profile = lazy(() => import("./pages/Profile.jsx"));
 const Upload = lazy(() => import("./pages/Upload.jsx"));
+const Communities = lazy(() => import("./pages/Communities.jsx"));
+const CommunityDetail = lazy(() => import("./pages/CommunityDetail.jsx"));
 const Dashboard = lazy(() => import("./pages/Dashboard.jsx"));
 const PostDetail = lazy(() => import("./pages/PostDetail.jsx"));
 
@@ -118,6 +120,22 @@ function App() {
             }
           />
           <Route path="/posts/:id" element={<PostDetail />} />
+          <Route
+            path="/communities"
+            element={
+              <ProtectedRoute>
+                <Communities />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/communities/:id"
+            element={
+              <ProtectedRoute>
+                <CommunityDetail />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
