@@ -111,7 +111,7 @@ Get instant help with an intelligent tutoring system:
 ## 📁 Project Structure
 
 ```
-eduverse/
+RoadmapPro/
 ├── frontend/                 # React application
 │   ├── src/
 │   │   ├── components/       # Reusable UI components
@@ -155,8 +155,8 @@ eduverse/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/raghul017/EduVerse.git
-cd EduVerse
+git clone https://github.com/kannadhasan2/RoadmapPro
+cd RoadmapPro
 ```
 
 ### 2. Backend Setup
