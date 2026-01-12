@@ -1,4 +1,4 @@
-# EduVerse Implementation Guide
+# RoadmapPro Implementation Guide
 
 This document translates the `idea.md` spec into practical build steps for the combined frontend + backend codebase.
 
@@ -73,7 +73,7 @@ FRONTEND_URL=http://localhost:5173
 4. **Storage (optional)**
 
    - If you prefer Supabase Storage instead of Cloudinary:
-     - Go to `Storage` → `Create bucket` (e.g., `eduverse-videos`).
+     - Go to `Storage` → `Create bucket` (e.g., `roadmappro-videos`).
      - Set public access to false (you will sign URLs).
      - Save the bucket name and service role key.
      - Update backend config to upload videos with Supabase client (future enhancement; current code uses Cloudinary).
