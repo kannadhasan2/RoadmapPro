@@ -2,7 +2,7 @@
 
 ## Overview
 
-EduVerse uses AI services (Groq and Google Gemini) for generating roadmaps, courses, and learning resources. This guide will help you set up and troubleshoot AI providers.
+RoadmapPro uses AI services (Groq and Google Gemini) for generating roadmaps, courses, and learning resources. This guide will help you set up and troubleshoot AI providers.
 
 ## API Providers
 
