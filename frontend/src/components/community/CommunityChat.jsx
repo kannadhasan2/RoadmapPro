@@ -78,7 +78,6 @@ function CommunityChat({ communityId }) {
       {/* Chat Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-surface/20">
         <span className="text-sm font-semibold text-textPrimary">💬 Live Chat</span>
-        {loading && <span className="text-xs text-textSecondary animate-pulse">Loading...</span>}
       </div>
       
       {/* Messages Area */}
@@ -100,24 +99,29 @@ function CommunityChat({ communityId }) {
               key={msg.id}
               className={`flex ${isOwn ? "justify-end" : "justify-start"} group`}
             >
-              <div
-                className={`relative max-w-[75%]  px-4 py-2.5 shadow-sm ${
+              <div style={{borderWidth:"0.2px"}}
+                className={`relative max-w-[75%]  px-3 py-2 shadow-sm ${
                   isOwn 
-                    ? "bg-accent text-white" 
-                    : "bg-surface/50 text-textPrimary border border-border"
+                    ? "bg-violet-500/10 border  border-violet-700 text-white rounded-sm rounded-br-none" 
+                    : "bg-surface/50 text-textPrimary border border-border rounded-sm rounded-bl-none"
                 }`}
               >
-                {!isOwn && (
-                  <div className="text-[10px] font-semibold text-accent mb-1">
-                    {msg.user_name}
+                
+                  <div className={`text-[11px] font-semibold text-accent mb-[3px] flex items-center gap-2 ${isOwn? "justify-end text-cyan-400":""} `}>
+                    {isOwn? "You" : msg.user_name}
+                     <div className={`text-[8px]  ${isOwn ? "text-white/70" : "text-textSecondary"}`}>
+                  {new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                </div>
                   </div>
-                )}
+                
                 <div className="text-sm whitespace-pre-wrap break-words leading-relaxed">
                   {msg.content}
                 </div>
-                <div className={`text-[10px] mt-1.5 ${isOwn ? "text-white/70" : "text-textSecondary"}`}>
+                {
+                  isOwn && <div className={`text-[10px] mt-1 ${isOwn ? "text-white/70" : "text-textSecondary"}`}>
                   {new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </div>
+                }
                 
                 {isOwn && (
                   <button
