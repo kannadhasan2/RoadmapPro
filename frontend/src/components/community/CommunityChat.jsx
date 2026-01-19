@@ -156,14 +156,14 @@ function CommunityChat({ communityId }) {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type a message..."
-              className="flex-1 bg-background border border-border  px-4 py-2.5 text-sm text-textPrimary placeholder:text-textSecondary focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
+              className="flex-1 bg-background border border-border hover:border-violet-700  px-4 py-2.5 text-sm text-textPrimary placeholder:text-textSecondary focus:outline-none focus:border-violet-700 focus:ring-1 focus:ring-accent/20 transition-all"
             />
             <button
               type="submit"
               disabled={sending || !input.trim()}
-              className="px-5 py-2.5  bg-accent hover:bg-accent/90 disabled:bg-accent/50 disabled:cursor-not-allowed text-white text-sm font-medium flex items-center gap-2 transition-all shadow-sm hover:shadow-md"
+              className="px-4 py-2.5  bg-violet-700 hover:bg-accent/90 disabled:bg-accent/50 disabled:cursor-not-allowed text-white text-[16px] font-medium flex items-center gap-2 transition-all shadow-sm hover:shadow-md"
             >
-              <Send size={16} />
+              <Send size={20} />
               {sending ? "..." : "Send"}
             </button>
           </div>
