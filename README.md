@@ -170,6 +170,7 @@ Configure `.env`:
 ```env
 # Database (Supabase)
 DATABASE_URL=postgresql://postgres:[PASSWORD]@db.[PROJECT].supabase.co:5432/postgres?sslmode=require
+# Important: Don't forget to add `?sslmode=require` at end of your DATABASE_URL
 
 # Authentication
 JWT_SECRET=your-super-secret-key-min-32-chars
@@ -177,12 +178,12 @@ JWT_EXPIRE=7d
 
 # AI Providers
 GROQ_API_KEY=gsk_your_groq_key        # Primary (get from console.groq.com)
-GEMINI_API_KEY=your_gemini_key        # Fallback (optional)
+GEMINI_API_KEY=your_gemini_key        # Fallback (optional but recommended)
 
 # Media Storage
-CLOUDINARY_CLOUD_NAME=your_cloud
-CLOUDINARY_API_KEY=your_key
-CLOUDINARY_API_SECRET=your_secret
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_API_key
+CLOUDINARY_API_SECRET=your_API_secret
 
 # Server
 PORT=5000
