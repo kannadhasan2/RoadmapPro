@@ -309,7 +309,7 @@ const Home = () => {
       <section className="py-2 px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
         <div className="max-w-[1400px] mx-auto text-center">
           <div className="text-violet-700 text-[14px] font-bold tracking-[0.15em] mb-4 font-mono">[ START LEARNING ]</div>
-              <h2 className="text-[38px] font-bold mb-6 leading-tight flex flex-wrap">
+              <h2 className="text-[38px] font-bold mb-6 leading-tight flex flex-wrap justify-center">
                 {'Custom Learning Path for Your Goals'.split("").map((char, i) => (
                   <span
                     key={i}

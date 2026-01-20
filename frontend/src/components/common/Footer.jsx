@@ -184,9 +184,9 @@ function Footer() {
               href="https://www.linkedin.com/in/kannadhasan-s/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex gap-[10px] items-center text-[11px] text-white hover:text-violet-700 hover:text-[14px] transition-colors font-mono"
+              className="flex gap-[10px] items-center text-[11px] text-white hover:text-violet-700 hover:text-[14px] transition-colors font-mono uppercase"
             >
-              CREATED BY KANNADHASAN WITH  <Heart className="animate-pulse" size={24} fill="#fb0909" color="#fb0909" strokeWidth={3} absoluteStrokeWidth />
+              Developed with  <Heart className="animate-pulse" size={24} fill="#fb0909" color="#fb0909" strokeWidth={3} absoluteStrokeWidth /> by Kannadhasan 
             </a>
           </div>
         </div>
