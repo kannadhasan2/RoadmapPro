@@ -29,7 +29,7 @@ function LoginForm () {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="">
       <div>
         <label className="block text-[11px] uppercase tracking-[0.15em] text-violet-700 font-bold mb-2 font-mono">EMAIL</label>
         <input
@@ -42,7 +42,7 @@ function LoginForm () {
         />
       </div>
       
-      <div>
+      <div className='mt-4'>
         <label className="block text-[11px] uppercase tracking-[0.15em] text-violet-700 font-bold mb-2 font-mono">PASSWORD</label>
         <input
           type="password"
@@ -53,6 +53,9 @@ function LoginForm () {
           className="w-full bg-[#0a0a0a] border border-[#2a2a2a] hover:border-violet-700 px-4 py-3 text-white text-[14px] placeholder:text-[#444] focus:outline-none focus:border-violet-700"
         />
       </div>
+      <div className='text-end'>
+        <p href="" className='text-violet-700  text-[12px] mt-0 pt-1 cursor-pointer'> Forgot Password?</p>
+      </div>
       
       {(formError || error) && (
         <p className="text-red-400 text-[13px]">{formError || error}</p>
@@ -61,7 +64,7 @@ function LoginForm () {
       <button 
         type="submit" 
         disabled={loading}
-        className="w-full px-5 py-3 bg-violet-700 disabled:opacity-40 text-white font-bold text-[13px] flex items-center justify-center gap-2 transition-all mt-6"
+        className="w-full px-5 py-3 bg-violet-700 disabled:opacity-40 text-white font-bold text-[13px] flex items-center justify-center gap-2 transition-all mt-5"
       >
         {loading ? <><Loader2 size={16} className="animate-spin" /> SIGNING IN...</> : 'LOGIN'}
       </button>
