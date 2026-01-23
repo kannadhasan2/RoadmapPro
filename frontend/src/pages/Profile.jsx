@@ -78,12 +78,12 @@ function Profile() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] py-6 sm:px-6">
+    <div className="min-h-screen bg-[#0a0a0a] py-5 sm:px-6">
       <div className="max-w-[1000px] mx-auto">
         
         {/* Header */}
         <div className="mb-6">
-          <div className="inline-flex items-center gap-2 font-bold text-[16px] text-violet-700 mb-4 tracking-[0.15em] font-mono">
+          <div className="flex items-center justify-center gap-2 font-bold text-[17px] text-violet-700 mb-3 tracking-[0.12em] font-mono">
             <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
             [ {isOwnProfile ? 'YOUR PROFILE' : 'USER PROFILE'} ]
           </div>

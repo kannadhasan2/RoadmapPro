@@ -41,8 +41,8 @@ function ProfileHeader ({ profile, isOwnProfile, onFollowToggle }) {
             onClick={onFollowToggle}
             className={`px-5 py-2.5 font-bold text-[13px] transition-all ${
               profile.following
-                ? 'bg-[#1a1a1a] border border-[#FF6B35] text-[#FF6B35]'
-                : 'bg-[#FF6B35] text-black'
+                ? 'bg-violet-700/10 border border-violet-700 text-[14px] text-violet-700'
+                : 'bg-violet-700 text-white'
             }`}
           >
             {profile.following ? 'FOLLOWING' : 'FOLLOW'}
