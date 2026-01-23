@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import { Link } from "react-router-dom";
-import { Github, Linkedin, Twitter, Mail, Rocket, BookOpen, Users, MessageSquare,Heart } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Rocket, BookOpen, Users, MessageSquare,Heart,Copyright } from "lucide-react";
 const ACTIVE_GRADIENT =
   'linear-gradient(45deg, #502deeff 0.91%, #FFD521 5.45%, #f03219ff 46.43%, #B900B4 87.21%, #2200b9ff 91.75%)';
 
@@ -157,7 +157,7 @@ function Footer() {
 
         {/* Tech Stack Banner */}
         <div className="bg-[#0a0a0a] border border-[#1a1a1a] p-4 mb-8">
-          <div className="flex flex-wrap items-center justify-center gap-6 text-[12px] font-semibold text-violet-700 font-mono tracking-widest">
+          <div className="flex flex-wrap items-center justify-center gap-5 text-[12px] font-semibold text-violet-700 font-mono tracking-widest">
             <span>REACT.JS</span>
             <span className="text-[#333]">•</span>
             <span>NODE.JS</span>
@@ -176,8 +176,8 @@ function Footer() {
         
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-6 border-t border-[#1a1a1a]">
-          <p className="text-[11px] text-white font-mono hover:text-violet-700 hover:text-[14px]">
-            © {currentYear} RoadmapPro. ALL RIGHTS RESERVED.
+          <p className="text-[11px] text-white font-mono hover:text-violet-700 hover:text-[14px] flex items-center gap-[3px]">
+            <Copyright size={14} strokeWidth={3} /> {currentYear} RoadmapPro. ALL RIGHTS RESERVED.
           </p>
           <div className="flex items-center gap-4 mt-4 md:mt-0">
             
