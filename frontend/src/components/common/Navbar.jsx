@@ -54,10 +54,9 @@ function Navbar() {
         <div className="hidden md:flex items-center gap-8 text-[14px] font-mono text-[#888]">
           <Link to="/" className={`hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4 ${location.pathname === "/" && "underline text-white"}`}>HOME</Link>
           <Link to="/ai-roadmap" className={`hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4 ${location.pathname === "/ai-roadmap" && "underline text-white"}`}>ROADMAPS</Link>
-          <Link to="/ai-course" className={`hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4 ${location.pathname === "/ai-course" && "underline text-white"}`}>COURSES</Link>
           <Link to="/videos" className={`hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4 ${location.pathname === "/videos" && "underline text-white"}`}>VIDEOS</Link>
           <Link to="/ai-tutor" className={`hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4 ${location.pathname === "/ai-tutor" && "underline text-white"}`}>AI_TUTOR</Link>
-          
+          <Link to="/communities" className={`hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4 ${location.pathname === "/communities" && "underline text-white"}`}>COMMUNITIY</Link>
         </div>
         
         {/* Right Side - Profile & Auth */}
@@ -107,9 +106,9 @@ function Navbar() {
                       <div className="md:hidden flex flex-col pl-5 gap-2 text-[14px] font-mono text-[#888]">
                       <Link to="/" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">HOME</Link>
                       <Link to="/ai-roadmap" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">ROADMAPS</Link>
-                      <Link to="/ai-course" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">COURSES</Link>
                       <Link to="/videos" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">VIDEOS</Link>
                       <Link to="/ai-tutor" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">AI_TUTOR</Link>
+                      <Link to="/communities" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">COMMUNITIES</Link>
                       
                     </div>
                     <button

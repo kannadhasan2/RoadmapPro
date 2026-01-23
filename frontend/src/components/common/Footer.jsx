@@ -158,7 +158,7 @@ function Footer() {
         {/* Tech Stack Banner */}
         <div className="bg-[#0a0a0a] border border-[#1a1a1a] p-4 mb-8">
           <div className="flex flex-wrap items-center justify-center gap-6 text-[12px] font-semibold text-violet-700 font-mono tracking-widest">
-            <span>REACT 18</span>
+            <span>REACT.JS</span>
             <span className="text-[#333]">•</span>
             <span>NODE.JS</span>
             <span className="text-[#333]">•</span>
@@ -169,6 +169,8 @@ function Footer() {
             <span>TAILWIND CSS</span>
             <span className="text-[#333]">•</span>
             <span>SUPABASE</span>
+            <span className="text-[#333]">•</span>
+            <span>ZUSTAND</span>
           </div>
         </div>
         
