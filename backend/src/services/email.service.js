@@ -39,8 +39,8 @@ export const emailService = {
     // Example with SendGrid:
     // const msg = {
     //   to: email,
-    //   from: 'noreply@eduverse.com',
-    //   subject: 'Reset Your EduVerse Password',
+    //   from: 'noreply@roadmappro.com',
+    //   subject: 'Reset Your RoadmapPro Password',
     //   html: `<p>Click <a href="${resetUrl}">here</a> to reset your password. Valid for 1 hour.</p>`
     // };
     // await sgMail.send(msg);
