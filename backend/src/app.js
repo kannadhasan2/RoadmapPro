@@ -17,62 +17,6 @@ ensureEnv();
 const app = express();
 const logger = pino({ level: env.node === "development" ? "debug" : "info" });
 
-const getAllowedOrigins = () => {
-  const origins = [];
-  
-  // Development: allow all localhost ports
-  if (env.node === 'development') {
-    return [/^http:\/\/localhost:\d+$/];
-  }
-  
-  // Production: explicit URLs
-  // Add exact frontend URL from env
-  if (env.frontendUrl) {
-    origins.push(env.frontendUrl);
-  }
-  
-  // Explicitly add Vercel production URL
-  origins.push('https://roadmap-pro.vercel.app');
-  
-  // Allow additional origins from env if specified
-  if (process.env.CORS_ALLOWED_ORIGINS) {
-    const additional = process.env.CORS_ALLOWED_ORIGINS.split(',').map(o => o.trim());
-    origins.push(...additional);
-  }
-  
-  // Allow Vercel preview deployments (with regex)
-  origins.push(/^https:\/\/roadmap-pro-[a-z0-9-]+\.vercel\.app$/);
-  
-  console.log('[CORS] Allowed origins:', origins);
-  return origins;
-};
-/*
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      const allowedOrigins = getAllowedOrigins();
-      
-      // Allow requests with no origin (like mobile apps or curl)
-      if (!origin) return callback(null, true);
-      
-      // Check if origin matches any allowed origin
-      const isAllowed = allowedOrigins.some(allowed => {
-        if (allowed instanceof RegExp) return allowed.test(origin);
-        return allowed === origin;
-      });
-      
-      if (isAllowed) {
-        callback(null, true);
-      } else {
-        console.warn(`[CORS] Blocked request from origin: ${origin}`);
-        callback(new Error(`Origin ${origin} not allowed by CORS`));
-      }
-    },
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-  })
-); */
 app.use(cors({
   origin: ["https://roadmap-pro.vercel.app","http://localhost:5173"], // or "*" for testing
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
