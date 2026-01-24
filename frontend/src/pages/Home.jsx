@@ -67,7 +67,7 @@ const Home = () => {
           
           {/* Subtitle */}
           <p className="text-[#888] text-[16px] max-w-[540px] mx-auto mb-10 leading-[1.6] font-mono opacity-0 animate-fade-in" style={{animationDelay: '0.3s', animationFillMode: 'forwards'}}>
-            The <span className="text-white font-bold">ECOSYSTEM</span> built around the world's most intelligent learning roadmap and course generation platform.
+            A unified learning  <span className="text-white font-bold">ECOSYSTEM</span> powered by the world’s most intelligent platform for adaptive roadmaps and courses.
           </p>
 
           {/* Terminal Box - Exact 'Browser Use' Replica */}
@@ -79,12 +79,12 @@ const Home = () => {
             <div className="absolute -bottom-[1px] -right-[1px] w-3 h-3 border-b border-r border-[#444]"></div>
 
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-3 border-b border-[#1a1a1a]">
-               <div className="text-[10px] text-violet-700 font-mono tracking-widest uppercase">user@RoadmapPro:~/new_task</div>
+            <div className="flex items-center justify-between px-6 py-2 border-b border-[#1a1a1a]">
+               <div className="text-[12px] text-violet-700 font-mono tracking-widest uppercase">user@RoadmapPro:~/new_task</div>
                <div className="flex gap-2">
-                  <div className="w-2 h-2 rounded-full bg-violet-700 border border-violet-700"></div>
-                  <div className="w-2 h-2 rounded-full bg-violet-700 border border-violet-700"></div>
-                  <div className="w-2 h-2 rounded-full bg-violet-700 border border-violet-700"></div>
+                  <div className="w-[10px] h-[10px] rounded-sm bg-violet-700 border border-violet-700"></div>
+                  <div className="w-[10px] h-[10px] rounded-sm bg-violet-700 border border-violet-700"></div>
+                  <div className="w-[10px] h-[10px] rounded-sm bg-violet-700 border border-violet-700"></div>
                </div>
             </div>
             
@@ -180,7 +180,7 @@ const Home = () => {
                 ))}
               </h2>
              <p className="text-[#666] text-[15px] font-mono max-w-[600px]">
-               Built on top of advanced AI agents. V 2.0.4 [STABLE]
+               Built on top of advanced AI agents. Version-2.0
              </p>
           </div>
 
@@ -219,14 +219,14 @@ const Home = () => {
                 link:"/communities"
               },
             ].map((tabs, i) => (
-              <Link to={tabs.link} key={i} className="bg-[#0a0a0a] border border-[#222] p-8 hover:border-violet-700 transition-all group relative overflow-hidden">
+              <Link to={tabs.link} key={i} className="bg-[#0a0a0a] border border-[#222] px-8 py-5 hover:border-violet-700 transition-all group relative overflow-hidden">
                 {/* Background Grid inside card */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:16px_16px]"></div>
                 
                 <div className="relative z-10 flex flex-col h-full justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-8">
-                       <span className="text-[12px] text-violet-700 font-mono">{tabs.name}</span>
+                       <span className="text-[14px] text-violet-700 font-bold font-mono">{tabs.name}</span>
                        <tabs.icon size={20} className="text-[#666] group-hover:text-violet-700 transition-colors" />
                     </div>
                     <h3 className="text-[24px] font-bold text-white mb-3">{tabs.title}</h3>
@@ -234,8 +234,8 @@ const Home = () => {
                   </div>
                   
                   <div className="pt-6 border-t border-[#1a1a1a] group-hover:border-violet-700 flex items-center justify-between">
-                     <span className="text-[10px] text-[#444] font-mono tracking-widest">{tabs.id}</span>
-                     <div className="text-[10px] text-[#444] font-mono">STATUS: <span className="text-violet-700">ACTIVE</span></div>
+                     <span className="text-[12px] text-[#444] font-mono tracking-widest">{tabs.id}</span>
+                     <div className="text-[12px] text-[#444] font-mono">STATUS: <span className="text-violet-700">ACTIVE</span></div>
                   </div>
                 </div>
               </Link>
@@ -250,13 +250,13 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Code Box - macOS dots on LEFT (colored) */}
             <div className="bg-[#0f0f0f] border border-[#1f1f1f] overflow-hidden">
-              <div className="flex items-center justify-between px-4 py-3 border-b border-[#1f1f1f]">
+              <div className="flex items-center justify-between px-4 py-4 border-b border-[#1f1f1f]">
                 <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-violet-700"></div>
-                  <div className="w-3 h-3 rounded-full bg-violet-700"></div>
-                  <div className="w-3 h-3 rounded-full bg-violet-700"></div>
+                  <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>
+                  <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>
+                  <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>
                 </div>
-                <code className="text-[11px] font-mono text-violet-700">/RoadmapPro.JS</code>
+                <code className="text-[12px] font-mono text-violet-700">/RoadmapPro.JS</code>
               </div>
               <pre className="p-6 text-[13px] font-mono leading-[2] overflow-x-auto">
                 <span className="text-[#c678dd]">const</span> <span className="text-[#61afef]">roadmap</span> = <span className="text-[#c678dd]">await</span> roadmapPro.<span className="text-[#e5c07b]">generate</span>({`{`}
@@ -372,9 +372,6 @@ const Home = () => {
                 <p className="text-[12px] text-[#444] leading-relaxed">{log.desc}</p>
               </div>
             ))}
-          </div>
-          <div className="text-right mt-6">
-            <a href="#" className="text-violet-700 text-[14px] font-bold font-mono hover:underline">&gt;_VIEW_ALL_LOGS</a>
           </div>
         </div>
       </section>

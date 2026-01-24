@@ -116,9 +116,9 @@ function AiTutor() {
                 <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a]">
                   <code className="text-[12px] text-violet-700 tracking-wide font-mono">USER@EDUVERSE:~/TUTOR</code>
                   <div className="flex gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-violet-700"></div>
+                    <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>
+                    <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>
+                    <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>
                   </div>
                 </div>
                 <form onSubmit={handleStartSession} className="p-6">
