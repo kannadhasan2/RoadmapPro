@@ -1,13 +1,13 @@
 function ProfileHeader ({ profile, isOwnProfile, onFollowToggle }) {
   if (!profile) return null;
-  
+  console.log(profile.profile_image)
   return (
     <div className="bg-[#0f0f0f] border border-[#1f1f1f] p-6">
       <div className="flex flex-col md:flex-row md:items-center gap-6">
         {/* Avatar */}
         <div className="w-20 h-20 bg-violet-700 flex items-center justify-center text-white text-4xl font-bold flex-shrink-0">
-          {profile.avatar ? (
-            <img src={profile.avatar} alt={profile.name} className="w-full h-full object-cover" />
+          {profile.profile_image ? (
+            <img src={profile.profile_image} alt={profile.name} className="w-full h-full " />
           ) : (
             profile.name?.charAt(0).toUpperCase()
           )}

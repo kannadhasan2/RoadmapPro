@@ -50,6 +50,7 @@ function Profile() {
     }
   };
 
+
   if (loading) {
     return (
       <div className="h-[calc(100vh-120px)] flex items-center justify-center gap-[8px] text-violet-700">
