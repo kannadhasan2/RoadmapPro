@@ -4,6 +4,7 @@ import { Users, Play, BookOpen, Route, Target, ArrowRight, Rocket, Route as Rout
 
 import GlitchText from "../components/ui/GlitchText";
 import ButtonHeading from "../components/ui/ButtonHeading";
+import Founder from "../components/common/Founder"
 
 const Home = () => {
   const navigate = useNavigate();
@@ -144,6 +145,15 @@ const Home = () => {
                </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-10 px-[12px] sm:px-6">
+        <div className="max-w-[1400px] mx-auto">
+            <div className="text-center">
+              <ButtonHeading text="The Founder" className="border-none text-[29px] font-extrabold " />
+            </div>
+            <Founder />
         </div>
       </section>
 
