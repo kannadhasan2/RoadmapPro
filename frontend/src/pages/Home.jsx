@@ -179,50 +179,54 @@ const Home = () => {
                 name: "AI_ROADMAPS", 
                 id: "MOD_01", 
                 title: "Personalized Learning Paths",
-                desc: "High-level goal decomposition into actionable steps. Monitors progress and adapts in real-time."
+                desc: "High-level goal decomposition into actionable steps. Monitors progress and adapts in real-time.",
+                link:"/ai-roadmap"
               },
               { 
                 icon: BookOpen, 
                 name: "SMART_COURSES", 
                 id: "MOD_02", 
                 title: "AI-Structured Courseware",
-                desc: "Automatic generation of syllabus, resources, and quizzes tailored to your skill gaps."
+                desc: "Automatic generation of syllabus, resources, and quizzes tailored to your skill gaps.",
+                link:"/ai-course"
               },
               { 
                 icon: Target, 
                 name: "AI_TUTOR", 
                 id: "MOD_03", 
                 title: "Context-Aware Assistance", 
-                desc: "Real-time help that understands your exact problem context without need for extensive prompting."
+                desc: "Real-time help that understands your exact problem context without need for extensive prompting.",
+                link:"/ai-tutor"
               },
               { 
                 icon: Users, 
                 name: "COMMUNITY", 
                 id: "MOD_04", 
                 title: "Collaborative Network",
-                desc: "Connect with peers on the same path. Share resources and compete on global leaderboards."
+                desc: "Connect with peers on the same path. Share resources and compete on global leaderboards.",
+                link:"/communities"
               },
-            ].map((f, i) => (
-              <div key={i} className="bg-[#0a0a0a] border border-[#222] p-8 hover:border-violet-700 transition-all group relative overflow-hidden">
+            ].map((tabs, i) => (
+              <Link to={tabs.link} key={i} className="bg-[#0a0a0a] border border-[#222] p-8 hover:border-violet-700 transition-all group relative overflow-hidden">
                 {/* Background Grid inside card */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:16px_16px]"></div>
                 
                 <div className="relative z-10 flex flex-col h-full justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-8">
-                       <span className="text-[12px] text-violet-700 font-mono">{f.name}</span>
-                       <f.icon size={20} className="text-[#666] group-hover:text-violet-700 transition-colors" />
+                       <span className="text-[12px] text-violet-700 font-mono">{tabs.name}</span>
+                       <tabs.icon size={20} className="text-[#666] group-hover:text-violet-700 transition-colors" />
                     </div>
-                    <h3 className="text-[24px] font-bold text-white mb-3">{f.title}</h3>
-                    <p className="text-[#888] text-[14px] leading-relaxed mb-8">{f.desc}</p>
+                    <h3 className="text-[24px] font-bold text-white mb-3">{tabs.title}</h3>
+                    <p className="text-[#888] text-[14px] leading-relaxed mb-8">{tabs.desc}</p>
                   </div>
                   
                   <div className="pt-6 border-t border-[#1a1a1a] group-hover:border-violet-700 flex items-center justify-between">
-                     <span className="text-[10px] text-[#444] font-mono tracking-widest">{f.id}</span>
+                     <span className="text-[10px] text-[#444] font-mono tracking-widest">{tabs.id}</span>
                      <div className="text-[10px] text-[#444] font-mono">STATUS: <span className="text-violet-700">ACTIVE</span></div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
