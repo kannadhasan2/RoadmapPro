@@ -5,6 +5,7 @@ import { Users, Play, BookOpen, Route, Target, ArrowRight, Rocket, Route as Rout
 import GlitchText from "../components/ui/GlitchText";
 import ButtonHeading from "../components/ui/ButtonHeading";
 import Founder from "../components/common/Founder"
+import RenderLogoSet from "../components/common/RenderLogoSet"
 
 const Home = () => {
   const navigate = useNavigate();
@@ -146,6 +147,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <RenderLogoSet />
       </section>
 
       <section className="py-10 px-[12px] sm:px-6">
