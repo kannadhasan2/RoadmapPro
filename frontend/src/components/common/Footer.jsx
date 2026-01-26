@@ -175,7 +175,7 @@ function Footer() {
         </div>
         
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between pt-6 border-t border-[#1a1a1a]">
+        <div className="flex flex-col md:flex-row items-center justify-between pt-6 border-t border-violet-700">
           <p className="text-[11px] text-white font-mono hover:text-violet-700 hover:text-[14px] flex items-center gap-[3px]">
             <Copyright size={14} strokeWidth={3} /> {currentYear} RoadmapPro. ALL RIGHTS RESERVED.
           </p>
