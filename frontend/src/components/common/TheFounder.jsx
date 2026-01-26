@@ -47,7 +47,7 @@ export default function TheFounder() {
 <div className="
   w-full relative
   max-[640px]:block min-[641px]:hidden
-aspect-[3/4]">
+aspect-[2.7/4]">
   <img
     src={kannadhasanMobileImage}
     alt="Thanish Rishi"

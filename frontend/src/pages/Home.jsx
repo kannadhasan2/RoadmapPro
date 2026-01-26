@@ -35,7 +35,6 @@ const Home = () => {
     navigate(`/roadmap?role=${encodeURIComponent(topic.trim())}&detail=${skillLevel.toLowerCase()}`);
   };
 
-  const title = "RoadmapPro Platform"
 
   return (
     <div className="min-h-screen bg-[#050505] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] text-white font-sans antialiased scroll-smooth selection:bg-violet-800 selection:text-white">
@@ -148,18 +147,20 @@ const Home = () => {
         <RenderLogoSet />
       </section>
 
-      <section className="py-0 px-[12px] sm:px-6">
+      <section className="py-0 px-[2px] ">
         <div className="max-w-[1400px] mx-auto">
             <div className="text-center">
               <ButtonHeading text="The Founder" className="border-none text-[29px] font-extrabold " />
             </div>
             <Kannadhasan />
-            <TheFounder />
+            <div className=" px-[12px]  sm:px-6">
+              <TheFounder />
+            </div>
         </div>
       </section>
 
       {/* ===== ECOSYSTEM GRID - 'Stealth Browser Infrastructure' Style ===== */}
-      <section className="py-24 px-[12px] sm:px-6">
+      <section className="py-12 px-[12px] sm:px-6">
         <div className="max-w-[1400px] mx-auto">
           {/* Header */}
           <div className="mb-12">
@@ -243,82 +244,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== PLATFORM DEMO - Code window with colored dots ===== */}
-      <section className="py-20 px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Code Box - macOS dots on LEFT (colored) */}
-            <div className="bg-[#0f0f0f] border border-[#1f1f1f] overflow-hidden">
-              <div className="flex items-center justify-between px-4 py-4 border-b border-[#1f1f1f]">
-                <div className="flex gap-2">
-                  <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>
-                  <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>
-                  <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>
-                </div>
-                <code className="text-[12px] font-mono text-violet-700">/RoadmapPro.JS</code>
-              </div>
-              <pre className="p-6 text-[13px] font-mono leading-[2] overflow-x-auto">
-                <span className="text-[#c678dd]">const</span> <span className="text-[#61afef]">roadmap</span> = <span className="text-[#c678dd]">await</span> roadmapPro.<span className="text-[#e5c07b]">generate</span>({`{`}
-                  topic: <span className="text-[#98c379]">"Full Stack Dev"</span>,
-                  level: <span className="text-[#98c379]">"beginner"</span>,
-                  duration: <span className="text-[#98c379]">"3 months"</span>
-                {`}`});
-
-                <span className="text-[#5c6370]">// That's your entire</span>
-                <span className="text-[#5c6370]">// learning infrastructure.</span>
-              </pre>
-            </div>
-
-            {/* Description */}
-            <div>
-              <div className="text-violet-700 text-[14px] font-bold tracking-[0.15em] mb-4 font-mono">[ ROADMAP ENGINE ]</div>
-              <h2 className="text-[38px] font-bold mb-6 leading-tight flex flex-wrap">
-                {title.split("").map((char, i) => (
-                  <span
-                    key={i}
-                    className="transition-colors duration-300"
-                    style={{
-                      animation: `violetWave 1.2s ease forwards infinite`,
-                      animationDelay: `${i * 100}ms`,
-                    }}
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </span>
-                ))}
-              </h2>
-              <p className="text-[#666] text-[15px] leading-[1.8] mb-8">
-                Create personalized learning paths with our AI-powered roadmap generator. Access structured courses, curated resources, and real-time AI tutoring support.</p>
-              <Link to="/ai-roadmap" className="text-violet-700 font-semibold text-[13px] flex items-center gap-2 hover:gap-3 transition-all tracking-wide">
-                TRY IT FREE <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== FEATURES GRID ===== */}
-      <section className="py-20  px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[
-              { label: "SYS: UPDATE_SERVICE", title: "ALWAYS_UP_TO_DATE", desc: "Latest models and learning paths applied automatically." },
-              { label: "NET: AUTO_SCALE", title: "INFINITE_SCALE", desc: "Run 1 task or 10,000. Zero provisioning required." },
-              { label: "MNG: FULL_SERVICE", title: "MANAGED_EVERYTHING", desc: "Sessions, files, cookies, downloads, proxies - all handled." },
-              { label: "SDK: TYPE_SAFE", title: "TYPE_SAFE_SDKS", desc: "Native Python & TypeScript support with full autocomplete." },
-              { label: "OPS: NO_OPS", title: "ZERO_MAINTENANCE", desc: "No Docker, Kubernetes, or browser management required." },
-              { label: "AUTH: SINGLE_KEY", title: "ONE_API_KEY", desc: "Access the entire cloud ecosystem with a single key." },
-            ].map((f, i) => (
-              <div key={i} className="relative bg-[#0f0f0f] border border-[#1f1f1f] p-7 transition-all duration-300 hover:border-violet-700">
-                <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-violet-700"></div>
-                <div className="absolute top-4 right-4 text-[11px] text-violet-700 tracking-[0.1em] font-mono">{f.label}</div>
-                <h3 className="font-bold text-[16px] tracking-wide mb-3 mt-2 pl-3">{f.title}</h3>
-                <p className="text-[13px] text-[#555] leading-relaxed pl-3">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ===== CTA SECTION ===== */}
       <section className="py-2 px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
         <div className="max-w-[1400px] mx-auto text-center">
@@ -351,8 +276,84 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ===== PLATFORM DEMO - Code window with colored dots ===== */}
+      <section className="py-20 px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Code Box - macOS dots on LEFT (colored) */}
+            <div className="bg-[#0f0f0f] border border-[#1f1f1f] overflow-hidden">
+              <div className="flex items-center justify-between px-4 py-4 border-b border-[#1f1f1f]">
+                <div className="flex gap-2">
+                  <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>
+                  <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>
+                  <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>
+                </div>
+                <code className="text-[12px] font-mono text-violet-700">/RoadmapPro.JS</code>
+              </div>
+              <pre className="p-6 text-[13px] font-mono leading-[2] overflow-x-auto">
+                <span className="text-[#c678dd]">const</span> <span className="text-[#61afef]">roadmap</span> = <span className="text-[#c678dd]">await</span> roadmapPro.<span className="text-[#e5c07b]">generate</span>({`{`}
+                  topic: <span className="text-[#98c379]">"Full Stack Dev"</span>,
+                  level: <span className="text-[#98c379]">"beginner"</span>,
+                  duration: <span className="text-[#98c379]">"3 months"</span>
+                {`}`});
+
+                <span className="text-[#5c6370]">// That's your entire</span>
+                <span className="text-[#5c6370]">// learning infrastructure.</span>
+              </pre>
+            </div>
+
+            {/* Description */}
+            <div>
+              <div className="text-violet-700 text-[14px] font-bold tracking-[0.15em] mb-4 font-mono">[ ROADMAP ENGINE ]</div>
+              <h2 className="text-[38px] font-bold mb-6 leading-tight flex flex-wrap">
+                {"RoadmapPro Platform".split("").map((char, i) => (
+                  <span
+                    key={i}
+                    className="transition-colors duration-300"
+                    style={{
+                      animation: `violetWave 1.2s ease forwards infinite`,
+                      animationDelay: `${i * 100}ms`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+              </h2>
+              <p className="text-[#666] text-[15px] leading-[1.8] mb-8">
+                Create personalized learning paths with our AI-powered roadmap generator. Access structured courses, curated resources, and real-time AI tutoring support.</p>
+              <Link to="/ai-roadmap" className="text-violet-700 font-semibold text-[13px] flex items-center gap-2 hover:gap-3 transition-all tracking-wide">
+                TRY IT FREE <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FEATURES GRID ===== */}
+      <section className="py-8  px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { label: "SYS: UPDATE_SERVICE", title: "ALWAYS_UP_TO_DATE", desc: "Latest models and learning paths applied automatically." },
+              { label: "NET: AUTO_SCALE", title: "INFINITE_SCALE", desc: "Run 1 task or 10,000. Zero provisioning required." },
+              { label: "MNG: FULL_SERVICE", title: "MANAGED_EVERYTHING", desc: "Sessions, files, cookies, downloads, proxies - all handled." },
+              { label: "SDK: TYPE_SAFE", title: "TYPE_SAFE_SDKS", desc: "Native Python & TypeScript support with full autocomplete." },
+              { label: "OPS: NO_OPS", title: "ZERO_MAINTENANCE", desc: "No Docker, Kubernetes, or browser management required." },
+              { label: "AUTH: SINGLE_KEY", title: "ONE_API_KEY", desc: "Access the entire cloud ecosystem with a single key." },
+            ].map((f, i) => (
+              <div key={i} className="relative bg-[#0f0f0f] border border-[#1f1f1f] p-7 transition-all duration-300 hover:border-violet-700">
+                <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-violet-700"></div>
+                <div className="absolute top-4 right-4 text-[11px] text-violet-700 tracking-[0.1em] font-mono">{f.label}</div>
+                <h3 className="font-bold text-[16px] tracking-wide mb-3 mt-2 pl-3">{f.title}</h3>
+                <p className="text-[13px] text-[#555] leading-relaxed pl-3">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== CHANGELOG ===== */}
-      <section className="py-24 px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
+      <section className="py-12 px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
         <div className="max-w-[1400px] mx-auto">
           <div className="flex items-center gap-2 mb-5">
             <ButtonHeading text="Latest_ChangeLog" className="border-none pl-0 mb-0 pb-0 uppercase" />

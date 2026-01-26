@@ -265,9 +265,9 @@ function AiTutor() {
               <button
                 type="submit"
                 disabled={!inputMessage.trim() || loading}
-                className="px-6 bg-violet-700 hover:bg-violet-500 border  border-violet-700 disabled:opacity-40 text-black rounded-lg transition-all flex items-center justify-center"
+                className="px-5 bg-violet-700 hover:bg-violet-500 border  border-violet-700 disabled:opacity-40 text-white rounded-lg transition-all flex items-center justify-center"
               >
-                <Send size={20} />
+                <Send size={26} />
               </button>
             </form>
           </div>

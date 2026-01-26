@@ -88,9 +88,9 @@ export default function Kannadhasan({ className = "" }) {
             to bottom,
             rgba(255,255,255,0.45) 0%,
             rgba(255,255,255,0.35) 30%,
-            rgba(255,255,255,0.22) 55%,
-            rgba(255,255,255,0.14) 75%,
-            rgba(255,255,255,0.10) 100%
+            rgb(0, 0, 0) 55%,
+            rgb(0, 0, 0) 75%,
+            rgb(0, 0, 0) 100%,rgb(0, 0, 0) ,rgb(0, 0, 0) 
           );
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -147,10 +147,12 @@ export default function Kannadhasan({ className = "" }) {
 
         /* ================= DESKTOP ================= */
         .desktop-words-container {
-          display: none;
+          display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        @media (min-width: 900px) {
+        @media (min-width: 300px) {
           .kannadhasan-text-container {
             display: none;
           }
@@ -199,17 +201,6 @@ export default function Kannadhasan({ className = "" }) {
         }
       `}</style>
 
-      {/* MOBILE / TABLET */}
-      <div className={`kannadhasan-text-container ${className}`}>
-        <div className="kannadhasan-wrapper">
-          <div className="kannadhasan-container">
-            <div className="kannadhasan-blur" />
-            <h1 className="kannadhasan-text">KANNADHASAN</h1>
-          </div>
-        </div>
-      </div>
-
-      {/* DESKTOP */}
       <div className={`desktop-words-container ${className}`}>
         <div className="kannadhasan-wrapper">
           <div className="kannadhasan-container">
