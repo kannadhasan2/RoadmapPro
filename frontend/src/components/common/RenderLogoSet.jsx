@@ -26,8 +26,8 @@ const GRADIENTS = {
     button: "linear-gradient(to right, #DB0C41, #FF2E50)",
     decorativeLeft: "linear-gradient(to right, transparent 0%, #E4B2F1 100%)",
     decorativeRight: "linear-gradient(to left, transparent 0%, #E4B2F1 100%)",
-    dividerLeft: "linear-gradient(90deg, #FFF 0%, #0D0D12 100%)",
-    dividerRight: "linear-gradient(90deg, #0D0D12 0%, #FFF 100%)",
+    dividerLeft: "linear-gradient(90deg, #3e19e4 30%, #121758 100%)",
+    dividerRight: "linear-gradient(90deg, #121758 0%, #3e19e4 100%)",
 };
 
 
@@ -86,7 +86,7 @@ const LogoMarqueeSection= () => {
       <div className="flex items-center justify-center w-full sm:px-3 px-4 mb-2 sm:mb-0">
         {/* Left Line */}
         <div
-          className="h-[1px] flex-1 
+          className="h-[2px] flex-1 
             max-w-[30%] 
             sm:max-w-[180px] 
             md:max-w-[250px] 
@@ -118,7 +118,7 @@ const LogoMarqueeSection= () => {
 
         {/* Right Line */}
         <div
-          className="h-[1px] flex-1 
+          className="h-[2px] flex-1 
             max-w-[30%] 
             sm:max-w-[180px] 
             md:max-w-[250px] 
@@ -131,11 +131,7 @@ const LogoMarqueeSection= () => {
       {/* Marquee */}
       <div className="w-full mb-2">
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 md:px-10 lg:px-14 xl:px-[85px]">
-          <div className="relative w-full overflow-hidden py-2 px-2 md:py-6 md:px-8 group">
-            {/* Edge fades (keep these classes in your global CSS) */}
-            <div className="absolute left-0 top-0 w-4 sm:w-8 md:w-32 lg:w-56 h-full z-10 pointer-events-none fade-edge-left" />
-            <div className="absolute right-0 top-0 w-4 sm:w-8 md:w-32 lg:w-56 h-full z-10 pointer-events-none fade-edge-right" />
-
+          <div className="w-full overflow-hidden py-2 px-2 md:py-6 md:px-8 group">
             <div className="w-full overflow-hidden">
               <div className="flex gap-8 sm:gap-12 md:gap-16 lg:gap-20 animate-scroll-horizontal w-max">
                 {Array.from({ length: 6 }, (_, setIndex) => renderLogoSet(setIndex))}
