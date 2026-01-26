@@ -4,7 +4,8 @@ import { Users, Play, BookOpen, Route, Target, ArrowRight, Rocket, Route as Rout
 
 import GlitchText from "../components/ui/GlitchText";
 import ButtonHeading from "../components/ui/ButtonHeading";
-import Founder from "../components/common/Founder"
+import Kannadhasan from "../components/common/Kannadhasan";
+import TheFounder from "../components/common/TheFounder";
 import RenderLogoSet from "../components/common/RenderLogoSet"
 
 const Home = () => {
@@ -46,7 +47,7 @@ const Home = () => {
           {/* Top Tag */}
           <div className="flex justify-center mb-6 opacity-0 animate-fade-in" style={{animationDelay: '0.1s', animationFillMode: 'forwards'}}>
              <div className="inline-flex items-center gap-3 text-[16px] font-bold text-violet-700 font-mono tracking-[0.2em] font-semibold uppercase">
-                <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
+                <span className="w-2 h-2 rounded-sm bg-violet-700 rounded-full"></span>
                 [ Let's Rise Together ]
              </div>
           </div>
@@ -57,7 +58,7 @@ const Home = () => {
             <div className="flex items-center justify-center gap-6 my-1">
                {/* Word Cycling Glitch Text - Solid Orange */}
                <GlitchText 
-                 words={["ACCELERATE", "AUTOMATE", "OPTIMIZE"]} 
+                 words={["ACCELERATE", "AUTOMATE", "OPTIMIZE","STRUCTURE"]} 
                  interval={3000}
                  className="text-violet-700 relative z-10"
                />
@@ -80,7 +81,7 @@ const Home = () => {
 
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-2 border-b border-[#1a1a1a]">
-               <div className="text-[12px] text-violet-700 font-mono tracking-widest uppercase">user@RoadmapPro:~/new_task</div>
+               <div className="text-[12px] text-violet-700 font-mono tracking-widest uppercase">user@RoadmapPro:~</div>
                <div className="flex gap-2">
                   <div className="w-[10px] h-[10px] rounded-sm bg-violet-700 border border-violet-700"></div>
                   <div className="w-[10px] h-[10px] rounded-sm bg-violet-700 border border-violet-700"></div>
@@ -94,7 +95,7 @@ const Home = () => {
                   value={topic}
                   onChange={(e) => setTopic(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleGenerate()}
-                  placeholder="Describe the skill you want to master..."
+                  placeholder="Tell us what you want to learn..."
                   rows={2}
                   className="w-full bg-transparent text-[#ddd] text-[22px] placeholder:text-[#444] focus:outline-none resize-none font-mono mb-16 leading-relaxed"
                />
@@ -104,16 +105,14 @@ const Home = () => {
                   <div className="flex gap-6 w-full md:w-auto">
                      {/* Control 1 */}
                      <div className="flex-1 md:flex-none">
-                        <label className="block text-[10px] text-violet-700 font-bold font-mono uppercase tracking-widest mb-2 text-left px-1">SKILL_LEVEL</label>
+                        <label className="block text-[10px] text-violet-700 font-bold font-mono uppercase tracking-widest mb-2 text-left px-1">DETAIL_LEVEL</label>
                         <div className="relative bg-[#0d0d0d] border border-[#222] px-4 py-2.5 w-full md:w-36 flex items-center justify-between hover:border-[#333] transition-colors cursor-pointer group/select">
                            <select 
                               value={skillLevel} 
                               onChange={(e) => setSkillLevel(e.target.value)} 
                               className="appearance-none bg-transparent text-[#999] text-[11px] font-mono w-full focus:outline-none cursor-pointer group-hover/select:text-white transition-colors"
                            >
-                              <option value="Beginner">Beginner</option>
                               <option value="Standard">Standard</option>
-                              <option value="Advanced">Advanced</option>
                            </select>
                            <ChevronDown size={12} className="text-[#333]" />
                         </div>
@@ -128,7 +127,6 @@ const Home = () => {
                               className="appearance-none bg-transparent text-[#999] text-[11px] font-mono w-full focus:outline-none cursor-pointer group-hover/select:text-white transition-colors"
                            >
                               <option value="Roadmap">Roadmap</option>
-                              <option value="Course">Course</option>
                            </select>
                            <ChevronDown size={12} className="text-[#333]" />
                         </div>
@@ -150,12 +148,13 @@ const Home = () => {
         <RenderLogoSet />
       </section>
 
-      <section className="py-10 px-[12px] sm:px-6">
+      <section className="py-0 px-[12px] sm:px-6">
         <div className="max-w-[1400px] mx-auto">
             <div className="text-center">
               <ButtonHeading text="The Founder" className="border-none text-[29px] font-extrabold " />
             </div>
-            <Founder />
+            <Kannadhasan />
+            <TheFounder />
         </div>
       </section>
 
@@ -190,32 +189,32 @@ const Home = () => {
                 icon: Route, 
                 name: "AI_ROADMAPS", 
                 id: "MOD_01", 
-                title: "Personalized Learning Paths",
-                desc: "High-level goal decomposition into actionable steps. Monitors progress and adapts in real-time.",
+                title: "Personalized paths from goal to mastery",
+                desc: "Breaks high-level goals into actionable steps and adapts as you progress.",
                 link:"/ai-roadmap"
               },
               { 
                 icon: BookOpen, 
                 name: "SMART_COURSES", 
                 id: "MOD_02", 
-                title: "AI-Structured Courseware",
-                desc: "Automatic generation of syllabus, resources, and quizzes tailored to your skill gaps.",
+                title: "AI-curated course structure",
+                desc: "Creates personalized syllabi, resources, and quizzes to target your skill gaps.",
                 link:"/ai-course"
               },
               { 
                 icon: Target, 
                 name: "AI_TUTOR", 
                 id: "MOD_03", 
-                title: "Context-Aware Assistance", 
-                desc: "Real-time help that understands your exact problem context without need for extensive prompting.",
+                title: "Context-driven AI guidance", 
+                desc: "Understands your problem context instantly and assists in real time, accurately.",
                 link:"/ai-tutor"
               },
               { 
                 icon: Users, 
                 name: "COMMUNITY", 
                 id: "MOD_04", 
-                title: "Collaborative Network",
-                desc: "Connect with peers on the same path. Share resources and compete on global leaderboards.",
+                title: "A collaborative ecosystem for learners",
+                desc: "Connect with peers on the same path, share resources, and compete worldwide through a collaborative learning network.",
                 link:"/communities"
               },
             ].map((tabs, i) => (
@@ -288,8 +287,7 @@ const Home = () => {
                 ))}
               </h2>
               <p className="text-[#666] text-[15px] leading-[1.8] mb-8">
-                Build personalized learning paths with our AI-powered roadmap generator. Get structured courses, curated resources, and real-time AI tutoring support.
-              </p>
+                Create personalized learning paths with our AI-powered roadmap generator. Access structured courses, curated resources, and real-time AI tutoring support.</p>
               <Link to="/ai-roadmap" className="text-violet-700 font-semibold text-[13px] flex items-center gap-2 hover:gap-3 transition-all tracking-wide">
                 TRY IT FREE <ArrowRight size={14} />
               </Link>

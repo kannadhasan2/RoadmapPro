@@ -1,33 +1,12 @@
-import React from "react";
-// Gradient definitions
+import React from 'react'
+
 const COLORS = {
-    background: "#0D0D12",
-    white: "#FFF",
-    redAccent: "#FF0020",
-    borderColor: "#4B131A",
     textLight: "#FDFDFD",
 };
 
 const GRADIENTS = {
-    lineHorizontal: `linear-gradient(
-    90deg,
-    rgba(13,13,18,0) 15%,
-    rgba(255,255,255,0.18) 50%,
-    rgba(13,13,18,0) 85%
-  )`,
-    lineVertical: `linear-gradient(
-    180deg,
-    rgba(13,13,18,0) 15%,
-    rgba(255,255,255,0.18) 50%,
-    rgba(13,13,18,0) 85%
-  )`,
-    introducing: "linear-gradient(90deg, #FFF -8.98%, #FDA5E1 99.7%)",
-    subtitle: "linear-gradient(180deg, #FFF 11.76%, #FA9CD6 160.12%)",
-    button: "linear-gradient(to right, #DB0C41, #FF2E50)",
-    decorativeLeft: "linear-gradient(to right, transparent 0%, #E4B2F1 100%)",
-    decorativeRight: "linear-gradient(to left, transparent 0%, #E4B2F1 100%)",
-    dividerLeft: "linear-gradient(90deg, #3e19e4 30%, #121758 100%)",
-    dividerRight: "linear-gradient(90deg, #121758 0%, #3e19e4 100%)",
+    dividerLeft: "linear-gradient(90deg, #5c17dd 30%, #121758 100%)",
+    dividerRight: "linear-gradient(90deg, #121758 0%, #5c17dd 100%)",
 };
 
 
@@ -40,13 +19,13 @@ import metallb from "../../assets/logo/metalb.svg";
 import microsoft from "../../assets/logo/microsoft logo.svg";
 
 const logos = [
-  { src: instagram, alt: "Instagram" },
-  { src: google, alt: "Google" },
-  { src: amazon, alt: "Amazon" },
   { src: applePay, alt: "Apple Pay" },
   { src: linkedin, alt: "LinkedIn" },
   { src: metallb, alt: "MetalLB" },
   { src: microsoft, alt: "Microsoft" },
+  { src: instagram, alt: "Instagram" },
+  { src: google, alt: "Google" },
+  { src: amazon, alt: "Amazon" },  
 ];
 
 const renderLogoSet = (setIndex) =>
@@ -58,7 +37,7 @@ const renderLogoSet = (setIndex) =>
       <img
         src={logo.src}
         alt={logo.alt}
-        className="h-5 sm:h-6 md:h-7 lg:h-8 object-contain opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300"
+        className="h-5  sm:h-6 md:h-7 lg:h-8 object-contain opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300"
       />
     </div>
   ));

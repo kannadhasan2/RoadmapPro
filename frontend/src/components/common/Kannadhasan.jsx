@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export default function MeetRishiText({ className = "" }) {
+export default function Kannadhasan({ className = "" }) {
   const words = ["KANNADHASAN"];
   const [hoveredLetter, setHoveredLetter] = useState(null);
   const [fontSize, setFontSize] = useState(240);
@@ -115,7 +115,7 @@ export default function MeetRishiText({ className = "" }) {
             font-weight: 400;
           }
           .kannadhasan-blur {
-            height: 60px;
+            height: 90px;
             bottom: -6px;
           }
         }
@@ -168,7 +168,7 @@ export default function MeetRishiText({ className = "" }) {
 
           .letter-wrapper {
             cursor: pointer;
-            line-height: 0.8;
+            line-height: 0.9;
           }
 
           .letter {
