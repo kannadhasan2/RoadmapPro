@@ -92,7 +92,7 @@ function AiTutor() {
                 [ AI TUTOR ]
               </div>
               <h1 className="text-[48px] font-bold text-white mb-4 leading-tight">
-                {"AI Tutor".split("").map((char, i) => (
+                {"Skill Mentor".split("").map((char, i) => (
                     <span
                       key={i}
                       className="transition-colors duration-300"

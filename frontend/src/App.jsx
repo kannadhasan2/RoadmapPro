@@ -17,7 +17,7 @@ const Dashboard = lazy(() => import("./pages/Dashboard.jsx"));
 const PostDetail = lazy(() => import("./pages/PostDetail.jsx"));
 
 const AiCourse = lazy(() => import("./pages/AiCourse.jsx"));
-const AiTutor = lazy(() => import("./pages/AiTutor.jsx"));
+const AiTutor = lazy(() => import("./pages/SkillMentor.jsx"));
 const AiRoadmap = lazy(() => import("./pages/AiRoadmap.jsx"));
 const RoadmapGenerator = lazy(() => import("./pages/RoadmapGenerator.jsx"));
 const GuideGenerator = lazy(() => import("./pages/GuideGenerator.jsx"));
@@ -87,7 +87,7 @@ function App() {
             }
           />
           <Route
-            path="/ai-tutor"
+            path="/skill-mentor"
             element={
               <ProtectedRoute>
                 <AiTutor />

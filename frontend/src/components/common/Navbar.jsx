@@ -55,7 +55,7 @@ function Navbar() {
           <Link to="/" className={`hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4 ${location.pathname === "/" && "underline text-white"}`}>HOME</Link>
           <Link to="/ai-roadmap" className={`hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4 ${location.pathname.includes("/ai-roadmap") && "underline text-white"}`}>ROADMAPS</Link>
           <Link to="/videos" className={`hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4 ${(location.pathname === "/videos" || location.pathname.includes("posts")  )&& "underline text-white"}`}>VIDEOS</Link>
-          <Link to="/ai-tutor" className={`hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4 ${location.pathname === "/ai-tutor" && "underline text-white"}`}>AI_TUTOR</Link>
+          <Link to="/skill-mentor" className={`hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4 ${location.pathname === "/skill-mentor" && "underline text-white"}`}>SkillMentor</Link>
           <Link to="/communities" className={`hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4 ${location.pathname.includes("/communities") && "underline text-white"}`}>COMMUNITIY</Link>
         </div>
         
@@ -107,7 +107,7 @@ function Navbar() {
                       <Link to="/" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">HOME</Link>
                       <Link to="/ai-roadmap" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">ROADMAPS</Link>
                       <Link to="/videos" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">VIDEOS</Link>
-                      <Link to="/ai-tutor" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">AI_TUTOR</Link>
+                      <Link to="/skill-mentor" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">SkillMentor</Link>
                       <Link to="/communities" className="hover:text-white transition-colors hover:underline decoration-violet-700 decoration-4 underline-offset-4">COMMUNITIES</Link>
                       
                     </div>
