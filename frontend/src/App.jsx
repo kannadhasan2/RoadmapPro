@@ -1,5 +1,5 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import { Navigate, Route, Routes,useLocation } from "react-router-dom";
+import { Suspense, lazy,useEffect } from "react";
 import MainLayout from "./layout/MainLayout.jsx";
 import ProtectedRoute from "./components/auth/ProtectedRoute.jsx";
 import Loader from "./components/common/Loader.jsx";
@@ -25,9 +25,19 @@ const CourseGenerator = lazy(() => import("./pages/CourseGenerator.jsx"));
 const Videos = lazy(() => import("./pages/Videos.jsx"));
 const Paths = lazy(() => import("./pages/Paths.jsx"));
 
+// ScrollToTop.jsx
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 function App() {
   return (
     <Suspense fallback={<Loader />}>
+      <ScrollToTop />
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
