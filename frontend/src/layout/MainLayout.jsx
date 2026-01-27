@@ -8,7 +8,11 @@ function MainLayout() {
   const isHomePage = location.pathname === "/";
 
   return (
-    <div className="min-h-screen relative font-sans flex flex-col bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-[#050505]
+  bg-[radial-gradient(circle_at_50%_60%,#7c3aed20,transparent_60%),radial-gradient(#ffffff08_2px,transparent_2px)]
+  bg-[size:100%_100%,12px_12px]
+  text-white font-sans antialiased scroll-smooth
+  selection:bg-violet-800 selection:text-white">
       {/* Navbar represents the global navigation */}
       <Navbar />
       

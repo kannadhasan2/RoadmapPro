@@ -65,7 +65,7 @@ function Communities() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] py-12 px-6">
+    <div className="min-h-screen bg-transparent py-12 px-6">
       <div className="max-w-[1200px] mx-auto">
         
         {/* Header */}

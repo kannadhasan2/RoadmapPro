@@ -56,7 +56,7 @@ function Footer() {
               <span className="text-white font-bold text-[16px] tracking-wide">RoadmapPro</span>
             </div>
             <p className="text-[13px] text-[#555] leading-relaxed mb-4">
-              AI-powered learning platform that generates personalized roadmaps, courses, and provides intelligent tutoring.
+              AI-powered learning platform creating custom roadmaps, curated courses, and intelligent guidance.
             </p>
             {/* Social Icons */}
             <div className="flex items-center gap-3">

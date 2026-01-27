@@ -110,8 +110,12 @@ function AiRoadmap() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] selection:bg-violet-700 selection:text-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] py-12 px-6">
-      <div className="max-w-[1400px] mx-auto">
+    <div className="min-h-screen bg-[#050505]
+  bg-[radial-gradient(circle_at_50%_60%,#7c3aed20,transparent_60%),radial-gradient(#ffffff08_2px,transparent_2px)]
+  bg-[size:100%_100%,12px_12px]
+  text-white font-sans antialiased scroll-smooth
+  selection:bg-violet-800 selection:text-white">
+     <div className="max-w-[1400px] mx-auto">
         
         {/* Header */}
         <div className="text-center mb-12">

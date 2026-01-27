@@ -80,7 +80,7 @@ function AiTutor() {
   ];
 
   return (
-    <div className="h-[calc(100vh-64px)] bg-[#0a0a0a]  flex flex-col">
+    <div className="h-[calc(100vh-64px)] bg-transparent  flex flex-col">
       <div className="max-w-[900px] mx-auto w-full h-full flex flex-col p-6">
         
         {messages.length === 0 ? (
@@ -114,7 +114,7 @@ function AiTutor() {
             <div className="max-w-[600px] w-full mx-auto mb-12">
               <div className="bg-[#111] border border-[#2a2a2a]">
                 <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a]">
-                  <code className="text-[12px] text-violet-700 tracking-wide font-mono">USER@EDUVERSE:~/TUTOR</code>
+                  <code className="text-[12px] text-violet-700 tracking-wide font-mono">USER@ROADMAPPRO:~/MENTOR</code>
                   <div className="flex gap-2">
                     <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>
                     <div className="w-[10px] h-[10px] rounded-sm bg-violet-700"></div>

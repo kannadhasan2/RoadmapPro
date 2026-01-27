@@ -46,7 +46,7 @@ function Videos() {
     : safePosts.filter(p => p.subject === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] py-8 px-6">
+    <div className="min-h-screen bg-transparent py-8 px-6">
       <div className="max-w-[1400px] mx-auto">
         
         {/* Header */}

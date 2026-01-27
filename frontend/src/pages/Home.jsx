@@ -37,7 +37,12 @@ const Home = () => {
 
 
   return (
-    <div className="min-h-screen bg-[#050505] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] text-white font-sans antialiased scroll-smooth selection:bg-violet-800 selection:text-white">
+   <div className="min-h-screen bg-[#050505]
+  bg-[radial-gradient(circle_at_50%_66%,#7c3aed20,transparent_40%),radial-gradient(#ffffff08_2px,transparent_2px)]
+  bg-[size:100%_100%,12px_12px]
+  text-white font-sans antialiased scroll-smooth
+  selection:bg-violet-800 selection:text-white">
+
 
       {/* ===== HERO SECTION ===== */}
       <section className="pt-12 pb-20 px-[12px] sm:px-[24px] relative">
@@ -73,13 +78,13 @@ const Home = () => {
           {/* Terminal Box - Exact 'Browser Use' Replica */}
           <div className="w-full max-w-[900px] mx-auto bg-[#050505] border border-[#222] relative group opacity-0 animate-fade-in shadow-2xl" style={{animationDelay: '0.4s', animationFillMode: 'forwards'}}>
             {/* Corners - White crop marks */}
-            <div className="absolute -top-[1px] -left-[1px] w-3 h-3 border-t border-l border-[#444]"></div>
-            <div className="absolute -top-[1px] -right-[1px] w-3 h-3 border-t border-r border-[#444]"></div>
-            <div className="absolute -bottom-[1px] -left-[1px] w-3 h-3 border-b border-l border-[#444]"></div>
-            <div className="absolute -bottom-[1px] -right-[1px] w-3 h-3 border-b border-r border-[#444]"></div>
+            <div className="absolute -top-[1px] -left-[1px] w-6 h-6 border-t border-l border-violet-700"></div>
+            <div className="absolute -top-[1px] -right-[1px] w-6 h-6 border-t border-r border-violet-700"></div>
+            <div className="absolute -bottom-[1px] -left-[1px] w-6 h-6 border-b border-l border-violet-700"></div>
+            <div className="absolute -bottom-[1px] -right-[1px] w-6 h-6 border-b border-r border-violet-700"></div>
 
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-2 border-b border-[#1a1a1a]">
+            <div className="flex items-center justify-between px-6 py-2 border-b border-[#222]">
                <div className="text-[12px] text-violet-700 font-mono tracking-widest uppercase">user@RoadmapPro:~</div>
                <div className="flex gap-2">
                   <div className="w-[10px] h-[10px] rounded-sm bg-violet-700 border border-violet-700"></div>
@@ -96,11 +101,11 @@ const Home = () => {
                   onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleGenerate()}
                   placeholder="Tell us what you want to learn..."
                   rows={2}
-                  className="w-full bg-transparent text-[#ddd] text-[22px] placeholder:text-[#444] focus:outline-none resize-none font-mono mb-16 leading-relaxed"
+                  className="w-full bg-transparent text-[#ddd] text-[22px] placeholder:text-gray focus:outline-none resize-none font-mono mb-16 leading-relaxed"
                />
                
                {/* Bottom Controls - Dark Boxes */}
-               <div className="flex flex-col md:flex-row items-end justify-between gap-6 border-t border-[#1a1a1a] pt-6">
+               <div className="flex flex-col md:flex-row items-end justify-between gap-6 border-t border-violet-900 pt-6">
                   <div className="flex gap-6 w-full md:w-auto">
                      {/* Control 1 */}
                      <div className="flex-1 md:flex-none">
@@ -138,7 +143,7 @@ const Home = () => {
                      disabled={!topic.trim()}
                      className="bg-violet-700 hover:bg-violet-600 active:translate-y-0.5 text-white font-extrabold text-[15px] px-6 py-3.5 font-mono tracking-wider flex items-center gap-2 transition-all w-full md:w-auto justify-center uppercase"
                   >
-                     <Play size={10} fill="currentColor" /> RUN FOR FREE
+                     <Play size={10} fill="currentColor" /> START FOR FREE
                   </button>
                </div>
             </div>
@@ -166,7 +171,7 @@ const Home = () => {
           <div className="mb-12">
              <ButtonHeading text="Infrastructure" className="border-none pl-0 pb-0 mb-0 uppercase" />
              <h2 className="text-[38px] font-bold mb-6 leading-tight flex flex-wrap">
-                {"Stealth Learning Infrastructure".split("").map((char, i) => (
+                {"The Invisible Backbone of Learning".split("").map((char, i) => (
                   <span
                     key={i}
                     className="transition-colors duration-300"
@@ -219,7 +224,7 @@ const Home = () => {
                 link:"/communities"
               },
             ].map((tabs, i) => (
-              <Link to={tabs.link} key={i} className="bg-[#0a0a0a] border border-[#222] px-8 py-5 hover:border-violet-700 transition-all group relative overflow-hidden">
+              <Link to={tabs.link} key={i} className="bg-[#0a0a0a] border  px-8 py-5 border-violet-900 transition-all group relative overflow-hidden">
                 {/* Background Grid inside card */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:16px_16px]"></div>
                 
@@ -249,7 +254,7 @@ const Home = () => {
         <div className="max-w-[1400px] mx-auto text-center">
           <div className="text-violet-700 text-[14px] font-bold tracking-[0.15em] mb-4 font-mono">[ START LEARNING ]</div>
               <h2 className="text-[38px] font-bold mb-6 leading-tight flex flex-wrap justify-center">
-                {'Custom Learning Path for Your Goals'.split("").map((char, i) => (
+                {'Goal-Driven Learning, Crafted Just for You'.split("").map((char, i) => (
                   <span
                     key={i}
                     className="transition-colors duration-300"
@@ -263,11 +268,11 @@ const Home = () => {
                 ))}
               </h2>
           <p className="text-[#555] text-[15px] max-w-[480px] mx-auto mb-12">
-            Whether you're learning to code, preparing for interviews, or mastering a new technology.
+            Whether you’re starting with code, leveling up for interviews, or conquering new tech — faster, smarter, and with clarity.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/ai-roadmap" className="px-10 py-4 bg-violet-700 hover:bg-violet-500 text-white font-bold text-[13px] flex items-center justify-center gap-2 transition-all tracking-wide">
-              <Rocket size={16} /> START FOR FREE
+              <Rocket size={16} /> START LEARNING
             </Link>
             <Link to="/communities" className="px-10 py-4 border border-[#333] hover:border-violet-700 text-white font-semibold text-[13px] flex items-center justify-center gap-2 transition-all tracking-wide">
               <Users size={16} /> JOIN COMMUNITY
@@ -292,21 +297,20 @@ const Home = () => {
               </div>
               <pre className="p-6 text-[13px] font-mono leading-[2] overflow-x-auto">
                 <span className="text-[#c678dd]">const</span> <span className="text-[#61afef]">roadmap</span> = <span className="text-[#c678dd]">await</span> roadmapPro.<span className="text-[#e5c07b]">generate</span>({`{`}
-                  topic: <span className="text-[#98c379]">"Full Stack Dev"</span>,
-                  level: <span className="text-[#98c379]">"beginner"</span>,
-                  duration: <span className="text-[#98c379]">"3 months"</span>
+                  topic: <span className="text-[#98c379]">"Software Developer"</span>,
+                  level: <span className="text-[#98c379]">"advanced"</span>,
+                  duration: <span className="text-[#98c379]">"6 months"</span>
                 {`}`});
 
-                <span className="text-[#5c6370]">// That's your entire</span>
-                <span className="text-[#5c6370]">// learning infrastructure.</span>
+                <span className="text-[#5c6370]">// One call. A complete learning system.</span>
               </pre>
             </div>
 
             {/* Description */}
             <div>
-              <div className="text-violet-700 text-[14px] font-bold tracking-[0.15em] mb-4 font-mono">[ ROADMAP ENGINE ]</div>
+              <div className="text-violet-700 text-[14px] font-bold tracking-[0.15em] mb-4 font-mono">[ AI PATH BUILDER ]</div>
               <h2 className="text-[38px] font-bold mb-6 leading-tight flex flex-wrap">
-                {"RoadmapPro Platform".split("").map((char, i) => (
+                {"RoadmapPro AI Platform".split("").map((char, i) => (
                   <span
                     key={i}
                     className="transition-colors duration-300"
@@ -320,9 +324,9 @@ const Home = () => {
                 ))}
               </h2>
               <p className="text-[#666] text-[15px] leading-[1.8] mb-8">
-                Create personalized learning paths with our AI-powered roadmap generator. Access structured courses, curated resources, and real-time AI tutoring support.</p>
+                Design custom learning journeys with our AI roadmap generator. Access structured courses, handpicked resources, and live AI support.</p>
               <Link to="/ai-roadmap" className="text-violet-700 font-semibold text-[13px] flex items-center gap-2 hover:gap-3 transition-all tracking-wide">
-                TRY IT FREE <ArrowRight size={14} />
+                START FOR FREE <ArrowRight size={14} />
               </Link>
             </div>
           </div>
