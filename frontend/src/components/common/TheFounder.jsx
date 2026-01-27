@@ -18,7 +18,7 @@ export default function TheFounder() {
         <div className="
           relative mx-auto w-full lg:max-w-[1352px] z-10 rounded-2xl
           bg-violet-700/5 border border-violet-900 overflow-hidden
-          max-[640px]:border-none min-[641px]:max-[1024px]:border-none
+          max-[640px]:border-none 
           /* Adjust top margin for different breakpoints */
           max-[640px]:mt-[-0px]
           min-[641px]:max-[1024px]:mt-[-0px]
@@ -46,8 +46,8 @@ export default function TheFounder() {
 
 <div className="
   w-full relative
-  max-[640px]:block min-[641px]:hidden
-aspect-[2.7/4]">
+  max-[640px]:block min-[641px]:hidden aspect-[2.6/4]
+min-[420px]:aspect-[2.9/4]">
   <img
     src={kannadhasanMobileImage}
     alt="Thanish Rishi"
@@ -66,7 +66,7 @@ aspect-[2.7/4]">
                 
                 {/* Mid-range Image (641-830px) */}
                 <div className="
-                  w-full relative aspect-[4/4]
+                  w-full relative aspect-[3.2/4]
                   hidden min-[641px]:flex min-[831px]:hidden
                 ">
                   <img
@@ -140,7 +140,7 @@ aspect-[2.7/4]">
                 min-[641px]:max-[831px]:bg-[#0D0D12]
                 min-[641px]:max-[830px]:border-0  
                 min-[641px]:max-[830px]:rounded-[14px]
-                min-[641px]:max-[830px]:p-[4px]
+                min-[641px]:max-[830px]:p-[8px]
                 /* Reset for larger screens (831px+) */
                 min-[831px]:bg-transparent
                 min-[831px]:border-0
