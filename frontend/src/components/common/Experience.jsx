@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Sparkles} from "lucide-react";
 
 
-
 function RoadmapProLogo({ className }) {
   return (
     <div className={`h-[22px] w-[22px] p-[3px] rounded-[9px] border border-[3px] border-violet-700 ${className}`}>
@@ -68,7 +67,7 @@ function Experience({ className, variant = 'small', data, position = 'center' })
           </div>
           
           <div className="side-content-section">
-            <div className="side-title-wrapper">
+            <div className="side-title-wrapper ">
               <p className="side-card-title">{displayTitle}</p>
               <div className="side-bottom-logo">
                 <RoadmapProLogo className="w-full h-full" />
@@ -703,8 +702,8 @@ export default function Experience02({ className }) {
   }
 
   .center-logo-container {
-    width: 58px;
-    height: 14px;
+    width: 25px;
+    height: 25px;
     flex-shrink: 0;
   }
 
@@ -811,8 +810,8 @@ export default function Experience02({ className }) {
 
   /* Side bottom logo */
   .side-bottom-logo {
-    width: 58px;
-    height: 14px;
+    width:25px;
+    height: 25px;
     flex-shrink: 0;
     margin-top: auto;
   }
@@ -935,7 +934,7 @@ export default function Experience02({ className }) {
 
       {/* Progress Bar */}
       <div className="progress-container ">
-        <div className="mobile-progress">
+        <div className="mobile-progress mt-2">
           <div className="progress-bar">
             <div
               key={key}
@@ -947,8 +946,8 @@ export default function Experience02({ className }) {
           </div>
         </div>
         
-        <div className="tablet-desktop-progress">
-          <div className="progress-bar">
+        <div className="tablet-desktop-progress ">
+          <div className="progress-bar ">
             <div
               key={key}
               className="progress-fill"

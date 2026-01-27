@@ -135,6 +135,7 @@ export default function Kannadhasan({ className = "" }) {
           .kannadhasan-text {
             font-size: 110px;
             font-weight: 400;
+            font-family: "Cal Sans";
           }
         }
 
@@ -152,7 +153,7 @@ export default function Kannadhasan({ className = "" }) {
             align-items: center;
         }
 
-        @media (min-width: 300px) {
+        @media (min-width: 200px) {
           .kannadhasan-text-container {
             display: none;
           }
