@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 
 export default function Kannadhasan({ className = "" }) {
@@ -74,76 +72,6 @@ export default function Kannadhasan({ className = "" }) {
           z-index: 2;
           pointer-events: none;
           filter: blur(12px);
-        }
-
-        /* ================= MOBILE / TABLET TEXT ================= */
-        .kannadhasan-text {
-          font-family: "Cal Sans", sans-serif;
-          font-weight: 600;
-          white-space: nowrap;
-          line-height: 0.85;
-          position: relative;
-          z-index: 2;
-          background: linear-gradient(
-            to bottom,
-            rgba(255,255,255,0.45) 0%,
-            rgba(255,255,255,0.35) 30%,
-            rgb(0, 0, 0) 55%,
-            rgb(0, 0, 0) 75%,
-            rgb(0, 0, 0) 100%,rgb(0, 0, 0) ,rgb(0, 0, 0) 
-          );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          text-align: center;
-          display: inline-block;
-        }
-
-        @media (max-width: 700px) {
-          .kannadhasan-text {
-            font-size: clamp(40px, 12vw, 100px);
-            font-weight: 500;
-          }
-          .kannadhasan-blur {
-            height: clamp(30px, 8vw, 50px);
-            bottom: clamp(-3px, -0.8vw, -5px);
-          }
-        }
-
-        @media (min-width: 701px) and (max-width: 800px) {
-          .kannadhasan-text {
-            font-size: 86px;
-            font-weight: 400;
-          }
-          .kannadhasan-blur {
-            height: 90px;
-            bottom: -6px;
-          }
-        }
-
-        @media (min-width: 801px) and (max-width: 900px) {
-          .kannadhasan-text {
-            font-size: 100px;
-            font-weight: 400;
-          }
-          .kannadhasan-blur {
-            height: 60px;
-            bottom: -6px;
-          }
-        }
-
-        @media (min-width: 900px) and (max-width: 980px) {
-          .kannadhasan-text {
-            font-size: 110px;
-            font-weight: 400;
-            font-family: "Cal Sans";
-          }
-        }
-
-        @media (min-width: 980px) and (max-width: 1024px) {
-          .kannadhasan-text {
-            font-size: 120px;
-            font-weight: 400;
-          }
         }
 
         /* ================= DESKTOP ================= */
