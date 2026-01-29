@@ -6,7 +6,7 @@ function Upload () {
       <header className="space-y-2 text-center">
         <p className="text-sm uppercase tracking-wide text-violet-700 font-bold">&gt; _Share knowledge</p>
         <h1 className="text-[48px] font-bold text-white mb-4 leading-tight">
-                {"Upload an educational short".split("").map((char, i) => (
+                {"Post a micro-lesson with real takeaways.".split("").map((char, i) => (
                   <span
                     key={i}
                     className="transition-colors duration-300"

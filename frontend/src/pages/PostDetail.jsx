@@ -102,7 +102,7 @@ function PostDetail() {
   const transcriptReady = Boolean(post.transcript && post.transcript.length > 20);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] py-6 lg:px-6">
+    <div className="min-h-screen  py-6 lg:px-6">
       <div className="max-w-[1400px] mx-auto">
         {/* Back button */}
         <button

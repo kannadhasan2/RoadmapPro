@@ -152,7 +152,7 @@ const Home = () => {
         <RenderLogoSet />
       </section>
 
-      <section className="py-0 px-[2px] ">
+      <section className="py-0 px-[2px] fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.9s" }}>
         <div className="max-w-[1400px] mx-auto">
             <div className="text-center">
               <ButtonHeading text="The Founder" className="border-none text-[29px] font-extrabold " />
@@ -165,7 +165,7 @@ const Home = () => {
       </section>
 
       {/* ===== ECOSYSTEM GRID - 'Stealth Browser Infrastructure' Style ===== */}
-      <section className="py-12 px-[12px] sm:px-6">
+      <section className="py-12 px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.9s" }}>
         <div className="max-w-[1400px] mx-auto">
           {/* Header */}
           <div className="mb-12">
@@ -250,7 +250,7 @@ const Home = () => {
       </section>
 
       {/* ===== CTA SECTION ===== */}
-      <section className="py-2 px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.6s" }}>
+      <section className="py-2 px-[12px] sm:px-6 fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.9s" }}>
         <div className="max-w-[1400px] mx-auto text-center">
           <div className="text-violet-700 text-[14px] font-bold tracking-[0.15em] mb-4 font-mono">[ START LEARNING ]</div>
               <h2 className="text-[38px] font-bold mb-6 leading-tight flex flex-wrap justify-center">
