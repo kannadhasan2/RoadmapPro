@@ -38,14 +38,14 @@ const Home = () => {
 
   return (
    <div className="min-h-screen bg-[#050505]
-  bg-[radial-gradient(circle_at_50%_66%,#7c3aed20,transparent_40%),radial-gradient(#ffffff08_2px,transparent_2px)]
-  bg-[size:100%_100%,12px_12px]
-  text-white font-sans antialiased scroll-smooth
-  selection:bg-violet-800 selection:text-white">
+      bg-[radial-gradient(circle_at_50%_66%,#7c3aed20,transparent_40%),radial-gradient(#ffffff08_2px,transparent_2px)]
+      bg-[size:100%_100%,12px_12px]
+      text-white font-sans antialiased scroll-smooth
+      selection:bg-violet-800 selection:text-white">
 
 
       {/* ===== HERO SECTION ===== */}
-      <section className="pt-12 pb-20 px-[12px] sm:px-[24px] relative">
+      <section className="pt-12 pb-20 px-[12px] sm:px-[24px] relative fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.9s" }}>
         <div className="max-w-[1000px] mx-auto text-center relative z-10">
           
           {/* Top Tag */}
