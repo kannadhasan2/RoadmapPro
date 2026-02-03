@@ -14,7 +14,7 @@ function Videos() {
 
   if (loading && posts.length === 0 ) {
     return (
-      <div className="h-[calc(100vh-120px)] bg-[#0a0a0a] flex items-center justify-center">
+      <div className="h-[calc(100vh-120px)] bg-transparent flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <div className="w-8 h-8 border-4 border-violet-700  rounded-[5px] animate-spin"></div>
           <p className=" text-[12px] font-bold lg:text-[14px] font-mono text-violet-700">LOADING_VIDEOS...</p>
