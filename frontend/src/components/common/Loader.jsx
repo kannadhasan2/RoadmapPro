@@ -1,4 +1,3 @@
-import { Loader2 } from 'lucide-react';
 
 function Loader ({ label = 'Loading...' }) {
   return (

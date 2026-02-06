@@ -1,4 +1,4 @@
-import { Link, useNavigate ,useLocation, useLoaderData} from "react-router-dom";
+import { Link, useNavigate ,useLocation} from "react-router-dom";
 import { Sparkles, LayoutDashboard, User, LogOut ,Menu} from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useAuthStore } from "../../store/authStore";
