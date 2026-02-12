@@ -311,7 +311,7 @@ function AiRoadmap() {
 
         {/* Empty State for User Roadmaps */}
         {generatedRoadmaps.length === 0 && (
-          <div> 
+          <div className="mb-10"> 
             <ButtonHeading text="YOUR_GENERATED_ROADMAPS" className="" />
             <div className="text-center py-12 bg-[#0f0f0f] border border-[#1f1f1f]">
             <Route size={40} className="text-violet-700 mx-auto mb-4" />
