@@ -87,9 +87,9 @@ function AiTutor() {
           <div className="flex-1 flex flex-col justify-center items-center ">
             {/* Header */}
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 text-[12px] text-violet-700 mb-4 tracking-[0.15em] font-mono">
-                <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
-                [ AI TUTOR ]
+              <div className="inline-flex items-center gap-2 text-[16px] font-bold text-violet-700 mb-4 tracking-[0.15em] font-mono">
+                <span className="w-2 h-2 bg-violet-700 rounded-sm"></span>
+                [ SKILL MENTOR ]
               </div>
               <h1 className="text-[48px] font-bold text-white mb-4 leading-tight">
                 {"Skill Mentor".split("").map((char, i) => (
@@ -111,7 +111,12 @@ function AiTutor() {
             </div>
 
             {/* Topic Input */}
-            <div className="max-w-[600px] w-full mx-auto mb-12">
+            <div className="relative max-w-[600px] w-full mx-auto mb-12">
+              <div className="absolute -top-[1px] -left-[1px] w-6 h-6 border-t border-l border-violet-700"></div>
+            <div className="absolute -top-[1px] -right-[1px] w-6 h-6 border-t border-r border-violet-700"></div>
+            <div className="absolute -bottom-[1px] -left-[1px] w-6 h-6 border-b border-l border-violet-700"></div>
+            <div className="absolute -bottom-[1px] -right-[1px] w-6 h-6 border-b border-r border-violet-700"></div>
+
               <div className="bg-[#111] border border-[#2a2a2a]">
                 <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a]">
                   <code className="text-[12px] text-violet-700 tracking-wide font-mono">USER@ROADMAPPRO:~/MENTOR</code>
@@ -133,7 +138,7 @@ function AiTutor() {
                   <button 
                     type="submit"
                     disabled={!topic.trim() || loading}
-                    className="w-full px-6 py-3 bg-[violet]/10 hover:bg-violet-700 disabled:opacity-100 text-white font-bold text-[13px] flex items-center justify-center gap-2 transition-all"
+                    className="w-full px-6 py-3 bg-violet-800 hover:bg-violet-700 disabled:opacity-100 text-white font-bold text-[13px] flex items-center justify-center gap-2 transition-all"
                   >
                     {loading ? (
                       <><Loader2 size={16} className="animate-spin" /> STARTING...</>

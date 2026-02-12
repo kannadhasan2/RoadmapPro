@@ -274,7 +274,11 @@ const Home = () => {
             <Link to="/ai-roadmap" className="px-10 py-4 bg-violet-700 hover:bg-violet-500 text-white font-bold text-[13px] flex items-center justify-center gap-2 transition-all tracking-wide">
               <Rocket size={16} /> START LEARNING
             </Link>
-            <Link to="/communities" className="px-10 py-4 border border-[#333] hover:border-violet-700 text-white font-semibold text-[13px] flex items-center justify-center gap-2 transition-all tracking-wide">
+            <Link to="/communities" className="relative px-10 py-4 border border-[#333] hover:border-violet-700 text-white font-semibold text-[13px] flex items-center justify-center gap-2 transition-all tracking-wide">
+              <div className="absolute -top-[1px] -left-[1px] w-3 h-3 border-t border-l border-violet-700"></div>
+              <div className="absolute -top-[1px] -right-[1px] w-3 h-3 border-t border-r border-violet-700"></div>
+              <div className="absolute -bottom-[1px] -left-[1px] w-3 h-3 border-b border-l border-violet-700"></div>
+              <div className="absolute -bottom-[1px] -right-[1px] w-3 h-3 border-b border-r border-violet-700"></div>
               <Users size={16} /> JOIN COMMUNITY
             </Link>
           </div>

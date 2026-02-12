@@ -144,7 +144,12 @@ function AiRoadmap() {
 
         {/* Animated Search Bar */}
         <div className="max-w-[700px] mx-auto mb-6">
-          <div className="bg-[#111] border border-[#2a2a2a]">
+          <div className="relative bg-[#111] border border-[#2a2a2a]">
+            <div className="absolute -top-[1px] -left-[1px] w-6 h-6 border-t border-l border-violet-700"></div>
+            <div className="absolute -top-[1px] -right-[1px] w-6 h-6 border-t border-r border-violet-700"></div>
+            <div className="absolute -bottom-[1px] -left-[1px] w-6 h-6 border-b border-l border-violet-700"></div>
+            <div className="absolute -bottom-[1px] -right-[1px] w-6 h-6 border-b border-r border-violet-700"></div>
+
             <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a]">
               <code className="text-[12px] text-violet-700 tracking-wide font-mono">USER@ROADMAPPRO:~/ROADMAP</code>
               <div className="flex gap-2">
@@ -167,7 +172,7 @@ function AiRoadmap() {
           {showCustomOption && (
             <div className="mt-3 flex items-center justify-center gap-2 text-[#666] text-[13px]">
               <ArrowRight size={14} />
-              <span>Press <kbd className="px-2 py-0.5 bg-[#1a1a1a] border border-[#2a2a2a] text-[11px] font-mono">Enter</kbd> to create roadmap for "<span className="text-[#FF6B35]">{searchQuery}</span>"</span>
+              <span>Press <kbd className="px-2 py-0.5 bg-[#1a1a1a] border border-[#2a2a2a] text-[11px] font-mono">Enter</kbd> to create roadmap for "<span className="text-violet-700 font-bold">{searchQuery}</span>"</span>
             </div>
           )}
         </div>

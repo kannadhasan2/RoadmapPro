@@ -2,7 +2,12 @@ function ProfileHeader ({ profile, isOwnProfile, onFollowToggle }) {
   if (!profile) return null;
   console.log(profile.profile_image)
   return (
-    <div className="bg-[#0f0f0f] border border-[#1f1f1f] p-6">
+    <div className="relative bg-[#0f0f0f] border border-[#1f1f1f] p-6">
+      <div className="absolute -top-[1px] -left-[1px] w-6 h-6 border-t border-l border-violet-700"></div>
+            <div className="absolute -top-[1px] -right-[1px] w-6 h-6 border-t border-r border-violet-700"></div>
+            <div className="absolute -bottom-[1px] -left-[1px] w-6 h-6 border-b border-l border-violet-700"></div>
+            <div className="absolute -bottom-[1px] -right-[1px] w-6 h-6 border-b border-r border-violet-700"></div>
+
       <div className="flex flex-col md:flex-row md:items-center gap-6">
         {/* Avatar */}
         <div className="w-20 h-20 bg-violet-700 flex items-center justify-center text-white text-4xl font-bold flex-shrink-0">
