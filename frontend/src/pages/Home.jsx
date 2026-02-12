@@ -45,7 +45,7 @@ const Home = () => {
 
 
       {/* ===== HERO SECTION ===== */}
-      <section className="pt-12 pb-20 px-[12px] sm:px-[24px] relative fade-in" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.9s" }}>
+      <section className="pt-12 pb-20 px-[12px] sm:px-[24px] relative fade-in slide-up" style={{ opacity: 0, transform: "translateY(20px)", transition: "all 0.9s" }}>
         <div className="max-w-[1000px] mx-auto text-center relative z-10">
           
           {/* Top Tag */}
