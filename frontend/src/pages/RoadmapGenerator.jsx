@@ -411,13 +411,13 @@ function RoadmapGenerator() {
           <div className="flex gap-3 justify-center">
             <button
               onClick={() => navigate("/ai-roadmap")}
-              className="px-4 py-2 text-slate-300 bg-white/5 hover:bg-white/10 rounded-none transition-colors btn-beam border border-white/10"
+              className="px-4 py-2 text-slate-300 bg-white/5 hover:border-violet-700 hover:bg-violet-700/5 rounded-none   border border-white/10"
             >
               Go Back
             </button>
             <button
               onClick={() => generateRoadmap(topic)}
-              className="px-4 py-2 bg-[#FF6B35] text-white rounded-none hover:bg-[#ff7a4a] transition-colors flex items-center gap-2 btn-beam"
+              className="px-4 py-2 bg-violet-700 text-white rounded-none hover:bg-violet-600  flex items-center gap-2 "
             >
               <RefreshCw size={16} />
               Try Again

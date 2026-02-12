@@ -85,7 +85,7 @@ function Profile() {
         {/* Header */}
         <div className="mb-6">
           <div className="flex items-center justify-center gap-2 font-bold text-[17px] text-violet-700 mb-3 tracking-[0.12em] font-mono">
-            <span className="w-2 h-2 bg-violet-700 rounded-full"></span>
+            <span className="w-2 h-2 rounded-[3px] bg-violet-700"></span>
             [ {isOwnProfile ? 'YOUR PROFILE' : 'USER PROFILE'} ]
           </div>
         </div>
