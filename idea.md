@@ -407,7 +407,7 @@ eduverse/
 
 ### 🏆 Recommended Strategy: Groq Primary + Gemini Backup
 
-**Why Groq is PERFECT for EduVerse:**
+**Why Groq is PERFECT for RoadmapPro:**
 
 - 14,400 requests per day (enough for 1,000+ daily active users)
 - 300+ tokens per second response speed
